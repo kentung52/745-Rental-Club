@@ -444,6 +444,10 @@ a:focus {
 }
 
 .section-title b {
+  font-size: 25px;
+}
+
+.section-title p {
   font-size: 20px;
 }
 
