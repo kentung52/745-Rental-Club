@@ -404,6 +404,12 @@ a:focus {
   font-weight: bold;
 }
 
+.news-color-line {
+  color: #046f1f;
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .news-location {
   color: #ee0505;
   font-size: 18px;
