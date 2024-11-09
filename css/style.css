@@ -611,7 +611,7 @@ a:focus {
 }
 
 .bg-1 {
-  background: url("../images/background.png") no-repeat 50% 50%;
+  background: url("../images/background.png") no-repeat 90% 10%;
   background-size: cover;
   position: relative;
 }
