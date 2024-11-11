@@ -237,3 +237,20 @@
     });
 
 })(jQuery);
+
+
+function scrollToSection() {
+	// 滾動到目標區塊
+	location.href = '#consignment';
+
+	// 取得目標區塊元素
+	const targetSection = document.getElementById('consignment');
+	
+	// 加入閃爍效果
+	targetSection.classList.add('flash-effect');
+	
+	// 在動畫結束後移除閃爍效果
+	targetSection.addEventListener('animationend', function() {
+		targetSection.classList.remove('flash-effect');
+	}, { once: true }); // 確保只執行一次
+}
