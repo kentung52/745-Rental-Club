@@ -10,6 +10,7 @@ Version: 1.0.0
 @import url("https://fonts.googleapis.com/css?family=Exo:500,600,700|Roboto&display=swap");
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;   /*平滑頁面滾動*/
 }
 
 body {
@@ -1774,7 +1775,7 @@ a:focus {
 }
 
 /* index scroll */
-.scroll {
+html {
   scroll-behavior: smooth;
 }
 /*# sourceMappingURL=maps/style.css.map */
