@@ -11,7 +11,20 @@ Version: 1.0.0
 html {
   overflow-x: hidden;
   scroll-behavior: smooth;   /*平滑頁面滾動*/
+
+  
 }
+/* 閃爍動畫 */
+@keyframes flash {
+  0%, 100% { background-color: rgb(255, 255, 255); }
+  50% { background-color: rgb(238, 243, 161); }
+}
+
+/* 啟用閃爍效果的樣式 */
+.flash-effect {
+  animation: flash 0.7s ease-in-out 3; /* 閃爍3次 */
+}
+
 
 body {
   line-height: 1.6;
