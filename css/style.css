@@ -17,7 +17,7 @@ html {
 /* 閃爍動畫 */
 @keyframes flash {
   0%, 100% { background-color: rgb(255, 255, 255); }
-  50% { background-color: rgb(238, 243, 161); }
+  50% { background-color: rgb(237, 241, 176); }
 }
 
 /* 啟用閃爍效果的樣式 */
