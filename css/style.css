@@ -1772,4 +1772,9 @@ a:focus {
 .text-index {
   font-size: 30px;
 }
+
+/* index scroll */
+.scroll {
+  scroll-behavior: smooth;
+}
 /*# sourceMappingURL=maps/style.css.map */
