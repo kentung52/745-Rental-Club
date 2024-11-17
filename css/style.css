@@ -534,6 +534,7 @@ a:focus {
 
 #navbarmain {
   padding: 20px 0px;
+  
 }
 
 #navbarmain .nav-link {
@@ -1793,3 +1794,5 @@ html {
   scroll-behavior: smooth;
 }
 /*# sourceMappingURL=maps/style.css.map */
+
+
