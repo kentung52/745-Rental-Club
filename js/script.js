@@ -254,3 +254,5 @@ function scrollToSection() {
 		targetSection.classList.remove('flash-effect');
 	}, { once: true }); // 確保只執行一次
 }
+
+
