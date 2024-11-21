@@ -1130,6 +1130,12 @@ a:focus {
 
 .testimonial-block .client-info {
   margin-bottom: 20px;
+  transform: scale(1.2);
+  transition: transform 0.5s ease-in-out; /* 增加平滑過渡 */
+}
+
+.testimonial-block .client-info img:hover {
+  transform: scale(1.5); /* 滑鼠懸停時進一步放大 */
 }
 
 .testimonial-block .client-info h4 {
