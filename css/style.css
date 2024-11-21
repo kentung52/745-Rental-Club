@@ -278,12 +278,9 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
 }
 
 .section {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
-.section-car {
-  padding: 0px 0;
-}
 
 .section-sm {
   padding: 70px 0;
@@ -1807,7 +1804,7 @@ html {
   font-size: 2.5rem;
 }
 
-.department-single {
-  padding: 0px 0;
-}
+/* .department-single {
+  padding: 10px 0;
+} */
 
