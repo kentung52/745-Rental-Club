@@ -1808,4 +1808,47 @@ html {
 }
 
 
+/* 圖片放大效果 */
+.portfolio-img {
+  position: relative;
+}
 
+.portfolio-img img {
+  width: 100%;
+  display: block;
+}
+
+.portfolio-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 1;
+  transition: .5s;
+}
+
+.portfolio-btn a {
+  font-size: 1.5rem;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.portfolio-img:hover .portfolio-btn {
+  opacity: 1;
+}
+
+.portfolio-btn a:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: #32C36C; /* 可以根據主題色調整 */
+}

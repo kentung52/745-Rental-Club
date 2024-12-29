@@ -255,4 +255,11 @@ function scrollToSection() {
 	}, { once: true }); // 確保只執行一次
 }
 
+// 放大圖片功能
+// 初始化 Lightbox（如果需要定制配置）
+lightbox.option({
+    'resizeDuration': 200,
+    'wrapAround': true
+});
 
+  
