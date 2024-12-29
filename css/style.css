@@ -1809,46 +1809,105 @@ html {
 
 
 /* 圖片放大效果 */
-.portfolio-img {
+/* 容器樣式 */
+.image-container {
   position: relative;
+  display: inline-block;
+  cursor: pointer;
+  overflow: hidden;
 }
 
-.portfolio-img img {
+.image-display {
   width: 100%;
+  height: auto;
   display: block;
 }
 
-.portfolio-btn {
+/* 覆蓋層樣式 */
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 半透明遮罩 */
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   opacity: 0;
-  z-index: 1;
-  transition: .5s;
+  transition: opacity 0.3s ease;
+  z-index: 1; /* 確保覆蓋層可被點擊 */
 }
 
-.portfolio-btn a {
-  font-size: 1.5rem;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border-radius: 50%;
-  transition: 0.3s;
-}
-
-.portfolio-img:hover .portfolio-btn {
+.image-container:hover .overlay {
   opacity: 1;
 }
 
-.portfolio-btn a:hover {
-  background: rgba(0, 0, 0, 0.8);
-  color: #32C36C; /* 可以根據主題色調整 */
+/* 按鈕樣式 */
+.eye-button {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 2; /* 確保按鈕在覆蓋層上方 */
 }
+
+.eye-button:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+/* 全屏顯示樣式 */
+.fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 999;
+}
+
+.fullscreen-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 大圖片樣式 */
+.fullscreen-image {
+  max-width: 90%;
+  max-height: 90%;
+  transition: transform 0.3s ease;
+}
+
+/* 關閉按鈕樣式 */
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
