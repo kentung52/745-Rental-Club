@@ -256,38 +256,38 @@ function scrollToSection() {
 }
 
 // 放大圖片功能
-// 確保網頁載入完成後執行
-document.addEventListener("DOMContentLoaded", () => {
-    // 選取所有的 .image-container
-    document.querySelectorAll('.image-container').forEach(container => {
-        const clickArea = container.querySelector('.click-area'); // 選取白色區域
+// // 確保網頁載入完成後執行
+// document.addEventListener("DOMContentLoaded", () => {
+//     // 選取所有的 .image-container
+//     document.querySelectorAll('.image-container').forEach(container => {
+//         const clickArea = container.querySelector('.click-area'); // 選取白色區域
 
-        // 點擊白色區域顯示全屏圖片
-        clickArea.addEventListener('click', () => {
-			console.log('白色区域被点击');
-            const fullscreenOverlay = document.createElement('div');
-            fullscreenOverlay.className = 'fullscreen-overlay';
-            fullscreenOverlay.innerHTML = `
-                <img src="${container.querySelector('.image-display').src}" class="fullscreen-image">
-                <div class="close-button">&times;</div>
-            `;
-            document.body.appendChild(fullscreenOverlay);
+//         // 點擊白色區域顯示全屏圖片
+//         clickArea.addEventListener('click', () => {
+// 			console.log('白色区域被点击');
+//             const fullscreenOverlay = document.createElement('div');
+//             fullscreenOverlay.className = 'fullscreen-overlay';
+//             fullscreenOverlay.innerHTML = `
+//                 <img src="${container.querySelector('.image-display').src}" class="fullscreen-image">
+//                 <div class="close-button">&times;</div>
+//             `;
+//             document.body.appendChild(fullscreenOverlay);
 
-            // 顯示動畫
-            setTimeout(() => {
-                fullscreenOverlay.classList.add('show');
-            }, 10);
+//             // 顯示動畫
+//             setTimeout(() => {
+//                 fullscreenOverlay.classList.add('show');
+//             }, 10);
 
-            // 關閉按鈕功能
-            fullscreenOverlay.querySelector('.close-button').addEventListener('click', () => {
-                fullscreenOverlay.classList.remove('show');
-                setTimeout(() => {
-                    document.body.removeChild(fullscreenOverlay);
-                }, 300);
-            });
-        });
-    });
-});
+//             // 關閉按鈕功能
+//             fullscreenOverlay.querySelector('.close-button').addEventListener('click', () => {
+//                 fullscreenOverlay.classList.remove('show');
+//                 setTimeout(() => {
+//                     document.body.removeChild(fullscreenOverlay);
+//                 }, 300);
+//             });
+//         });
+//     });
+// });
 
 
 
