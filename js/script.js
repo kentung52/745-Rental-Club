@@ -6,7 +6,15 @@
 	'use strict';
 
 	
-	
+// 初始化 Lightbox 選項
+
+lightbox.option({
+    'resizeDuration': 200,       // 圖片切換時的過渡時間
+    'wrapAround': true,          // 啟用無縫循環
+    'albumLabel': '圖片 %1 / %2' // 圖片組的標籤顯示
+  });
+  
+  
  // SCROLL TO TOP
   
   $(window).on('scroll', function () {
@@ -254,8 +262,6 @@ function scrollToSection() {
 		targetSection.classList.remove('flash-effect');
 	}, { once: true }); // 確保只執行一次
 }
-
-// 放大圖片功能
 
 
 
