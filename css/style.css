@@ -1809,8 +1809,7 @@ html {
 
 
 /* 圖片放大效果 */
-/* 讓眼睛按鈕的區塊默認隱藏 */
-/* 父層容器：確保可相對定位 */
+/* 父層容器：確保相對定位 */
 .portfolio-img {
   position: relative;
   overflow: hidden; /* 避免元素超出邊界 */
@@ -1824,76 +1823,89 @@ html {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4); /* 半透明黑色遮罩 */
-  opacity: 0;
-  transition: opacity 0.3s;
+  opacity: 0; /* 預設隱藏 */
+  transition: opacity 0.3s; /* 平滑顯示過渡 */
   z-index: 1;
 }
 
-/* 按鈕（眼睛圖示）：預設隱藏 + 絕對置中 */
+/* 按鈕（白色圓形背景）：預設隱藏 + 絕對置中 */
 .portfolio-btn {
   position: absolute;
   top: 50%;               /* 垂直置中 */
   left: 50%;              /* 水平置中 */
   transform: translate(-50%, -50%); /* 偏移修正 */
-  opacity: 0;
-  transition: opacity 0.3s;
+  opacity: 0;             /* 預設隱藏 */
+  transition: opacity 0.3s, transform 0.3s;
   z-index: 2;             /* 高於遮罩 */
-  display: flex;          /* 確保內容居中對齊 */
+  width: 60px;            /* 圓形大小 */
+  height: 60px;
+  background: rgba(255, 255, 255, 1); /* 純白背景 */
+  border-radius: 50%;     /* 圓形 */
+  display: flex;          /* 使用 flex 居中對齊 */
   align-items: center;
   justify-content: center;
-  width: 60px;            /* 確保按鈕尺寸 */
-  height: 60px;
-  border-radius: 50%;     /* 圓形按鈕 */
-  background: rgba(255, 255, 255, 0.8); /* 白色半透明背景 */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* 增加按鈕陰影 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* 增加陰影效果 */
+}
+
+/* 圓形區塊內嵌眼睛圖示 */
+.portfolio-btn::before {
+  content: "\f06e";       /* Font Awesome 的眼睛圖示 Unicode 編碼 */
+  font-family: "Font Awesome 5 Free"; /* 確保使用 FA 字體 */
+  font-weight: 900;       /* 加粗樣式 */
+  font-size: 40px;        /* 調整圖示大小 */
+  left: 50%;
+  color: #ff4d4d;         /* 圖示顏色（紅色，可自行調整） */
+  display: flex;
+  text-align: center;
+  margin: 0;              /* 移除可能存在的默認邊距 */
+  line-height: 1;         /* 確保圖示居中 */
+  z-index: 3;  
 }
 
 /* 眼睛按鈕 hover 時的樣式 */
 .portfolio-btn:hover {
-  background: rgba(255, 255, 255, 1); /* 背景變成純白色 */
   transform: translate(-50%, -50%) scale(1.1); /* 略微放大 */
 }
 
-/* 當滑鼠 hover（桌機）或點擊（行動裝置）時，顯示遮罩和按鈕 */
+/* 當滑鼠 hover 或點擊時，顯示遮罩和按鈕 */
 .portfolio-img:hover .overlay,
 .portfolio-img:hover .portfolio-btn {
-  opacity: 1;
+  opacity: 1; /* 顯示 */
 }
 
-/* 眼睛圖示樣式 */
+/* 保留按鈕樣式並調整居中效果 */
 .portfolio-btn a {
-  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 保證按鈕居中 */
+  display: flex;                  /* 使用 flex 保證內容居中對齊 */
   align-items: center;
   justify-content: center;
-  width: 100%; /* 確保圖示與按鈕大小一致 */
-  height: 100%;
-  font-size: 24px;       /* 圖示大小 */
-  color: #fdfdfd;        /* 圖示顏色 */
-  text-decoration: none; /* 去掉超連結的下劃線 */
+  width: 60px;                    /* 按鈕寬度 */
+  height: 60px;                   /* 按鈕高度 */
+  border-radius: 50%;             /* 確保按鈕圓形 */
+  background: rgba(255, 255, 255, 1); /* 白色背景 */
+  text-decoration: none;          /* 去掉超連結下劃線 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* 按鈕陰影 */
+  z-index: 2;                     /* 保證按鈕在最上層 */
 }
 
-/* 按鈕外觀樣式 */
-.portfolio-btn a {
-  font-size: 24px;          /* Icon 的大小 */
-  color: #fff;              /* Icon 顏色 */
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.8); /* 按鈕背景（白色半透明） */
-  border-radius: 50%;       /* 圓形按鈕 */
-  border: 2px solid #fff;   /* 按鈕外框 */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* 加點陰影 */
-  text-decoration: none;    /* 去掉超連結的下劃線 */
-  display: flex;            /* 按鈕內容居中對齊 */
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s, transform 0.3s; /* 增加按鈕動畫效果 */
+/* 調整眼睛圖示樣式 */
+.portfolio-btn a i {
+  font-size: 24px;        /* 圖示大小 */
+  color: #ff4d4d;         /* 圖示顏色 */
+  
 }
 
-/* 按鈕 hover 時的效果 */
+/* 鼠標 hover 效果 */
 .portfolio-btn a:hover {
-  background: rgba(255, 255, 255, 1); /* 背景變成純白色 */
-  transform: scale(1.1);              /* 放大按鈕 */
+  transform: translate(-50%, -50%) scale(1.1); /* 按鈕放大 */
+  background: rgba(255, 255, 255, 1);         /* 背景保持白色 */
 }
+
+
+
 
 
 
