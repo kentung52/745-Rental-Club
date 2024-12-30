@@ -1849,12 +1849,11 @@ html {
 
 /* 圓形區塊內嵌眼睛圖示 */
 .portfolio-btn::before {
-  content: "\f06e";       /* Font Awesome 的眼睛圖示 Unicode 編碼 */
-  font-family: "Font Awesome 5 Free"; /* 確保使用 FA 字體 */
+  
   font-weight: 900;       /* 加粗樣式 */
-  font-size: 40px;        /* 調整圖示大小 */
+  font-size: 30px;        /* 調整圖示大小 */
   left: 50%;
-  color: #ff4d4d;         /* 圖示顏色（紅色，可自行調整） */
+  color: #000000;         /* 圖示顏色（紅色，可自行調整） */
   display: flex;
   text-align: center;
   margin: 0;              /* 移除可能存在的默認邊距 */
@@ -1893,8 +1892,10 @@ html {
 
 /* 調整眼睛圖示樣式 */
 .portfolio-btn a i {
-  font-size: 24px;        /* 圖示大小 */
-  color: #ff4d4d;         /* 圖示顏色 */
+  left: 5%;
+  top: 5%;
+  font-size: 50px;        /* 圖示大小 */
+  color: #000000;         /* 圖示顏色 */
   
 }
 
