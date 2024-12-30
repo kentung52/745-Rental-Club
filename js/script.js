@@ -260,36 +260,35 @@ function scrollToSection() {
 document.addEventListener("DOMContentLoaded", () => {
     // 選取所有的 .image-container
     document.querySelectorAll('.image-container').forEach(container => {
-        const button = container.querySelector('.eye-button'); // 選取按鈕
+        const clickArea = container.querySelector('.click-area'); // 選取白色區域
 
-        // 檢查按鈕是否存在
-        if (button) {
-            // 點擊按鈕顯示全屏圖片
-            button.addEventListener('click', () => {
-                const fullscreenOverlay = document.createElement('div');
-                fullscreenOverlay.className = 'fullscreen-overlay';
-                fullscreenOverlay.innerHTML = `
-                    <img src="${container.querySelector('.image-display').src}" class="fullscreen-image">
-                    <div class="close-button">&times;</div>
-                `;
-                document.body.appendChild(fullscreenOverlay);
+        // 點擊白色區域顯示全屏圖片
+        clickArea.addEventListener('click', () => {
+			console.log('白色区域被点击');
+            const fullscreenOverlay = document.createElement('div');
+            fullscreenOverlay.className = 'fullscreen-overlay';
+            fullscreenOverlay.innerHTML = `
+                <img src="${container.querySelector('.image-display').src}" class="fullscreen-image">
+                <div class="close-button">&times;</div>
+            `;
+            document.body.appendChild(fullscreenOverlay);
 
-                // 顯示動畫
+            // 顯示動畫
+            setTimeout(() => {
+                fullscreenOverlay.classList.add('show');
+            }, 10);
+
+            // 關閉按鈕功能
+            fullscreenOverlay.querySelector('.close-button').addEventListener('click', () => {
+                fullscreenOverlay.classList.remove('show');
                 setTimeout(() => {
-                    fullscreenOverlay.classList.add('show');
-                }, 10);
-
-                // 關閉按鈕功能
-                fullscreenOverlay.querySelector('.close-button').addEventListener('click', () => {
-                    fullscreenOverlay.classList.remove('show');
-                    setTimeout(() => {
-                        document.body.removeChild(fullscreenOverlay);
-                    }, 300);
-                });
+                    document.body.removeChild(fullscreenOverlay);
+                }, 300);
             });
-        }
+        });
     });
 });
+
 
 
 

@@ -1830,39 +1830,34 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* 半透明遮罩 */
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease;
-  z-index: 1; /* 確保覆蓋層可被點擊 */
 }
 
 .image-container:hover .overlay {
-  opacity: 1;
+  opacity: 1; /* 滑鼠懸停時顯示遮罩層 */
 }
 
-/* 按鈕樣式 */
-.eye-button {
+/* 白色點擊區域 */
+.click-area {
   background: rgba(255, 255, 255, 0.8);
-  border: none;
+  border: 2px solid red; /* 添加红色边框调试 */
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
-  color: #333;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  z-index: 2; /* 確保按鈕在覆蓋層上方 */
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.eye-button:hover {
-  background: rgba(255, 255, 255, 1);
+.click-area:hover {
   transform: scale(1.1);
+  background: rgba(255, 255, 255, 1);
 }
 
 /* 全屏顯示樣式 */
