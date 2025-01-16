@@ -1079,7 +1079,9 @@ a:focus {
 .service-page {
   background: url("../images/service/mx5_bus.jpg") no-repeat;
   background-size: cover;
-  position: relative;  
+  position: relative;
+  padding: 40px 25px 200px;  
+  
 }
 
 @media (min-width: 992px) {
