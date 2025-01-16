@@ -678,6 +678,10 @@ a:focus {
 .text-color3 {
   color: #552408;
 }
+
+.text-color-black {
+  color: #000000;
+}
 .divider {
   width: 40px;
   height: 5px;
