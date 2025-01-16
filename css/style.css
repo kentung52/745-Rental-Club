@@ -1914,6 +1914,12 @@ html {
 
 
 
-
+.text-shadow { 
+  text-shadow: 
+  -1px -1px 0 black,    /* 上左 */
+  1px -1px 0 black,     /* 上右 */
+  -1px 1px 0 black,     /* 下左 */
+  1px 1px 0 black;      /* 下右 */
+}
 
 
