@@ -389,6 +389,7 @@ a:focus {
 .page-title .block span {    
   color: #fff;
   font-size: 40px;
+  font-weight: 700;
 }
 
 .page-title .block p {
