@@ -1645,6 +1645,10 @@ a:focus {
   padding: 25px;
 }
 
+.sidebar-widget.schedule-widget em {  
+  margin-top: 20px;
+}
+
 .sidebar-widget.schedule-widget ul li {
   padding: 10px 0px;
   border-bottom: 1px solid #eee;
