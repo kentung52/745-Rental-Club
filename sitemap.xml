@@ -18,7 +18,7 @@
 	<url>
 	<loc>https://745-rental-club.vercel.app/news.html</loc>  <!-- 最新消息 -->
 		<priority>0.80</priority>
-		<lastmod>2025-03-03T00:00:00+08:00</lastmod>
+		<lastmod>2025-03-08T00:00:00+08:00</lastmod>
 	</url>
 	<url>
 	<loc>https://745-rental-club.vercel.app/service.html</loc>  <!-- 車種總攬 -->
@@ -28,7 +28,7 @@
 	<url>
 	<loc>https://745-rental-club.vercel.app/repairs_and_modify.html</loc>  <!-- 保養 部品 改裝 賣車 -->
 		<priority>0.80</priority>
-		<lastmod>2025-03-03T00:00:00+08:00</lastmod>
+		<lastmod>2025-03-08T00:00:00+08:00</lastmod>
 	</url>
 	<url>
 	<loc>https://745-rental-club.vercel.app/repairs_and_modify/maintainance.html</loc>  <!-- 保養維修 -->
@@ -58,7 +58,7 @@
 	<url>
 	<loc>https://745-rental-club.vercel.app/teaching.html</loc>  <!-- 教學 -->
 		<priority>0.80</priority>
-		<lastmod>2025-03-03T00:00:00+08:00</lastmod>
+		<lastmod>2025-03-08T00:00:00+08:00</lastmod>
 	</url>
 	<url>
 	<loc>https://745-rental-club.vercel.app/evaluate.html</loc>  <!-- 條款 -->
@@ -73,7 +73,7 @@
 	<url>
 	<loc>https://745-rental-club.vercel.app/car_introduce_white.html</loc>  <!-- 白牌介紹 -->
 		<priority>0.64</priority>
-		<lastmod>2025-03-03T00:00:00+08:00</lastmod>
+		<lastmod>2025-03-08T00:00:00+08:00</lastmod>
 	</url>
 	<url>
 	<loc>https://745-rental-club.vercel.app/car_introduce_yellow.html</loc>  <!-- 黃牌介紹 -->
@@ -83,7 +83,7 @@
 	<url>
 	<loc>https://745-rental-club.vercel.app/car_introduce_red.html</loc>  <!-- 紅牌介紹 -->
 		<priority>0.64</priority>
-		<lastmod>2025-03-03T00:00:00+08:00</lastmod>
+		<lastmod>2025-03-08T00:00:00+08:00</lastmod>
 	</url>
 	<url>
 	<loc>https://745-rental-club.vercel.app/car_introduce/mx5.html</loc>  <!-- MX5 -->
@@ -168,7 +168,7 @@
 	<url>
 	<loc>https://745-rental-club.vercel.app/car_introduce/yellow_motor/cb350.html</loc>  <!-- CB350 -->
 		<priority>0.51</priority>
-		<lastmod>2025-03-03T00:00:00+08:00</lastmod>
+		<lastmod>2025-03-08T00:00:00+08:00</lastmod>
 	</url>
 	<url>
 	<loc>https://745-rental-club.vercel.app/car_introduce/yellow_motor/speed400.html</loc>  <!-- Speed400 -->
@@ -198,7 +198,7 @@
 	<url>
 	<loc>https://745-rental-club.vercel.app/car_introduce/red_motor/gsx_8s.html</loc>  <!-- GSR-8S -->
 		<priority>0.51</priority>
-		<lastmod>2025-03-03T00:00:00+08:00</lastmod>
+		<lastmod>2025-03-08T00:00:00+08:00</lastmod>
 	</url>
 	<url>
 	<loc>https://745-rental-club.vercel.app/car_introduce/red_motor/rs660.html</loc>  <!-- RS660 -->
