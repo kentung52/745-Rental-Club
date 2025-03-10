@@ -59,17 +59,7 @@
 	<loc>https://745-rental-club.vercel.app/teaching.html</loc>  <!-- 教學 -->
 		<priority>0.80</priority>
 		<lastmod>2025-03-08T00:00:00+08:00</lastmod>
-	</url>
-	<url>
-	<loc>https://745-rental-club.vercel.app/evaluate.html</loc>  <!-- 條款 -->
-		<priority>0.80</priority>
-		<lastmod>2025-03-03T00:00:00+08:00</lastmod>
-	</url>
-	<url>
-	<loc>https://745-rental-club.vercel.app/desire.html</loc>  <!-- 新車許願池 -->
-		<priority>0.80</priority>
-		<lastmod>2025-03-03T00:00:00+08:00</lastmod>
-	</url>
+	</url>		
 	<url>
 	<loc>https://745-rental-club.vercel.app/car_introduce_white.html</loc>  <!-- 白牌介紹 -->
 		<priority>0.64</priority>
