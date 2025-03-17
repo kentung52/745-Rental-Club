@@ -918,14 +918,6 @@ a:focus {
   width: 100%;    
   margin-top: -60px;
   border: 5px solid #fff;
-
-  font-size: 30px;
-  color: #000000;
-  padding: 2px;
-  font-style:italic;
-  border: 5px solid #000000;
-  /* margin: 25px 0px; */
-  background-color: #ffffff8c;
 }
 
 .department-service {
