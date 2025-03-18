@@ -979,7 +979,7 @@ a:focus {
 .doctor-inner-box .doctor-profile {
   overflow: hidden;
   position: relative;
-  box-shadow: 0px 8px 16px 0px rgba(200, 183, 255, 0.2);
+  box-shadow: 0px 8px 16spx 0px rgba(200, 183, 255, 0.2);
 }
 /* 分頹圖 */
 .doctor-inner-box .doctor-profile .doctor-img {  
