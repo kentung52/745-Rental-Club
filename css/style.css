@@ -394,6 +394,7 @@ a:focus {
 
 .page-title .block p {
   color: #fff;
+  font-size: 50px;
 }
 
 .page-title .block b {
@@ -465,8 +466,9 @@ a:focus {
   margin-bottom: 70px;
 }
 
-.section-title h2 {
+.section-title h3 {
   color: #223a66;
+  font-size: 45px;
 }
 
 .section-title b {
@@ -632,7 +634,7 @@ a:focus {
 }
 
 .bg-1 {
-  background: url("../images/background.jpg") no-repeat 70% 40%;
+  background: url("../images/background.jpg") no-repeat 70% 50%;
   background-size: cover;
   position: relative;
 }
