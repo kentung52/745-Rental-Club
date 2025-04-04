@@ -1855,6 +1855,13 @@ html {
   overflow: hidden; /* 避免元素超出邊界 */
 }
 
+.portfolio-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
 /* 半透明遮罩區塊：預設隱藏 */
 .portfolio-img .overlay {
   position: absolute;
