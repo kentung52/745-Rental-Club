@@ -1855,6 +1855,7 @@ html {
   overflow: hidden; /* 避免元素超出邊界 */
 }
 
+/* 保證幻燈片圖片可水平置中並填滿 */
 .portfolio-img img {
   width: 100%;
   height: auto;
