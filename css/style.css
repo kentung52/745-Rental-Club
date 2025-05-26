@@ -8,22 +8,33 @@ Version: 1.0.0
 
 */
 @import url("https://fonts.googleapis.com/css?family=Exo:500,600,700|Roboto&display=swap");
+
 html {
   overflow-x: hidden;
-  scroll-behavior: smooth;   /*平滑頁面滾動*/
+  scroll-behavior: smooth;
+  /*平滑頁面滾動*/
   scroll-padding-top: 30vh;
 
-  
+
 }
+
 /* 閃爍動畫 */
 @keyframes flash {
-  0%, 100% { background-color: rgb(255, 255, 255); }
-  50% { background-color: rgb(237, 241, 176); }
+
+  0%,
+  100% {
+    background-color: rgb(255, 255, 255);
+  }
+
+  50% {
+    background-color: rgb(237, 241, 176);
+  }
 }
 
 /* 啟用閃爍效果的樣式 */
 .flash-effect {
-  animation: flash 0.7s ease-in-out 3; /* 閃爍3次 */
+  animation: flash 0.7s ease-in-out 3;
+  /* 閃爍3次 */
 }
 
 
@@ -41,34 +52,51 @@ body {
   transition: .5s;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
   font-family: "Exo", sans-serif;
   font-weight: 700;
   color: #222;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: 2.5rem;
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 44px;
 }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: 1.5rem;
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: 1.3rem;
   line-height: 30px;
 }
 
-h5, .h5 {
+h5,
+.h5 {
   font-size: 1.25rem;
 }
 
-h6, .h6 {
+h6,
+.h6 {
   font-size: 1rem;
 }
 
@@ -80,14 +108,20 @@ p {
   background: #223a66;
 }
 
-input[type="email"], input[type="password"], input[type="text"], input[type="tel"] {
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="tel"] {
   box-shadow: none;
   height: 45px;
   outline: none;
   font-size: 14px;
 }
 
-input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus, input[type="tel"]:focus {
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus {
   box-shadow: none;
   border: 1px solid #223a66;
 }
@@ -106,7 +140,7 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
   padding: 7rem 0px;
 }
 
-.about-content p{
+.about-content p {
   font-size: 20px;
 
 }
@@ -248,7 +282,9 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
   border-radius: 50px;
 }
 
-.btn.active:focus, .btn:active:focus, .btn:focus {
+.btn.active:focus,
+.btn:active:focus,
+.btn:focus {
   outline: 0;
 }
 
@@ -300,7 +336,7 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
 }
 
 /* service標題圖片透明度 */
-.overlay:before {    
+.overlay:before {
   content: "";
   position: absolute;
   left: 0;
@@ -362,7 +398,8 @@ a {
   transition: all .35s ease;
 }
 
-a:focus, a:hover {
+a:focus,
+a:hover {
   color: #e12454;
   text-decoration: none;
 }
@@ -380,18 +417,19 @@ a:focus {
   padding: 120px 0px 70px 0px;
   position: relative;
 }
+
 /* 標題文字 */
-.page-title .block h1 {    
+.page-title .block h1 {
   color: #fff;
   font-size: 50px;
 }
 
-.page-title .block h3 {    
+.page-title .block h3 {
   color: #fff;
   font-size: 50px;
 }
 
-.page-title .block span {    
+.page-title .block span {
   color: #fff;
   font-size: 40px;
   font-weight: 700;
@@ -404,7 +442,7 @@ a:focus {
 
 .page-title .block b {
   color: #fff;
-  font-weight:bold;
+  font-weight: bold;
 }
 
 .page-title .breadcumb-nav {
@@ -413,12 +451,15 @@ a:focus {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.slick-slide:focus, .slick-slide a {
+.slick-slide:focus,
+.slick-slide a {
   outline: none;
 }
 
 @media (max-width: 480px) {
-  h2, .h2 {
+
+  h2,
+  .h2 {
     font-size: 1.3rem;
     line-height: 36px;
   }
@@ -451,9 +492,11 @@ a:focus {
 .title-color {
   color: #223a66;
 }
+
 .title-color2 {
   color: #f83f11;
 }
+
 .title-color3 {
   color: #ffffff;
 }
@@ -503,7 +546,7 @@ a:focus {
 @media (max-width: 1199px) {
   .text-lg {
     font-size: 50px;
-    
+
 
   }
 }
@@ -511,7 +554,7 @@ a:focus {
 @media (max-width: 992px) {
   .text-lg {
     font-size: 40px;
-    
+
 
   }
 }
@@ -519,7 +562,7 @@ a:focus {
 @media (max-width: 768px) {
   .text-lg {
     font-size: 30px;
-   
+
 
   }
 }
@@ -527,7 +570,7 @@ a:focus {
 @media (max-width: 545px) {
   .text-lg {
     font-size: 25px;
-   
+
 
   }
 }
@@ -546,7 +589,7 @@ a:focus {
 
 #navbarmain {
   padding: 20px 0px;
-  
+
 }
 
 #navbarmain .nav-link {
@@ -617,12 +660,13 @@ a:focus {
   color: #fff;
   margin-right: 20px;
   font-size: 20px;
-   
+
 }
+
 @media (max-width: 1280) {
   .top-bar-info {
-    color: #fff;     
-    margin-left: 200px;    
+    color: #fff;
+    margin-left: 200px;
   }
 }
 
@@ -690,6 +734,7 @@ a:focus {
 .text-color-black {
   color: #000000;
 }
+
 .divider {
   width: 40px;
   height: 5px;
@@ -707,6 +752,7 @@ a:focus {
     font-size: 38px;
     line-height: 50px;
   }
+
   .banner {
     min-height: 450px;
     background: #fff !important;
@@ -718,6 +764,7 @@ a:focus {
     font-size: 28px;
     line-height: 40px;
   }
+
   .banner {
     min-height: 450px;
     background: #fff !important;
@@ -729,6 +776,7 @@ a:focus {
     font-size: 56px;
     line-height: 70px;
   }
+
   .banner {
     background: #fff !important;
   }
@@ -736,7 +784,7 @@ a:focus {
 
 @media (max-width: 1280) {
   .banner {
-    background: #fff !important;     
+    background: #fff !important;
   }
 }
 
@@ -809,7 +857,7 @@ a:focus {
   background-color: #fff;
   border-radius: 15px 15px 15px 15px;
   box-shadow: 0px 0px 30px 0px rgba(0, 42, 106, 0.1);
-  
+
 }
 
 .feature-item .feature-icon i {
@@ -818,8 +866,8 @@ a:focus {
 }
 
 .feature-item h4 {
-  color: #223a66; 
-  font-size: 30px; 
+  color: #223a66;
+  font-size: 30px;
 }
 
 .feature-item p {
@@ -832,7 +880,7 @@ a:focus {
 
 .feature-item b {
   font-size: 25px;
-  
+
 }
 
 .feature-section.border-top {
@@ -893,7 +941,7 @@ a:focus {
 }
 
 .service i {
-  color: #a84502;  
+  color: #a84502;
   /* service圖案顏色 */
 }
 
@@ -902,7 +950,7 @@ a:focus {
   font-size: 35px;
 }
 
-.service p { 
+.service p {
   font-size: 22px;
 }
 
@@ -917,12 +965,12 @@ a:focus {
   box-shadow: 0 0 38px rgba(21, 40, 82, 0.07);
 }
 
-.service-block h4{
-  font-size: 30px;  
+.service-block h4 {
+  font-size: 30px;
 }
 
-.service-block img {  
-  width: 100%;    
+.service-block img {
+  width: 100%;
   margin-top: -60px;
   border: 5px solid #fff;
 }
@@ -975,7 +1023,9 @@ a:focus {
   color: #fff;
 }
 
-.doctors .btn-group > .btn-group:not(:last-child) > .btn, .doctors .btn-group > .btn:not(:last-child):not(.dropdown-toggle), .doctors .btn-group > .btn:not(:first-child) {
+.doctors .btn-group>.btn-group:not(:last-child)>.btn,
+.doctors .btn-group>.btn:not(:last-child):not(.dropdown-toggle),
+.doctors .btn-group>.btn:not(:first-child) {
   border-radius: 3px;
 }
 
@@ -988,10 +1038,11 @@ a:focus {
   position: relative;
   box-shadow: 0px 8px 16spx 0px rgba(200, 183, 255, 0.2);
 }
+
 /* 分頹圖 */
-.doctor-inner-box .doctor-profile .doctor-img {  
+.doctor-inner-box .doctor-profile .doctor-img {
   /* 原高245 */
-  height: 220px; 
+  height: 220px;
   transition: all .35s ease;
 }
 
@@ -1022,6 +1073,7 @@ a:focus {
   .doctors .btn-group {
     display: block;
   }
+
   .doctors .btn-group .btn {
     margin: 8px 3px;
   }
@@ -1031,6 +1083,7 @@ a:focus {
   .doctors .btn-group {
     display: block;
   }
+
   .doctors .btn-group .btn {
     margin: 8px 3px;
   }
@@ -1040,6 +1093,7 @@ a:focus {
   .doctors .btn-group {
     display: block;
   }
+
   .doctors .btn-group .btn {
     margin: 8px 3px;
   }
@@ -1088,24 +1142,24 @@ a:focus {
   background: url("../images/service/mx5_bus.jpg") no-repeat;
   background-size: cover;
   position: relative;
-  padding: 100px 0px 250px;  
-  
+  padding: 100px 0px 250px;
+
 }
 
 @media (min-width: 992px) {
-  .service-page {    
+  .service-page {
     background-size: cover;
     background-position: center;
 
 
-    
+
   }
 }
 
 @media (min-width: 992px) {
   .title-color3 {
     color: #ffffff;
-    
+
   }
 }
 
@@ -1133,11 +1187,11 @@ a:focus {
   margin-bottom: 20px;
 }
 
-.testimonial-block h4 {  
+.testimonial-block h4 {
   font-size: 35px;
 }
 
-.testimonial-block span {  
+.testimonial-block span {
   font-size: 25px;
 }
 
@@ -1148,7 +1202,7 @@ a:focus {
 
 .testimonial-block .client-info {
   margin-bottom: 20px;
-  
+
 }
 
 
@@ -1209,6 +1263,7 @@ a:focus {
   .testimonial-wrap {
     margin-left: 0px;
   }
+
   .testimonial::before {
     display: none;
   }
@@ -1218,6 +1273,7 @@ a:focus {
   .testimonial-wrap {
     margin-left: 0px;
   }
+
   .testimonial::before {
     display: none;
   }
@@ -1227,6 +1283,7 @@ a:focus {
   .testimonial-wrap {
     margin-left: 0px;
   }
+
   .testimonial::before {
     display: none;
   }
@@ -1234,8 +1291,9 @@ a:focus {
 
 @media (max-width: 992px) {
   .testimonial-wrap {
-    margin-left: 0px;    
+    margin-left: 0px;
   }
+
   .testimonial::before {
     display: none;
   }
@@ -1243,8 +1301,9 @@ a:focus {
 
 @media (max-width: 1280px) {
   .testimonial-wrap {
-    margin-left: 0px;    
+    margin-left: 0px;
   }
+
   .testimonial::before {
     display: none;
   }
@@ -1287,9 +1346,9 @@ a:focus {
   /* position: relative; */
   display: flex;
   /* 水平置中 */
-  justify-content: center;    
+  justify-content: center;
   /* 垂直置中 */
-  align-items: center;  
+  align-items: center;
 }
 
 .google-map #map {
@@ -1366,7 +1425,7 @@ a:focus {
   font-size: 30px;
   color: #000000;
   padding: 40px;
-  font-style:normal;
+  font-style: normal;
   border-left: 5px solid #040fa7;
   margin: 25px 0px;
   background-color: #d1c7c78c;
@@ -1376,7 +1435,7 @@ a:focus {
   font-size: 30px;
   color: #000000;
   padding: 20px;
-  font-style:italic;
+  font-style: italic;
   border: 5px solid #000000;
   margin: 25px 0px;
   background-color: #ffffff8c;
@@ -1429,7 +1488,7 @@ a:focus {
   margin-top: 20px;
 }
 
-.post-comments .media > .pull-left {
+.post-comments .media>.pull-left {
   padding-right: 20px;
 }
 
@@ -1502,7 +1561,7 @@ a:focus {
   margin-right: 20px;
 }
 
-.post-author > img {
+.post-author>img {
   border: 1px solid #dedede;
   max-width: 120px;
   padding: 5px;
@@ -1552,18 +1611,21 @@ a:focus {
   margin-top: 80px;
 }
 
-.comment-reply-form input, .comment-reply-form textarea {
+.comment-reply-form input,
+.comment-reply-form textarea {
   height: 35px;
   border-radius: 0;
   box-shadow: none;
 }
 
-.comment-reply-form input:focus, .comment-reply-form textarea:focus {
+.comment-reply-form input:focus,
+.comment-reply-form textarea:focus {
   box-shadow: none;
   border: 1px solid #223a66;
 }
 
-.comment-reply-form textarea, .comment-reply-form .btn-main {
+.comment-reply-form textarea,
+.comment-reply-form .btn-main {
   height: auto;
 }
 
@@ -1609,8 +1671,8 @@ a:focus {
 .sidebar-widget.category ul li a {
   color: #222;
   transition: all 0.3s ease;
-  
-  
+
+
 }
 
 .sidebar-widget.category ul li a:hover {
@@ -1652,7 +1714,7 @@ a:focus {
   padding: 25px;
 }
 
-.sidebar-widget.schedule-widget em {  
+.sidebar-widget.schedule-widget em {
   margin-top: 20px;
 }
 
@@ -1820,9 +1882,7 @@ a:focus {
   opacity: 1;
 }
 
-.maintainance img {
-  
-}
+.maintainance img {}
 
 .text-modify {
   font-size: 20px;
@@ -1840,6 +1900,7 @@ a:focus {
 html {
   scroll-behavior: smooth;
 }
+
 /*# sourceMappingURL=maps/style.css.map */
 
 
@@ -1852,7 +1913,8 @@ html {
 /* 父層容器：確保相對定位 */
 .portfolio-img {
   position: relative;
-  overflow: hidden; /* 避免元素超出邊界 */
+  overflow: hidden;
+  /* 避免元素超出邊界 */
 }
 
 /* 保證幻燈片圖片可水平置中並填滿 */
@@ -1870,54 +1932,74 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* 半透明黑色遮罩 */
-  opacity: 0; /* 預設隱藏 */
-  transition: opacity 0.3s; /* 平滑顯示過渡 */
+  background: rgba(0, 0, 0, 0.4);
+  /* 半透明黑色遮罩 */
+  opacity: 0;
+  /* 預設隱藏 */
+  transition: opacity 0.3s;
+  /* 平滑顯示過渡 */
   z-index: 1;
 }
 
 /* 按鈕（白色圓形背景）：預設隱藏 + 絕對置中 */
 .portfolio-btn {
   position: absolute;
-  top: 50%;               /* 垂直置中 */
-  left: 50%;              /* 水平置中 */
-  transform: translate(-50%, -50%); /* 偏移修正 */
-  opacity: 0;             /* 預設隱藏 */
+  top: 50%;
+  /* 垂直置中 */
+  left: 50%;
+  /* 水平置中 */
+  transform: translate(-50%, -50%);
+  /* 偏移修正 */
+  opacity: 0;
+  /* 預設隱藏 */
   transition: opacity 0.3s, transform 0.3s;
-  z-index: 2;             /* 高於遮罩 */
-  width: 60px;            /* 圓形大小 */
+  z-index: 2;
+  /* 高於遮罩 */
+  width: 60px;
+  /* 圓形大小 */
   height: 60px;
-  background: rgba(255, 255, 255, 1); /* 純白背景 */
-  border-radius: 50%;     /* 圓形 */
-  display: flex;          /* 使用 flex 居中對齊 */
+  background: rgba(255, 255, 255, 1);
+  /* 純白背景 */
+  border-radius: 50%;
+  /* 圓形 */
+  display: flex;
+  /* 使用 flex 居中對齊 */
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* 增加陰影效果 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  /* 增加陰影效果 */
 }
 
 /* 圓形區塊內嵌眼睛圖示 */
 .portfolio-btn::before {
-  
-  font-weight: 900;       /* 加粗樣式 */
-  font-size: 30px;        /* 調整圖示大小 */
+
+  font-weight: 900;
+  /* 加粗樣式 */
+  font-size: 30px;
+  /* 調整圖示大小 */
   left: 50%;
-  color: #000000;         /* 圖示顏色（紅色，可自行調整） */
+  color: #000000;
+  /* 圖示顏色（紅色，可自行調整） */
   display: flex;
   text-align: center;
-  margin: 0;              /* 移除可能存在的默認邊距 */
-  line-height: 1;         /* 確保圖示居中 */
-  z-index: 3;  
+  margin: 0;
+  /* 移除可能存在的默認邊距 */
+  line-height: 1;
+  /* 確保圖示居中 */
+  z-index: 3;
 }
 
 /* 眼睛按鈕 hover 時的樣式 */
 .portfolio-btn:hover {
-  transform: translate(-50%, -50%) scale(1.1); /* 略微放大 */
+  transform: translate(-50%, -50%) scale(1.1);
+  /* 略微放大 */
 }
 
 /* 當滑鼠 hover 或點擊時，顯示遮罩和按鈕 */
 .portfolio-img:hover .overlay,
 .portfolio-img:hover .portfolio-btn {
-  opacity: 1; /* 顯示 */
+  opacity: 1;
+  /* 顯示 */
 }
 
 /* 保留按鈕樣式並調整居中效果 */
@@ -1925,46 +2007,107 @@ html {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* 保證按鈕居中 */
-  display: flex;                  /* 使用 flex 保證內容居中對齊 */
+  transform: translate(-50%, -50%);
+  /* 保證按鈕居中 */
+  display: flex;
+  /* 使用 flex 保證內容居中對齊 */
   align-items: center;
   justify-content: center;
-  width: 60px;                    /* 按鈕寬度 */
-  height: 60px;                   /* 按鈕高度 */
-  border-radius: 50%;             /* 確保按鈕圓形 */
-  background: rgba(255, 255, 255, 1); /* 白色背景 */
-  text-decoration: none;          /* 去掉超連結下劃線 */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* 按鈕陰影 */
-  z-index: 2;                     /* 保證按鈕在最上層 */
+  width: 60px;
+  /* 按鈕寬度 */
+  height: 60px;
+  /* 按鈕高度 */
+  border-radius: 50%;
+  /* 確保按鈕圓形 */
+  background: rgba(255, 255, 255, 1);
+  /* 白色背景 */
+  text-decoration: none;
+  /* 去掉超連結下劃線 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  /* 按鈕陰影 */
+  z-index: 2;
+  /* 保證按鈕在最上層 */
 }
 
 /* 調整眼睛圖示樣式 */
 .portfolio-btn a i {
   left: 5%;
   top: 5%;
-  font-size: 50px;        /* 圖示大小 */
-  color: #000000;         /* 圖示顏色 */
-  
+  font-size: 50px;
+  /* 圖示大小 */
+  color: #000000;
+  /* 圖示顏色 */
+
 }
 
 /* 鼠標 hover 效果 */
 .portfolio-btn a:hover {
-  transform: translate(-50%, -50%) scale(1.1); /* 按鈕放大 */
-  background: rgba(255, 255, 255, 1);         /* 背景保持白色 */
+  transform: translate(-50%, -50%) scale(1.1);
+  /* 按鈕放大 */
+  background: rgba(255, 255, 255, 1);
+  /* 背景保持白色 */
 }
 
 
 
 
-.text-shadow { 
-  text-shadow: 
-  -1px -1px 0 black,    /* 上左 */
-  1px -1px 0 black,     /* 上右 */
-  -1px 1px 0 black,     /* 下左 */
-  1px 1px 0 black;      /* 下右 */
+.text-shadow {
+  text-shadow:
+    -1px -1px 0 black,
+    /* 上左 */
+    1px -1px 0 black,
+    /* 上右 */
+    -1px 1px 0 black,
+    /* 下左 */
+    1px 1px 0 black;
+  /* 下右 */
 }
 
 
-.text-red{
+.text-red {
   color: red;
+}
+
+/* 表單隱藏功能 */
+/* 隱藏 checkbox */
+.toggle-checkbox {
+  display: none;
+}
+
+/* 可展開的區塊：預設折疊 */
+.more-options {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+
+/* 展開：checkbox 勾選後生效 */
+.toggle-checkbox:checked+.more-options {
+  max-height: 1000px;
+  /* 須夠大容納所有內容 */
+  opacity: 1;
+}
+
+/* 展開/收起 按鈕樣式 */
+.show-more-btn {
+  display: block;
+  margin-top: 10px;
+  cursor: pointer;
+  color: transparent;
+  position: relative;
+}
+
+.show-more-btn::before {
+  content: "顯示完整清單";
+  /* justify-content: center; */
+  color: #007bff;
+  position: absolute;
+  left: 0;
+}
+
+/* 變更為收起 */
+.toggle-checkbox:checked+.more-options+.show-more-btn::before {
+  content: attr(data-toggle-text);
+  /* 顯示「收起方案」 */
 }
