@@ -2111,3 +2111,9 @@ html {
   content: attr(data-toggle-text);
   /* 顯示「收起方案」 */
 }
+
+
+
+.table-center{
+  text-align: center;
+}
