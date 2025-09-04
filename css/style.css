@@ -690,22 +690,29 @@ a:focus {
 }
 
 .banner {
-  /* position: relative;
-  overflow: hidden;
-  background: #fff;
-  background: url("../images/Mx-5.jpg") no-repeat;
-  background-size: contain;
-  min-height: 550px; */
-
-  background: url("../images/car_introduce/mx5/1.jpg") no-repeat;
-  background-size: cover;
   position: relative;
+  animation: bannerSlide 8s infinite;
+  background: url("../images/car_introduce/mx5/1.jpg") no-repeat center center/cover;
+
+  
+}
+
+@keyframes bannerSlide {
+  0%,
+  45% {
+    background-image: url("../images/car_introduce/mx5/1.jpg");
+  }
+  55%,
+  100% {
+    background-image: url("../images/index/DM/holiday.jpg");
+  }
 }
 
 
 
 .banner .block {
   padding: 40px 25px 200px;
+  animation: bannerTextFade 8s infinite;
 }
 
 .banner .block h1 {
@@ -714,6 +721,17 @@ a:focus {
   letter-spacing: -1.2px;
   text-transform: capitalize;
   color: #223a66;
+}
+
+@keyframes bannerTextFade {
+  0%, 45% {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  55%, 100% {
+    opacity: 0;
+    pointer-events: none;
+  }
 }
 
 .letter-spacing {
@@ -756,7 +774,7 @@ a:focus {
 
   .banner {
     min-height: 450px;
-    background: #fff !important;
+    /* background: #fff !important; */
   }
 }
 
@@ -768,7 +786,7 @@ a:focus {
 
   .banner {
     min-height: 450px;
-    background: #fff !important;
+    /* background: #fff !important; */
   }
 }
 
@@ -779,13 +797,13 @@ a:focus {
   }
 
   .banner {
-    background: #fff !important;
+    /* background: #fff !important; */
   }
 }
 
 @media (max-width: 1280) {
   .banner {
-    background: #fff !important;
+    /* background: #fff !important; */
   }
 }
 
