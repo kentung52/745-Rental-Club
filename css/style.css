@@ -691,7 +691,7 @@ a:focus {
 
 .banner {
   position: relative;
-  animation: bannerSlide 8s infinite;
+  animation: bannerSlide 12s infinite;
   background: url("../images/car_introduce/mx5/1.jpg") no-repeat center center/cover;
 
   
@@ -712,7 +712,7 @@ a:focus {
 
 .banner .block {
   padding: 40px 25px 200px;
-  animation: bannerTextFade 8s infinite;
+  animation: bannerTextFade 12s infinite;
 }
 
 .banner .block h1 {
