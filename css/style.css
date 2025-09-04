@@ -699,12 +699,12 @@ a:focus {
 
 @keyframes bannerSlide {
   0%,
-  45% {
-    background-image: url("../images/car_introduce/mx5/1.jpg");
+  45% {    
+    background-image: url("../images/index/DM/holiday.jpg");
   }
   55%,
   100% {
-    background-image: url("../images/index/DM/holiday.jpg");
+    background-image: url("../images/car_introduce/mx5/1.jpg");
   }
 }
 
@@ -725,12 +725,12 @@ a:focus {
 
 @keyframes bannerTextFade {
   0%, 45% {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  55%, 100% {
     opacity: 0;
     pointer-events: none;
+  }
+  55%, 100% {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 
