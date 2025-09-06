@@ -692,7 +692,7 @@ a:focus {
 .banner {
   position: relative;
   animation: bannerSlide 12s infinite;
-  background: url("/images/car_introduce/mx5/1.jpg") no-repeat center center/cover;
+  background: url("/images/index/bg.jpg") no-repeat center center/cover;
 
   
 }
@@ -704,7 +704,7 @@ a:focus {
   }
   55%,
   100% {
-    background-image: url("/images/car_introduce/mx5/1.jpg");
+    background-image: url("/images/index/bg.jpg"); 
   }
 }
 
