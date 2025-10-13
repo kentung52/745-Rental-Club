@@ -70,20 +70,20 @@ function gtag_report_conversion(url) {
 			<div class="row align-items-center">
 				<div class="col-lg-6">
 					<ul class="top-bar-info list-inline-item pl-0 mb-0">
-						<li class="list-inline-item"><a href="https://www.facebook.com/share/wggMXmSDbXKfNsaG/?mibextid=LQQJ4d" onclick="gtag_report_conversion()"><i class="icofont-facebook mr-2"></i>FB粉絲專業</a></li>
-						<li class="list-inline-item"><a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=885wivoh" onclick="gtag_report_conversion()"><i class="icofont-line mr-2"></i>Line官方帳號</a></li>
-						<li class="list-inline-item"><a href="https://www.instagram.com/745_rental?igsh=Nmk5bDRxaWFoeWlw&utm_source=qr" onclick="gtag_report_conversion()"><i class="icofont-instagram mr-2"></i>Instagram官方帳號</a></li>
-						<li class="list-inline-item"><a href="https://maps.app.goo.gl/zqQqQ7DXSarYD7QE6" onclick="gtag_report_conversion()"><i class="icofont-location-pin mr-2"></i>桃園市八德區豐德二路35號</a></li>
+						<li class="list-inline-item"><a fb-href href="#" onclick="gtag_report_conversion()"><i class="icofont-facebook mr-2"></i>FB粉絲專業</a></li>
+						<li class="list-inline-item"><a line-href href="#" onclick="gtag_report_conversion()"><i class="icofont-line mr-2"></i>Line官方帳號</a></li>
+						<li class="list-inline-item"><a ig-href href="#" onclick="gtag_report_conversion()"><i class="icofont-instagram mr-2"></i>Instagram官方帳號</a></li>
+						<li class="list-inline-item"><a map-href href="#" onclick="gtag_report_conversion()"><i class="icofont-location-pin mr-2"></i>桃園市八德區豐德二路35號</a></li>
 						<li class="list-inline-item"><a href="./appoinment.html" onclick="gtag_report_conversion()"><i class="icofont-calendar mr-2"></i>預約系統</a></li>
-						<li class="list-inline-item"><a href="https://m.me/745rental" onclick="gtag_report_conversion()"><i class="icofont-facebook-messenger mr-2"></i>聯絡我們</a></li>
+						<li class="list-inline-item"><a msg-href href="#" onclick="gtag_report_conversion()"><i class="icofont-facebook-messenger mr-2"></i>聯絡我們</a></li>
 						
 					</ul>
 				</div>
 				<div class="col-lg-6">
 					<div class="text-lg-right top-right-bar mt-2 mt-lg-0">
-						<a href="tel:03-4904903" onclick="gtag_report_conversion()">
+						<a phone-href onclick="gtag_report_conversion()">
 							<span>電話 : </span>
-							<span class="h4">03-4904903</span>
+							<span phone-text class="h4"></span>
 						</a>
 					</div>
 				</div>
@@ -224,7 +224,7 @@ function gtag_report_conversion(url) {
 							<b style="color: rgb(190, 20, 20);"><li><em>以上費用不包含夜間、風雨加成</em></li></b>               
 							<!-- <li class="d-flex justify-content-between">逢連續假日 : <span>請提前私訊粉專聯絡</span></li> -->
 		                </ul>
-						<a href="tel:0966570250"  class="btn-index btn-main-2 btn-round-full">立即聯繫</a>
+						<a phone-href href="#"  class="btn-index btn-main-2 btn-round-full">立即聯繫</a>
 					</div>
 				</div>
 			</div>
@@ -1149,6 +1149,9 @@ function gtag_report_conversion(url) {
 
     <script src="js/script.js"></script>
     <script src="js/contact.js"></script>
+	<script src="/js/config.js"></script> <!-- 電話、外部連結設定值 -->
+	<script src="/js/inject-config.js"></script>  <!-- 用於電話、外部連結的自動赴值 -->
+
 
 	
 
