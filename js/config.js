@@ -12,5 +12,6 @@
     LINE_URL: "https://liff.line.me/1645278921-kWRPP32q/?accountId=885wivoh",
     IG_URL:   "https://www.instagram.com/745_rental?igsh=Nmk5bDRxaWFoeWlw&utm_source=qr",
     MSG_URL:  "https://m.me/745rental",    
+    
   };
 
