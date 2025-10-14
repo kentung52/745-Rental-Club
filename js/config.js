@@ -4,6 +4,9 @@
     PHONE_URI:  "tel:0966570250",              // 連結
     ADDRESS:    "桃園市八德區豐德二路35號",
     MAP_URL:    "https://maps.app.goo.gl/zqQqQ7DXSarYD7QE6",
+    WEEKDAY_HR: "平日09:00〜23:00",
+    WEEKEND_HR: "假日09:00〜23:00",
+
 
     FB_URL:   "https://www.facebook.com/share/wggMXmSDbXKfNsaG/?mibextid=LQQJ4d",
     LINE_URL: "https://liff.line.me/1645278921-kWRPP32q/?accountId=885wivoh",

@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // 文字
   bind('[phone-text]',  el => el.textContent = S.PHONE_TEXT || '');
   bind('[address-text]',el => el.textContent = S.ADDRESS    || '');
+  bind('[weekday-text]',el => el.textContent = S.WEEKDAY_HR || '');
+  bind('[weekend-text]',el => el.textContent = S.WEEKEND_HR || '');
 
   // href
   bind('[phone-href]',  el => el.setAttribute('href', S.PHONE_URI || '#'));
