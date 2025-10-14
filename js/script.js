@@ -12,8 +12,10 @@
   $(window).on('scroll', function () {
     if ($(window).scrollTop() > 70) {
         $('.backtop').addClass('reveal');
+		$('.line-float').addClass('reveal');
     } else {
         $('.backtop').removeClass('reveal');
+		$('.line-float').removeClass('reveal');
     }
 });
  

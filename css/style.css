@@ -1901,7 +1901,42 @@ a:focus {
   opacity: 1;
 }
 
-.maintainance img {}
+/* LINE 浮動按鈕 */
+.line-float {
+  position: fixed;
+  background: #06c755; /* Line 綠色 */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 55px;          /* 與 backtop 對齊 */
+  width: 60px;
+  height: 60px;
+  bottom: 130px;        /* 比 backtop 高一段距離 */
+  text-align: center;
+  border-radius: 50px;
+  opacity: 0;           /* 和 backtop 一樣由 JS 控制顯示 */
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.line-float i {
+  color: #fff;
+  font-size: 24px;
+}
+
+/* 顯示用（和 .reveal 一樣的效果） */
+.line-float.reveal {
+  opacity: 1;
+}
+
+/* hover 效果 */
+.line-float:hover {
+  background: #04a742;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,.25);
+}
+
 
 .text-modify {
   font-size: 20px;

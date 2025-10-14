@@ -7,7 +7,7 @@
     WEEKDAY_HR: "平日09:00〜23:00",
     WEEKEND_HR: "假日09:00〜23:00",
 
-
+    LOGO_URL: "images/logo.png",
     FB_URL:   "https://www.facebook.com/share/wggMXmSDbXKfNsaG/?mibextid=LQQJ4d",
     LINE_URL: "https://liff.line.me/1645278921-kWRPP32q/?accountId=885wivoh",
     IG_URL:   "https://www.instagram.com/745_rental?igsh=Nmk5bDRxaWFoeWlw&utm_source=qr",
