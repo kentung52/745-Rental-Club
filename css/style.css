@@ -700,11 +700,12 @@ a:focus {
 @keyframes bannerSlide {
   0%,
   45% {    
-    background-image: url("/images/index/DM/holiday.jpg");
+    background-image: url("/images/index/bg2.jpg");
   }
   55%,
   100% {
-    background-image: url("/images/index/bg.jpg"); 
+    background-image: url("/images/index/bg.jpg");
+    
   }
 }
 
