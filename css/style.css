@@ -693,19 +693,35 @@ a:focus {
   position: relative;
   animation: bannerSlide 12s infinite;
   background: url("/images/index/bg.jpg") no-repeat center center/cover;
-
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;  
   
+}
+
+/* 手機：顯示整張，不裁切（會留上下或左右留白） */
+@media (max-width: 576px){
+  .banner{
+    background-size: contain;      /* 不裁切，完整顯示 */    
+    min-height: 75vh;      /* 佔視窗 75% 高 */
+    background-size: contain;
+   
+  }
+
+  /* 手機把內距縮小，不要把圖擠小 */
+  .banner .block{
+    padding: 24px 16px 80px;
+  }
 }
 
 @keyframes bannerSlide {
   0%,
   45% {    
-    background-image: url("/images/index/bg2.jpg");
+    background-image: url("/images/index/bg.jpg");    
   }
   55%,
   100% {
-    background-image: url("/images/index/bg.jpg");
-    
+    background-image: url("/images/index/bg2.jpg");  
   }
 }
 
@@ -726,12 +742,12 @@ a:focus {
 
 @keyframes bannerTextFade {
   0%, 45% {
-    opacity: 0;
+    opacity: 1;
     pointer-events: none;
   }
   55%, 100% {
-    opacity: 1;
-    pointer-events: auto;
+    opacity: 0;
+    pointer-events: auto;    
   }
 }
 
