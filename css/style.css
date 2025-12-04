@@ -691,7 +691,6 @@ a:focus {
 
 .banner {
   position: relative;
-  animation: bannerSlide 12s infinite;
   background: url("/images/index/bg.jpg") no-repeat center center/cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -699,13 +698,42 @@ a:focus {
   
 }
 
+
+/* 第二張 DM 專用：完整顯示、不裁切 */
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0;right:0;bottom:0;left:0; 的縮寫 */
+  background: #fff url("/images/index/12.jpg") no-repeat center center;
+  background-size: contain;         /* 關鍵：完整顯示圖片 */
+  opacity: 0;                       /* 一開始不顯示 */
+  animation: bannerDmFade 12s infinite;
+}
+
+
+/* 控制 DM 何時出現（對應你原本 55% ~ 100% 顯示 12.jpg） */
+@keyframes bannerDmFade {
+  0%,45% {
+    opacity: 0;
+    pointer-events: auto;
+  }
+  55%,100% {
+    opacity: 1;
+    pointer-events: none;
+  }
+}
+
+
 /* 手機：顯示整張，不裁切（會留上下或左右留白） */
 @media (max-width: 576px){
   .banner{
     background-size: contain;      /* 不裁切，完整顯示 */    
-    min-height: 75vh;      /* 佔視窗 75% 高 */
+    min-height: 75vh;      /* 佔視窗 75% 高 */   
+  }
+  
+  /* 手機：DM 用 contain，文字不會被裁掉 */
+  .banner::before{
     background-size: contain;
-   
   }
 
   /* 手機把內距縮小，不要把圖擠小 */
@@ -713,19 +741,6 @@ a:focus {
     padding: 24px 16px 80px;
   }
 }
-
-@keyframes bannerSlide {
-  0%,
-  45% {    
-    background-image: url("/images/index/bg.jpg");    
-  }
-  55%,
-  100% {
-    background-image: url("/images/index/bg2.jpg");  
-  }
-}
-
-
 
 .banner .block {
   padding: 40px 25px 200px;
@@ -743,11 +758,11 @@ a:focus {
 @keyframes bannerTextFade {
   0%, 45% {
     opacity: 1;
-    pointer-events: none;
+    pointer-events: auto;
   }
   55%, 100% {
     opacity: 0;
-    pointer-events: auto;    
+    pointer-events: none;    
   }
 }
 
