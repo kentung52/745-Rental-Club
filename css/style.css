@@ -714,12 +714,12 @@ a:focus {
 /* 控制 DM 何時出現（對應你原本 55% ~ 100% 顯示 12.jpg） */
 @keyframes bannerDmFade {
   0%,45% {
-    opacity: 0;
-    pointer-events: auto;
-  }
-  55%,100% {
     opacity: 1;
     pointer-events: none;
+  }
+  55%,100% {
+    opacity: 0;
+    pointer-events: auto;
   }
 }
 
@@ -757,12 +757,12 @@ a:focus {
 
 @keyframes bannerTextFade {
   0%, 45% {
-    opacity: 1;
-    pointer-events: auto;
+    opacity: 0;
+    pointer-events: none;
   }
   55%, 100% {
-    opacity: 0;
-    pointer-events: none;    
+    opacity: 1;
+    pointer-events: auto;    
   }
 }
 
