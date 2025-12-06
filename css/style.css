@@ -937,7 +937,7 @@ a:focus {
 
 .feature-item .stamp-icon {
     position: absolute;
-    top:  -17px;      /* 往上調整位置 */
+    top:  -13px;      /* 往上調整位置 */
     left: -10px;     /* 往左調整位置 */
     width: 70px;     /* 依需求縮放 */
     opacity: 1;      /* 若想淡化可調成 0.7 */
