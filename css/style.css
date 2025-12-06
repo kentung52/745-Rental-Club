@@ -934,6 +934,18 @@ a:focus {
 
 }
 
+
+.feature-item .stamp-icon {
+    position: absolute;
+    top:  -17px;      /* 往上調整位置 */
+    left: -10px;     /* 往左調整位置 */
+    width: 70px;     /* 依需求縮放 */
+    opacity: 1;      /* 若想淡化可調成 0.7 */
+    z-index: 5;
+    transform: rotate(-15deg);   /* 負數=往逆時針轉，正數=順時針 */
+    transform-origin: center;    /* 以圖片中心為旋轉軸 */
+}
+
 .feature-section.border-top {
   border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
