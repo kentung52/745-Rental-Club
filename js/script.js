@@ -268,19 +268,20 @@ function scrollToPost(postId) {
   const target = document.getElementById(postId);
   if (!target) return;
 
+  const offset = window.matchMedia('(min-width: 992px)').matches ? 20 : 110;
+  const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
 
-  const headerOffset = window.matchMedia('(min-width: 992px)').matches ? 360 : 110;
-  
+  window.scrollTo({ top: y, behavior: 'smooth' });
 
-  const top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-  window.scrollTo({ top, behavior: 'smooth' });
-
-  // 閃爍效果
+  // 閃爍（可重播）
+  target.classList.remove('flash-effect');
+  void target.offsetWidth;
   target.classList.add('flash-effect');
   target.addEventListener('animationend', function () {
     target.classList.remove('flash-effect');
   }, { once: true });
 }
+
 
 function normalizeTocTitle(raw) {
   if (!raw) return '';
@@ -378,34 +379,23 @@ document.addEventListener('DOMContentLoaded', buildNewsToc);
 
   // 點 TOC 後：平滑捲動 + 自動收起抽屜
   document.addEventListener('click', function (e) {
-    const a = e.target.closest('a.toc-link');
-    if (!a) return;
+	const a = e.target.closest('a.toc-link');
+	if (!a) return;
 
-    const hash = a.getAttribute('href');
-    if (!hash || !hash.startsWith('#')) return;
+	// 只處理「手機抽屜」裡的 toc-link，桌機 sidebar 不要進來
+	if (!a.closest('.news-toc-mobile')) return;
 
-    const target = document.querySelector(hash);
-    if (!target) return;
+	const hash = a.getAttribute('href');
+	if (!hash || !hash.startsWith('#')) return;
 
-    e.preventDefault();
+	e.preventDefault();
 
-    // 依你的 sticky navbar 高度調整 offset
-    const offset = 80;
-    const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+	const targetId = hash.slice(1);
+	scrollToPost(targetId);
 
-    window.scrollTo({ top: y, behavior: 'smooth' });
+	if (!drawer.hidden) closeDrawer();
+});
 
-	// 閃爍效果（手機 TOC 也要加）
-	target.classList.remove('flash-effect'); // 避免連點時不觸發
-	void target.offsetWidth;                 // 觸發 reflow，確保動畫重播
-	target.classList.add('flash-effect');
-	target.addEventListener('animationend', function () {
-	target.classList.remove('flash-effect');
-	}, { once: true });
-
-    // 若在手機抽屜開啟狀態，點選後收起
-    if (!drawer.hidden) closeDrawer();
-  });
 
   // ESC 關閉
   document.addEventListener('keydown', (e) => {

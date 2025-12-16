@@ -2320,3 +2320,103 @@ html {
   font-size: 28px;
   line-height: 1;
 }
+
+
+/* ===== 手機：TOC 抽屜（只處理手機）===== */
+@media (max-width: 991.98px) {
+
+  /* 浮動按鈕：字更清楚 */
+  .news-toc-mobile .toc-fab{
+    font-size: 16px;
+    letter-spacing: .5px;
+  }
+
+  /* 背景遮罩：柔和 + 微模糊 */
+  .news-toc-mobile .toc-backdrop{
+    background: rgba(0,0,0,.35);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
+  /* 抽屜本體：改成卡片、依內容撐高、最多不超過視窗 */
+  .news-toc-mobile .toc-drawer{
+    top: 70px !important;                 /* 避開瀏海/狀態列 */
+    right: 12px !important;
+
+    height: auto !important;              /* 關鍵：不要 100vh */
+    max-height: calc(100svh - 90px) !important; /* iOS 更穩 */
+
+    width: min(92vw, 380px) !important;
+
+    border-radius: 16px;
+    overflow: hidden;                     /* 讓圓角生效 */
+    box-shadow: 0 18px 45px rgba(0,0,0,.22);
+
+    transform: translateX(110%);
+    transition: transform .22s ease;
+  }
+
+  .news-toc-mobile .toc-drawer.open{
+    transform: translateX(0);
+  }
+
+  /* Header：更有層次 */
+  .news-toc-mobile .toc-drawer-header{
+    padding: 14px 14px;
+    background: #f7f8fb;
+    border-bottom: 1px solid rgba(0,0,0,.06);
+  }
+
+  .news-toc-mobile .toc-drawer-header strong{
+    font-size: 18px;
+    color: #1f3c88;
+    letter-spacing: .5px;
+  }
+
+  /* 內容區：取消任何固定 height，超過才捲 */
+  .news-toc-mobile .toc-drawer-body,
+  .toc-drawer-body{
+    padding: 10px 12px;
+
+    height: auto !important; /* 關鍵：壓掉舊的 height: calc(100vh - 52px) */
+    max-height: calc(100svh - 90px - 52px) !important;
+
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 目錄連結：字變大 + 列表感 */
+  .news-toc-mobile .toc-link{
+    display: block;
+    font-size: 18px;          /* 你覺得太大/太小就改這個 */
+    line-height: 1.6;
+    padding: 10px 10px;
+    border-radius: 12px;
+    color: #222;
+    background: transparent;
+  }
+
+  .news-toc-mobile .toc-link:active{
+    background: rgba(31,60,136,.10);
+  }
+
+  .news-toc-mobile .toc-drawer-body li{
+    margin-bottom: 6px;
+  }
+
+  /* 關閉按鈕 */
+  .news-toc-mobile .toc-close{
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: 0;
+    background: transparent;
+    font-size: 22px;
+    color: #333;
+  }
+
+  .news-toc-mobile .toc-close:active{
+    background: rgba(0,0,0,.06);
+  }
+}
+
