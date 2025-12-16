@@ -19,18 +19,7 @@ html {
 
 }
 
-/* 閃爍動畫 */
-@keyframes flash {
 
-  0%,
-  100% {
-    background-color: rgb(255, 255, 255);
-  }
-
-  50% {
-    background-color: rgb(237, 241, 176);
-  }
-}
 
 /* 啟用閃爍效果的樣式 */
 .flash-effect {
@@ -2272,9 +2261,9 @@ html {
 .news-toc-mobile .toc-fab {
   position: fixed;
   right: 18px;
-  bottom: 210px;   /* 避開你既有的 backtop/line-float，可自行微調 */
-  width: 64px;
-  height: 64px;
+  bottom: 300px;   /* 避開你既有的 backtop/line-float，可自行微調 */
+  width: 90px;
+  height: 90px;
   border-radius: 999px;
   border: 0;
   background: #1f3c88;

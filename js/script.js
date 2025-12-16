@@ -268,8 +268,9 @@ function scrollToPost(postId) {
   const target = document.getElementById(postId);
   if (!target) return;
 
-  // 依你的 sticky navbar 高度調整（100~120 常見）
-  const headerOffset = 100;
+
+  const headerOffset = window.matchMedia('(min-width: 992px)').matches ? 360 : 110;
+  
 
   const top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
   window.scrollTo({ top, behavior: 'smooth' });
@@ -389,10 +390,18 @@ document.addEventListener('DOMContentLoaded', buildNewsToc);
     e.preventDefault();
 
     // 依你的 sticky navbar 高度調整 offset
-    const offset = 110;
+    const offset = 80;
     const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
 
     window.scrollTo({ top: y, behavior: 'smooth' });
+
+	// 閃爍效果（手機 TOC 也要加）
+	target.classList.remove('flash-effect'); // 避免連點時不觸發
+	void target.offsetWidth;                 // 觸發 reflow，確保動畫重播
+	target.classList.add('flash-effect');
+	target.addEventListener('animationend', function () {
+	target.classList.remove('flash-effect');
+	}, { once: true });
 
     // 若在手機抽屜開啟狀態，點選後收起
     if (!drawer.hidden) closeDrawer();
