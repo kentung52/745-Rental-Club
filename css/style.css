@@ -2223,12 +2223,7 @@ html {
   overflow: auto;
 }
 
-/* 目錄連結樣式 */
-#news-toc a{
-  display: block;
-  text-decoration: none;
-  padding: 6px 0;
-}
+
 
 
 
@@ -2323,34 +2318,36 @@ html {
 
 
 /* ===== 手機：TOC 抽屜（只處理手機）===== */
-@media (max-width: 991.98px) {
+/* ===== 手機：TOC 抽屜同步桌機 sidebar 風格 ===== */
+@media (max-width: 991.98px){
 
-  /* 浮動按鈕：字更清楚 */
-  .news-toc-mobile .toc-fab{
-    font-size: 16px;
-    letter-spacing: .5px;
-  }
-
-  /* 背景遮罩：柔和 + 微模糊 */
+  /* backdrop 保留你原本的即可，這裡稍微精緻化 */
   .news-toc-mobile .toc-backdrop{
     background: rgba(0,0,0,.35);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
   }
 
-  /* 抽屜本體：改成卡片、依內容撐高、最多不超過視窗 */
+  /* 抽屜卡片：套用桌機那種「漸層邊框 + 雙層陰影」 */
   .news-toc-mobile .toc-drawer{
-    top: 70px !important;                 /* 避開瀏海/狀態列 */
-    right: 12px !important;
+    top: 70px;
+    right: 12px;
 
-    height: auto !important;              /* 關鍵：不要 100vh */
-    max-height: calc(100svh - 90px) !important; /* iOS 更穩 */
+    width: min(92vw, 380px);
+    height: auto;
+    max-height: calc(100svh - 90px);
 
-    width: min(92vw, 380px) !important;
+    border-radius: 18px;
+    overflow: hidden;
 
-    border-radius: 16px;
-    overflow: hidden;                     /* 讓圓角生效 */
-    box-shadow: 0 18px 45px rgba(0,0,0,.22);
+    border: 1px solid rgba(31,60,136,.14);
+    background:
+      linear-gradient(#fff,#fff) padding-box,
+      linear-gradient(135deg, rgba(31,60,136,.35), rgba(225,36,84,.22)) border-box;
+
+    box-shadow:
+      0 18px 45px rgba(0,0,0,.18),
+      0 2px 0 rgba(255,255,255,.7) inset;
 
     transform: translateX(110%);
     transition: transform .22s ease;
@@ -2360,63 +2357,283 @@ html {
     transform: translateX(0);
   }
 
-  /* Header：更有層次 */
+  /* 抽屜右上角淡淡光暈裝飾（同步桌機 before） */
+  .news-toc-mobile .toc-drawer::before{
+    content:"";
+    position:absolute;
+    top:-90px;
+    right:-110px;
+    width:240px;
+    height:240px;
+    background: radial-gradient(circle at 30% 30%, rgba(31,60,136,.18), rgba(31,60,136,0) 60%);
+    pointer-events:none;
+  }
+
+  /* Header：同步桌機的標題條 */
   .news-toc-mobile .toc-drawer-header{
-    padding: 14px 14px;
-    background: #f7f8fb;
+    position: relative;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+
+    padding: 14px 12px;
+    background: linear-gradient(180deg, #f6f8ff 0%, #ffffff 100%);
     border-bottom: 1px solid rgba(0,0,0,.06);
   }
 
   .news-toc-mobile .toc-drawer-header strong{
+    position: relative;
+    margin: 0;
+    padding-left: 14px;
     font-size: 18px;
-    color: #1f3c88;
-    letter-spacing: .5px;
+    color: #1b2f66;
+    letter-spacing: .6px;
   }
 
-  /* 內容區：取消任何固定 height，超過才捲 */
+  /* 標題左側色條 */
+  .news-toc-mobile .toc-drawer-header strong::before{
+    content:"";
+    position:absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 18px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #223a66, #e12454);
+  }
+
+  /* 內容區：只負責捲動，不要固定 height 100vh */
   .news-toc-mobile .toc-drawer-body,
   .toc-drawer-body{
-    padding: 10px 12px;
-
-    height: auto !important; /* 關鍵：壓掉舊的 height: calc(100vh - 52px) */
-    max-height: calc(100svh - 90px - 52px) !important;
-
+    padding: 12px 12px 14px;
+    height: auto;
+    max-height: calc(100svh - 90px - 56px); /* 56px 估 header 高度 */
     overflow: auto;
     -webkit-overflow-scrolling: touch;
   }
 
-  /* 目錄連結：字變大 + 列表感 */
-  .news-toc-mobile .toc-link{
-    display: block;
-    font-size: 24px;          /* 你覺得太大/太小就改這個 */
-    line-height: 1.6;
-    padding: 10px 10px;
-    border-radius: 12px;
-    color: #222;
-    background: transparent;
-  }
-
-  .news-toc-mobile .toc-link:active{
-    background: rgba(31,60,136,.10);
-  }
-
+  /* list item 間距同步桌機 */
   .news-toc-mobile .toc-drawer-body li{
-    margin-bottom: 6px;
+    margin-bottom: 10px;
   }
 
-  /* 關閉按鈕 */
+  /* 重點：toc-link 改成桌機的「卡片式 item」 */
+  .news-toc-mobile .toc-link{
+    position: relative;
+    display:block;
+
+    padding: 12px 12px 12px 14px;
+    border-radius: 14px;
+
+    background: #f7f8fb;
+    border: 1px solid rgba(0,0,0,.06);
+
+    color: #222;
+    font-size: 17px;     /* 手機不建議 24px，會太擠 */
+    line-height: 1.55;
+
+    transition: transform .16s ease, background .16s ease, border-color .16s ease, box-shadow .16s ease;
+  }
+
+  /* 左側導引線（同步桌機） */
+  .news-toc-mobile .toc-link::before{
+    content:"";
+    position:absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 0;
+    border-radius: 999px;
+    background: rgba(31,60,136,.55);
+    transition: height .16s ease;
+  }
+
+  /* 手機沒有 hover，主要做 active 回饋 */
+  .news-toc-mobile .toc-link:active{
+    background: #f1f4ff;
+    border-color: rgba(31,60,136,.18);
+    box-shadow: 0 10px 22px rgba(0,0,0,.14);
+    transform: translateY(-1px);
+    color: #223a66;
+  }
+  .news-toc-mobile .toc-link:active::before{
+    height: 22px;
+  }
+
+  /* 關閉按鈕：更像 UI 控制 */
   .news-toc-mobile .toc-close{
     width: 36px;
     height: 36px;
     border-radius: 10px;
-    border: 0;
-    background: transparent;
+    border: 1px solid rgba(0,0,0,.08);
+    background: rgba(255,255,255,.8);
     font-size: 22px;
+    line-height: 1;
     color: #333;
   }
-
   .news-toc-mobile .toc-close:active{
     background: rgba(0,0,0,.06);
   }
+
+  /* 浮動按鈕（維持你的設定，可微調一致性） */
+  .news-toc-mobile .toc-fab{
+    font-size: 16px;
+    letter-spacing: .5px;
+  }
 }
 
+
+
+
+/* ===== 桌機：News Sidebar 美化（只影響 >=992px）===== */
+@media (min-width: 992px) {
+
+  /* 外層 aside 的 sticky 你已經做了，這裡不動它 */
+
+  /* Sidebar 卡片本體（你 HTML 是 .news-sidebar.card） */
+  .news-aside .news-sidebar.card{
+    position: relative;
+    border: 1px solid rgba(31,60,136,.14);
+    border-radius: 18px;
+    background:
+      linear-gradient(#fff,#fff) padding-box,
+      linear-gradient(135deg, rgba(31,60,136,.35), rgba(225,36,84,.22)) border-box;
+    box-shadow:
+      0 18px 45px rgba(0,0,0,.10),
+      0 2px 0 rgba(255,255,255,.7) inset;
+    overflow: hidden;
+  }
+
+  /* 右上角淡淡裝飾（不會搶戲） */
+  .news-aside .news-sidebar.card::before{
+    content:"";
+    position:absolute;
+    top:-90px;
+    right:-110px;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle at 30% 30%, rgba(31,60,136,.18), rgba(31,60,136,0) 60%);
+    pointer-events:none;
+  }
+
+  /* 內距微調 */
+  .news-aside .news-sidebar .card-body{
+    padding: 18px 18px 16px;
+  }
+
+  /* 標題：做成 header 條 */
+  .news-aside .news-sidebar h5{
+    position: relative;
+    margin: 0 0 14px;
+    padding: 12px 12px 12px 14px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #f6f8ff 0%, #ffffff 100%);
+    border: 1px solid rgba(0,0,0,.06);
+    color: #1b2f66;
+    letter-spacing: .6px;
+  }
+
+  /* 標題左側色條 */
+  .news-aside .news-sidebar h5::before{
+    content:"";
+    position:absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 18px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #223a66, #e12454);
+  }
+
+  /* 標題加個小圖示（純 CSS 圓點，不用載入 icon） */
+  .news-aside .news-sidebar h5::after{
+    content:"";
+    position:absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(31,60,136,.22);
+    box-shadow: 0 0 0 6px rgba(31,60,136,.08);
+  }
+
+  /* 清掉你原本 #news-toc a 的 padding 設定（我們用更具體選擇器覆蓋） */
+  .news-aside .news-sidebar #news-toc a{
+    padding: 0; /* 覆蓋舊的 padding: 6px 0 */
+  }
+
+  /* 目錄 item：卡片式列表 */
+  .news-aside .news-sidebar #news-toc li{
+    margin-bottom: 10px; /* 覆蓋 mb-2 的視覺感 */
+  }
+
+  .news-aside .news-sidebar #news-toc .toc-link{
+    position: relative;
+    display: block;
+    padding: 11px 12px 11px 14px;
+    border-radius: 14px;
+
+    background: #f7f8fb;
+    border: 1px solid rgba(0,0,0,.06);
+
+    color: #222;
+    font-size: 16px;
+    line-height: 1.5;
+
+    transition: transform .16s ease, background .16s ease, border-color .16s ease, box-shadow .16s ease;
+  }
+
+  /* 左側導引線 */
+  .news-aside .news-sidebar #news-toc .toc-link::before{
+    content:"";
+    position:absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 0;
+    border-radius: 999px;
+    background: rgba(31,60,136,.55);
+    transition: height .16s ease;
+  }
+
+  /* hover：滑入 + 更亮 + 導引線拉長 */
+  .news-aside .news-sidebar #news-toc .toc-link:hover{
+    background: #f1f4ff;
+    border-color: rgba(31,60,136,.18);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(0,0,0,.10);
+    color: #223a66;
+  }
+
+  .news-aside .news-sidebar #news-toc .toc-link:hover::before{
+    height: 22px;
+  }
+
+  /* active：點下去的回饋 */
+  .news-aside .news-sidebar #news-toc .toc-link:active{
+    transform: translateY(0px);
+    box-shadow: 0 6px 14px rgba(0,0,0,.10);
+    background: rgba(31,60,136,.14);
+  }
+
+  /* 可選：sidebar 內容很多要捲動時，捲軸更乾淨（WebKit） */
+  .news-aside .news-sidebar{
+    scrollbar-width: thin;                 /* Firefox */
+    scrollbar-color: rgba(0,0,0,.25) transparent;
+  }
+  .news-aside .news-sidebar::-webkit-scrollbar{
+    width: 10px;
+  }
+  .news-aside .news-sidebar::-webkit-scrollbar-thumb{
+    background: rgba(0,0,0,.18);
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+}
