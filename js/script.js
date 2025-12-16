@@ -223,22 +223,27 @@
 
 		
  // Shuffle js filter and masonry
-    var Shuffle = window.Shuffle;
-    var jQuery = window.jQuery;
+  // Shuffle js filter and masonry
+  var Shuffle = window.Shuffle;
+  var jQuery = window.jQuery;
 
-    var myShuffle = new Shuffle(document.querySelector('.shuffle-wrapper'), {
-        itemSelector: '.shuffle-item',
-        buffer: 1
+  var shuffleEl = document.querySelector('.shuffle-wrapper');
+  if (shuffleEl && Shuffle) {
+    var myShuffle = new Shuffle(shuffleEl, {
+      itemSelector: '.shuffle-item',
+      buffer: 1
     });
 
     jQuery('input[name="shuffle-filter"]').on('change', function (evt) {
-        var input = evt.currentTarget;
-        if (input.checked) {
-            myShuffle.filter(input.value);
-        }
+      var input = evt.currentTarget;
+      if (input.checked) {
+        myShuffle.filter(input.value);
+      }
     });
+  }
 
 })(jQuery);
+
 
 //index scroll
 function scrollToSection() {
@@ -259,6 +264,142 @@ function scrollToSection() {
 
 
 
+function scrollToPost(postId) {
+  const target = document.getElementById(postId);
+  if (!target) return;
+
+  // 依你的 sticky navbar 高度調整（100~120 常見）
+  const headerOffset = 100;
+
+  const top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+  window.scrollTo({ top, behavior: 'smooth' });
+
+  // 閃爍效果
+  target.classList.add('flash-effect');
+  target.addEventListener('animationend', function () {
+    target.classList.remove('flash-effect');
+  }, { once: true });
+}
+
+function normalizeTocTitle(raw) {
+  if (!raw) return '';
+  // 去掉多餘空白、換行
+  let t = raw.replace(/\s+/g, ' ').trim();
+  // 避免目錄太長（你可自行調整 26）
+  const limit = 26;
+  if (t.length > limit) t = t.slice(0, limit) + '…';
+  return t;
+}
+
+function bindTocLinks(toc) {
+  const links = toc.querySelectorAll('a');
+  links.forEach(a => {
+    a.addEventListener('click', function (e) {
+      const targetId =
+        a.getAttribute('data-target') ||
+        (a.getAttribute('href') || '').replace('#', '');
+
+      if (!targetId) return;
+
+      e.preventDefault();
+      scrollToPost(targetId);
+      history.replaceState(null, '', `#${targetId}`);
+    });
+  });
+}
+
+function buildNewsToc() {
+  const toc = document.getElementById('news-toc');
+  const postsRoot = document.getElementById('news-posts');
+  if (!toc || !postsRoot) return;
+
+  // 你已經手打目錄：不重建，只綁定點擊行為
+  if (toc.children.length > 0) {
+    bindTocLinks(toc);
+    return;
+  }
+
+  // 沒手打才自動生成
+  const posts = postsRoot.querySelectorAll('.news-post[id]');
+  if (!posts.length) return;
+
+  toc.innerHTML = '';
+
+  posts.forEach(post => {
+    const h2 = post.querySelector('h2');
+    const title = normalizeTocTitle(h2 ? h2.textContent : post.id);
+
+    const li = document.createElement('li');
+    li.className = 'mb-2';
+
+    const a = document.createElement('a');
+    a.href = `#${post.id}`;
+    a.textContent = title;
+
+    li.appendChild(a);
+    toc.appendChild(li);
+  });
+
+  bindTocLinks(toc);
+}
+
+document.addEventListener('DOMContentLoaded', buildNewsToc);
 
 
-  
+
+(function () {
+  const fab = document.getElementById('tocFab');
+  const drawer = document.getElementById('tocDrawer');
+  const backdrop = document.getElementById('tocBackdrop');
+  const closeBtn = document.getElementById('tocClose');
+
+  if (!fab || !drawer || !backdrop || !closeBtn) return;
+
+  function openDrawer() {
+    drawer.hidden = false;
+    backdrop.hidden = false;
+    requestAnimationFrame(() => drawer.classList.add('open'));
+    fab.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    fab.setAttribute('aria-expanded', 'false');
+    setTimeout(() => {
+      drawer.hidden = true;
+      backdrop.hidden = true;
+    }, 220);
+  }
+
+  fab.addEventListener('click', openDrawer);
+  closeBtn.addEventListener('click', closeDrawer);
+  backdrop.addEventListener('click', closeDrawer);
+
+  // 點 TOC 後：平滑捲動 + 自動收起抽屜
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest('a.toc-link');
+    if (!a) return;
+
+    const hash = a.getAttribute('href');
+    if (!hash || !hash.startsWith('#')) return;
+
+    const target = document.querySelector(hash);
+    if (!target) return;
+
+    e.preventDefault();
+
+    // 依你的 sticky navbar 高度調整 offset
+    const offset = 110;
+    const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+
+    window.scrollTo({ top: y, behavior: 'smooth' });
+
+    // 若在手機抽屜開啟狀態，點選後收起
+    if (!drawer.hidden) closeDrawer();
+  });
+
+  // ESC 關閉
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !drawer.hidden) closeDrawer();
+  });
+})();
