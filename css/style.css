@@ -2430,7 +2430,7 @@ html {
     border: 1px solid rgba(0,0,0,.06);
 
     color: #222;
-    font-size: 17px;     /* 手機不建議 24px，會太擠 */
+    font-size: 20px;     /* 手機不建議 24px，會太擠 */
     line-height: 1.55;
 
     transition: transform .16s ease, background .16s ease, border-color .16s ease, box-shadow .16s ease;
