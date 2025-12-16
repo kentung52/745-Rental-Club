@@ -2388,7 +2388,7 @@ html {
   /* 目錄連結：字變大 + 列表感 */
   .news-toc-mobile .toc-link{
     display: block;
-    font-size: 20px;          /* 你覺得太大/太小就改這個 */
+    font-size: 24px;          /* 你覺得太大/太小就改這個 */
     line-height: 1.6;
     padding: 10px 10px;
     border-radius: 12px;
