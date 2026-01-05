@@ -699,7 +699,7 @@ a:focus {
   content: "";
   position: absolute;
   inset: 0; /* top:0;right:0;bottom:0;left:0; 的縮寫 */
-  background: #fff url("/images/index/12.jpg") no-repeat center center;
+  background: #fff url("/images/index/holiday.jpg") no-repeat center center;
   background-size: contain;         /* 關鍵：完整顯示圖片 */
   opacity: 0;                       /* 一開始不顯示 */
   animation: bannerDmFade 12s infinite;
