@@ -2640,7 +2640,16 @@ html {
 
 
 
-.red-text {
-  color: red;
-  font-size: 30px;
+.number-text{
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateY(-0.12em); /* 你可以從 -0.05em ~ -0.12em 試 */
+  .number-text{ display:inline-block; vertical-align:middle; }
+  img.number-text{ display:block; } /* 若 class 是掛在 img 上 */
+  padding-inline: 0.1em;  /* 左右加一點白邊 */
+  box-sizing: border-box; /* 確保 padding 不撐大盒子 */
+
 }
+
