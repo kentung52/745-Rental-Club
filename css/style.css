@@ -2637,3 +2637,10 @@ html {
     background-clip: content-box;
   }
 }
+
+
+
+.red-text {
+  color: red;
+  font-size: 30px;
+}
