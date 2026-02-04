@@ -62,42 +62,42 @@
 	</url>		
 	<url>
 	<loc>https://745-rental-club.vercel.app/car_introduce_white.html</loc>  <!-- 白牌介紹 -->
-		<priority>0.64</priority>
+		<priority>0.7</priority>
 		<lastmod>2026-02-03T00:00:00+08:00</lastmod>
 	</url>
 	<url>
 	<loc>https://745-rental-club.vercel.app/car_introduce_yellow.html</loc>  <!-- 黃牌介紹 -->
-		<priority>0.64</priority>
+		<priority>0.7</priority>
 		<lastmod>2026-02-03T00:00:00+08:00</lastmod>
 	</url>
 	<url>
 	<loc>https://745-rental-club.vercel.app/car_introduce_red.html</loc>  <!-- 紅牌介紹 -->
-		<priority>0.64</priority>
+		<priority>0.7</priority>
 		<lastmod>2026-02-03T00:00:00+08:00</lastmod>
 	</url>
 	<url>
 	<loc>https://745-rental-club.vercel.app/car_introduce/mx5.html</loc>  <!-- MX5 -->
-		<priority>0.64</priority>
+		<priority>0.7</priority>
 		<lastmod>2026-02-03T00:00:00+08:00</lastmod>
 	</url>
 	<url>
 	<loc>https://745-rental-club.vercel.app/repairs_and_modify/component/helmet.html</loc>  <!-- 安全帽 -->
-		<priority>0.64</priority>
+		<priority>0.7</priority>
 		<lastmod>2026-02-03T00:00:00+08:00</lastmod>
 	</url>
 	<url>
 	<loc>https://745-rental-club.vercel.app/repairs_and_modify/component/parts.html</loc>  <!-- 部品 -->
-		<priority>0.64</priority>
+		<priority>0.7</priority>
 		<lastmod>2026-02-03T00:00:00+08:00</lastmod>
 	</url>
 	<url>
 	<loc>https://745-rental-club.vercel.app/repairs_and_modify/component/bluetooth_headset.html</loc>  <!-- 藍芽耳機 -->
-		<priority>0.64</priority>
+		<priority>0.7</priority>
 		<lastmod>2026-02-03T00:00:00+08:00</lastmod>
 	</url>
 	<url>
 	<loc>https://745-rental-club.vercel.app/repairs_and_modify/component/phone_stand.html</loc>  <!-- 手機架 -->
-		<priority>0.64</priority>
+		<priority>0.7</priority>
 		<lastmod>2026-02-03T00:00:00+08:00</lastmod>
 	</url>
 	<url>
