@@ -3700,8 +3700,6 @@ html {
 
 
 
-
-/* ===== Thumbs (必須有，不然縮圖會變成大圖) ===== */
 .rf-thumbs{
   display:flex;
   gap: 10px;
@@ -3763,3 +3761,7 @@ html {
 @media (max-width: 575.98px){
   .rf-thumb{ width: 98px; height: 72px; }
 }
+
+
+
+
