@@ -297,193 +297,174 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 					</div>
 
 					<!-- Refurb Slider (Maintenance Style) -->
-<div class="car-cardBox" id="refurb">
-  <div class="car-cardBox__header">
-    <h3 class="car-cardBox__title">維修 / 整新流程</h3>
-    <div class="car-cardBox__tools">
-      <button class="car-ghostBtn" type="button" id="rfPrev" aria-label="上一筆紀錄">
-        <i class="icofont-simple-left"></i>
-      </button>
-      <button class="car-ghostBtn" type="button" id="rfNext" aria-label="下一筆紀錄">
-        <i class="icofont-simple-right"></i>
-      </button>
-    </div>
-  </div>
-
-  <div class="rf-slider" aria-label="維修整新幻燈片">
-
-    <!-- Left: main photo -->
-    <!-- Top: main photo (no overlay text) -->
-<a class="rf-main" id="rfMainLink"
-   href="../../images/buy_and_sell/car1/1.jpg"
-   data-lightbox="refurb-group">
-  <img id="rfMainImg" src="../../images/buy_and_sell/car1/1.jpg" alt="維修整新照片">
-</a>
-
-
-<!-- Thumbs -->
-    <div class="rf-thumbs" id="rfThumbs">
-      <button class="rf-thumb is-active" type="button"
-        data-full="../../images/buy_and_sell/car1/1.jpg"
-        data-title="入庫檢查 / 車況診斷"
-        data-sub="建立整新清單・拍攝前後對照"
-        data-date="2026-02-01"
-        data-mileage="9,800 km"
-        data-cat="檢查"
-        data-result="確認可整新"
-        data-tasks="外觀/電系/煞車/胎況檢查|漏油/異音/怠速確認|建立工單與待料清單"
-        data-note="重要部位會拍攝特寫，供消費者核對處理前後狀態。">
-        <img src="../../images/buy_and_sell/car1/1.jpg" alt="step1">
-        <span class="rf-thumb__tag">檢查</span>
-      </button>
-
-      <button class="rf-thumb" type="button"
-        data-full="../../images/buy_and_sell/car1/2.jpg"
-        data-title="保養耗材更新"
-        data-sub="機油/濾心/煞車油・依車況更換"
-        data-date="2026-02-03"
-        data-mileage="9,820 km"
-        data-cat="保養"
-        data-result="完成"
-        data-tasks="更換機油與濾心|檢查來令片與碟盤|煞車油檢測與補強"
-        data-note="耗材更換會拍照存檔，並記錄料件規格（若有）。">
-        <img src="../../images/buy_and_sell/car1/2.jpg" alt="step2">
-        <span class="rf-thumb__tag">保養</span>
-      </button>
-
-      <button class="rf-thumb" type="button"
-        data-full="../../images/buy_and_sell/car1/3.jpg"
-        data-title="傳動/底盤整理"
-        data-sub="鏈條/齒盤/張力・螺絲扭力檢查"
-        data-date="2026-02-04"
-        data-mileage="9,830 km"
-        data-cat="底盤"
-        data-result="完成"
-        data-tasks="鏈條清潔上油與張力調整|檢查齒盤磨耗|扭力值複核與定位"
-        data-note="底盤區採近拍，保留真實細節，避免誇張濾鏡。">
-        <img src="../../images/buy_and_sell/car1/3.jpg" alt="step3">
-        <span class="rf-thumb__tag">底盤</span>
-      </button>
-
-      <button class="rf-thumb" type="button"
-        data-full="../../images/buy_and_sell/car1/4.jpg"
-        data-title="外觀整新 / 清潔"
-        data-sub="烤漆/鍍膜/細部清潔・前後對照"
-        data-date="2026-02-05"
-        data-mileage="9,835 km"
-        data-cat="外觀"
-        data-result="完成"
-        data-tasks="車身清潔與細部整理|局部修復/補漆（依車況）|前後對照拍攝"
-        data-note="外觀以真實反光與細節呈現，不過度修圖。">
-        <img src="../../images/buy_and_sell/car1/4.jpg" alt="step4">
-        <span class="rf-thumb__tag">外觀</span>
-      </button>
-
-      <button class="rf-thumb" type="button"
-        data-full="../../images/buy_and_sell/car1/5.jpg"
-        data-title="路試 / 最終驗收"
-        data-sub="騎乘測試・煞車手感・油門反應"
-        data-date="2026-02-06"
-        data-mileage="9,860 km"
-        data-cat="驗收"
-        data-result="可交車"
-        data-tasks="短程路試/怠速穩定度確認|煞車手感與回彈測試|異音複核與終檢"
-        data-note="交車前再次拍攝里程表與關鍵部位，保留可驗證性。">
-        <img src="../../images/buy_and_sell/car1/5.jpg" alt="step5">
-        <span class="rf-thumb__tag">驗收</span>
-      </button>
-    </div>
-
-<!-- Caption row (UNDER the photo, not overlay) -->
-<div class="rf-caption">
-  <div class="rf-caption__left">
-    <span class="rf-stepPill">
-      <span class="rf-stepDot"></span>
-      <span id="rfStepLabel">Step 1 / 5</span>
-    </span>
-    <div class="rf-caption__title" id="rfTitle">入庫檢查 / 車況診斷</div>
-    <div class="rf-caption__sub" id="rfSub">建立整新清單・拍攝前後對照</div>
-  </div>
-
-  <div class="rf-caption__right">
-    <a class="rf-zoomBtn" href="#" id="rfZoomBtn">
-      <i class="icofont-search-1 mr-1"></i> 放大查看
-    </a>
-  </div>
-</div>
-
-
-
-    <!-- Bottom: simple explain blocks -->
-<div class="rf-info">
-  <div class="rf-info__grid">
-    <div class="rf-infoCard">
-      <div class="rf-infoCard__k">日期</div>
-      <div class="rf-infoCard__v" id="rfDate">2026-02-01</div>
-    </div>
-    <div class="rf-infoCard">
-      <div class="rf-infoCard__k">當下里程</div>
-      <div class="rf-infoCard__v" id="rfMileage">9,800 km</div>
-    </div>
-    <div class="rf-infoCard">
-      <div class="rf-infoCard__k">類別</div>
-      <div class="rf-infoCard__v" id="rfCat">檢查</div>
-    </div>
-    <div class="rf-infoCard">
-      <div class="rf-infoCard__k">結論</div>
-      <div class="rf-infoCard__v" id="rfResult">確認可整新</div>
-    </div>
-  </div>
-
-  <div class="rf-info__row">
-    <div class="rf-block">
-      <div class="rf-block__title">工項</div>
-      <ul class="rf-list" id="rfTasks">
-        <li>外觀、電系、煞車、胎況與耗材檢查</li>
-        <li>漏油/異音/怠速穩定度確認</li>
-        <li>建立整新工單與待料清單</li>
-      </ul>
-    </div>
-
-    <div class="rf-block">
-      <div class="rf-block__title">備註</div>
-      <div class="rf-note" id="rfNote">重要部位會拍攝特寫，供消費者核對處理前後狀態。</div>
-    </div>
-  </div>
-
-  <div class="rf-progress" aria-label="進度">
-    <div class="rf-progress__bar"><span id="rfBar"></span></div>
-    <div class="rf-progress__text"><span id="rfIdx">1</span> / <span id="rfTotal">5</span></div>
-  </div>
-</div>
-
-
-    
-
-  </div>
-</div>
-
-
-					<!-- CTA block (bottom) -->
-					<div class="car-ctaBar">
-						<div class="car-ctaBar__text">
-							<div class="car-ctaBar__title">想看更多整新細節或安排看車？</div>
-							<div class="car-ctaBar__desc">可私訊詢價，或填表預約賞車與試乘（依車況）。</div>
-						</div>
-						<div class="car-ctaBar__actions">
-							<a class="btn btn-main btn-round-full btn-icon" href="https://www.facebook.com/xxxx"
-								target="_blank" rel="noopener">
-								私訊詢價 <i class="icofont-facebook ml-3"></i>
-							</a>
-							<a class="btn btn-solid-border btn-round-full btn-icon" href="sell_table.html">
-								預約賞車 <i class="icofont-simple-right ml-3"></i>
-							</a>
+					<div class="car-cardBox" id="refurb">
+					<div class="car-cardBox__header">
+						<h3 class="car-cardBox__title">維修 / 整新流程</h3>
+						<div class="car-cardBox__tools">
+						<button class="car-ghostBtn" type="button" id="rfPrev" aria-label="上一筆紀錄">
+							<i class="icofont-simple-left"></i>
+						</button>
+						<button class="car-ghostBtn" type="button" id="rfNext" aria-label="下一筆紀錄">
+							<i class="icofont-simple-right"></i>
+						</button>
 						</div>
 					</div>
 
-				</div>
+					<div class="rf-slider" aria-label="維修整新幻燈片">
 
-				<!-- ===== Right: sticky info card ===== -->
+						<!-- Left: main photo -->
+						<!-- Top: main photo (no overlay text) -->
+					<a class="rf-main" id="rfMainLink"
+					href="../../images/buy_and_sell/car1/1.jpg"
+					data-lightbox="refurb-group">
+					<img id="rfMainImg" src="../../images/buy_and_sell/car1/1.jpg" alt="維修整新照片">
+					</a>
+
+
+					<!-- Thumbs -->
+						<div class="rf-thumbs" id="rfThumbs">
+						<button class="rf-thumb is-active" type="button"
+							data-full="../../images/buy_and_sell/car1/1.jpg"
+							data-title="入庫檢查 / 車況診斷"
+							data-sub="建立整新清單・拍攝前後對照"
+							data-date="2026-02-01"
+							data-mileage="9,800 km"
+							data-cat="檢查"
+							data-result="確認可整新"
+							data-tasks="外觀/電系/煞車/胎況檢查|漏油/異音/怠速確認|建立工單與待料清單"
+							data-note="重要部位會拍攝特寫，供消費者核對處理前後狀態。">
+							<img src="../../images/buy_and_sell/car1/1.jpg" alt="step1">
+							<span class="rf-thumb__tag">檢查</span>
+						</button>
+
+						<button class="rf-thumb" type="button"
+							data-full="../../images/buy_and_sell/car1/2.jpg"
+							data-title="保養耗材更新"
+							data-sub="機油/濾心/煞車油・依車況更換"
+							data-date="2026-02-03"
+							data-mileage="9,820 km"
+							data-cat="保養"
+							data-result="完成"
+							data-tasks="更換機油與濾心|檢查來令片與碟盤|煞車油檢測與補強"
+							data-note="耗材更換會拍照存檔，並記錄料件規格（若有）。">
+							<img src="../../images/buy_and_sell/car1/2.jpg" alt="step2">
+							<span class="rf-thumb__tag">保養</span>
+						</button>
+
+						<button class="rf-thumb" type="button"
+							data-full="../../images/buy_and_sell/car1/3.jpg"
+							data-title="傳動/底盤整理"
+							data-sub="鏈條/齒盤/張力・螺絲扭力檢查"
+							data-date="2026-02-04"
+							data-mileage="9,830 km"
+							data-cat="底盤"
+							data-result="完成"
+							data-tasks="鏈條清潔上油與張力調整|檢查齒盤磨耗|扭力值複核與定位"
+							data-note="底盤區採近拍，保留真實細節，避免誇張濾鏡。">
+							<img src="../../images/buy_and_sell/car1/3.jpg" alt="step3">
+							<span class="rf-thumb__tag">底盤</span>
+						</button>
+
+						<button class="rf-thumb" type="button"
+							data-full="../../images/buy_and_sell/car1/4.jpg"
+							data-title="外觀整新 / 清潔"
+							data-sub="烤漆/鍍膜/細部清潔・前後對照"
+							data-date="2026-02-05"
+							data-mileage="9,835 km"
+							data-cat="外觀"
+							data-result="完成"
+							data-tasks="車身清潔與細部整理|局部修復/補漆（依車況）|前後對照拍攝"
+							data-note="外觀以真實反光與細節呈現，不過度修圖。">
+							<img src="../../images/buy_and_sell/car1/4.jpg" alt="step4">
+							<span class="rf-thumb__tag">外觀</span>
+						</button>
+
+						<button class="rf-thumb" type="button"
+							data-full="../../images/buy_and_sell/car1/5.jpg"
+							data-title="路試 / 最終驗收"
+							data-sub="騎乘測試・煞車手感・油門反應"
+							data-date="2026-02-06"
+							data-mileage="9,860 km"
+							data-cat="驗收"
+							data-result="可交車"
+							data-tasks="短程路試/怠速穩定度確認|煞車手感與回彈測試|異音複核與終檢"
+							data-note="交車前再次拍攝里程表與關鍵部位，保留可驗證性。">
+							<img src="../../images/buy_and_sell/car1/5.jpg" alt="step5">
+							<span class="rf-thumb__tag">驗收</span>
+						</button>
+						</div>
+
+					<!-- Caption row (UNDER the photo, not overlay) -->
+					<div class="rf-caption">
+					<div class="rf-caption__left">
+						<span class="rf-stepPill">
+						<span class="rf-stepDot"></span>
+						<span id="rfStepLabel">Step 1 / 5</span>
+						</span>
+						<div class="rf-caption__title" id="rfTitle">入庫檢查 / 車況診斷</div>
+						<div class="rf-caption__sub" id="rfSub">建立整新清單・拍攝前後對照</div>
+					</div>
+
+					<div class="rf-caption__right">
+						<a class="rf-zoomBtn" href="#" id="rfZoomBtn">
+						<i class="icofont-search-1 mr-1"></i> 放大查看
+						</a>
+					</div>
+					</div>
+
+
+
+					<!-- Bottom: simple explain blocks -->
+					<div class="rf-info">
+					<div class="rf-info__grid">
+						<div class="rf-infoCard">
+						<div class="rf-infoCard__k">日期</div>
+						<div class="rf-infoCard__v" id="rfDate">2026-02-01</div>
+						</div>
+						<div class="rf-infoCard">
+						<div class="rf-infoCard__k">當下里程</div>
+						<div class="rf-infoCard__v" id="rfMileage">9,800 km</div>
+						</div>
+						<div class="rf-infoCard">
+						<div class="rf-infoCard__k">類別</div>
+						<div class="rf-infoCard__v" id="rfCat">檢查</div>
+						</div>
+						<div class="rf-infoCard">
+						<div class="rf-infoCard__k">結論</div>
+						<div class="rf-infoCard__v" id="rfResult">確認可整新</div>
+						</div>
+					</div>
+
+					<div class="rf-info__row">
+						<div class="rf-block">
+						<div class="rf-block__title">工項</div>
+						<ul class="rf-list" id="rfTasks">
+							<li>外觀、電系、煞車、胎況與耗材檢查</li>
+							<li>漏油/異音/怠速穩定度確認</li>
+							<li>建立整新工單與待料清單</li>
+						</ul>
+						</div>
+
+						<div class="rf-block">
+						<div class="rf-block__title">備註</div>
+						<div class="rf-note" id="rfNote">重要部位會拍攝特寫，供消費者核對處理前後狀態。</div>
+						</div>
+					</div>
+
+					<div class="rf-progress" aria-label="進度">
+						<div class="rf-progress__bar"><span id="rfBar"></span></div>
+						<div class="rf-progress__text"><span id="rfIdx">1</span> / <span id="rfTotal">5</span></div>
+					</div>
+					</div>
+
+
+		
+
+	</div>
+	</div>
+
+
+            <!-- ===== Right: sticky info card ===== -->
 				<div class="col-lg-4">
 					<aside class="car-side">
 						<div class="car-sideCard">
@@ -532,6 +513,27 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 						</div>
 					</aside>
 				</div>
+
+					<!-- CTA block (bottom) -->
+					<div class="car-ctaBar">
+						<div class="car-ctaBar__text">
+							<div class="car-ctaBar__title">想看更多整新細節或安排看車？</div>
+							<div class="car-ctaBar__desc">可私訊詢價，或填表預約賞車與試乘（依車況）。</div>
+						</div>
+						<div class="car-ctaBar__actions">
+							<a class="btn btn-main btn-round-full btn-icon" href="https://www.facebook.com/xxxx"
+								target="_blank" rel="noopener">
+								私訊詢價 <i class="icofont-facebook ml-3"></i>
+							</a>
+							<a class="btn btn-solid-border btn-round-full btn-icon" href="sell_table.html">
+								預約賞車 <i class="icofont-simple-right ml-3"></i>
+							</a>
+						</div>
+					</div>
+
+				</div>
+
+				
 
 			</div>
 		</div>
