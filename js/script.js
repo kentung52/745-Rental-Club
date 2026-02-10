@@ -402,3 +402,155 @@ document.addEventListener('DOMContentLoaded', buildNewsToc);
     if (e.key === 'Escape' && !drawer.hidden) closeDrawer();
   });
 })();
+
+
+
+
+
+
+
+// 二手車交易平台篩選器與搜尋功能
+// 最小 JS：切 Tab + 依目前 Tab 篩選/排序 + 計數 + 空狀態
+
+(function () {
+  const tabs = document.querySelectorAll('.car-tab');
+  const panels = document.querySelectorAll('.car-panel');
+
+  const q = document.getElementById('carSearch');
+  const selBrand = document.getElementById('carBrand');
+  const selTier = document.getElementById('carTier');
+  const selType = document.getElementById('carType');
+  const selMileage = document.getElementById('carMileage');
+  const selSort = document.getElementById('carSort');
+
+  function getActiveTab() {
+    const active = document.querySelector('.car-tab.is-active');
+    return active ? active.getAttribute('data-tab') : 'available';
+  }
+
+  function withinMileage(mileage, rule) {
+    if (rule === 'all') return true;
+    const m = parseInt(mileage, 10);
+    if (!Number.isFinite(m)) return false;
+
+    if (rule === '0-5000') return m >= 0 && m <= 5000;
+    if (rule === '5000-20000') return m > 5000 && m <= 20000;
+    if (rule === '20000+') return m > 20000;
+    return true;
+  }
+
+  function parseDateKey(s) {
+    // 期望 YYYY-MM-DD，解析失敗就回 0
+    if (!s) return 0;
+    const t = Date.parse(s);
+    return Number.isFinite(t) ? t : 0;
+  }
+
+  function applyFilterAndSort() {
+    const active = getActiveTab();
+    const grid = document.getElementById('grid-' + active);
+    if (!grid) return;
+
+    const keyword = (q.value || '').trim().toLowerCase();
+    const brand = selBrand ? selBrand.value : 'all';
+    const tier = selTier ? selTier.value : 'all';
+    const type = selType ? selType.value : 'all';
+    const mileageRule = selMileage ? selMileage.value : 'all';
+    const sortRule = selSort ? selSort.value : 'listed_desc';
+
+    const items = Array.from(grid.querySelectorAll('.car-item'));
+
+    // Filter
+    let visible = 0;
+    items.forEach(item => {
+      const itemBrand = item.getAttribute('data-brand') || '';
+      const itemTier = item.getAttribute('data-tier') || '';
+      const itemType = item.getAttribute('data-type') || '';
+      const itemMileage = item.getAttribute('data-mileage') || '';
+      const keys = (item.getAttribute('data-keywords') || '').toLowerCase();
+
+      const okKeyword = !keyword || keys.includes(keyword);
+      const okBrand = (brand === 'all') || (itemBrand === brand);
+      const okTier = (tier === 'all') || (itemTier === tier);
+      const okType = (type === 'all') || (itemType === type);
+      const okMileage = withinMileage(itemMileage, mileageRule);
+
+      const show = okKeyword && okBrand && okTier && okType && okMileage;
+      item.hidden = !show;
+      if (show) visible++;
+    });
+
+    // Sort (only for available/sold)
+    if (active !== 'wanted') {
+      const shown = items.filter(x => !x.hidden);
+
+      shown.sort((a, b) => {
+        const aListed = parseDateKey(a.getAttribute('data-listed'));
+        const bListed = parseDateKey(b.getAttribute('data-listed'));
+
+        const aPrice = parseInt(a.getAttribute('data-price') || '0', 10);
+        const bPrice = parseInt(b.getAttribute('data-price') || '0', 10);
+
+        const aMileage = parseInt(a.getAttribute('data-mileage') || '0', 10);
+        const bMileage = parseInt(b.getAttribute('data-mileage') || '0', 10);
+
+        if (sortRule === 'price_asc') return aPrice - bPrice;
+        if (sortRule === 'price_desc') return bPrice - aPrice;
+        if (sortRule === 'mileage_asc') return aMileage - bMileage;
+
+        // 預設：最新上架（listed_desc）
+        return bListed - aListed;
+      });
+
+      shown.forEach(el => grid.appendChild(el));
+    }
+
+    // Empty state
+    const empty = grid.querySelector('[data-empty="' + active + '"]');
+    if (empty) empty.hidden = visible !== 0;
+
+    // Update counts
+    updateCounts();
+  }
+
+  function updateCounts() {
+    const counts = { available: 0, sold: 0, wanted: 0 };
+
+    document.querySelectorAll('.car-item').forEach(item => {
+      const s = item.getAttribute('data-status');
+      if (counts[s] !== undefined) counts[s]++;
+    });
+
+    document.querySelectorAll('[data-count]').forEach(el => {
+      const key = el.getAttribute('data-count');
+      el.textContent = counts[key] || 0;
+    });
+  }
+
+  function switchTab(tabName) {
+    tabs.forEach(t => {
+      const on = t.getAttribute('data-tab') === tabName;
+      t.classList.toggle('is-active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+
+    panels.forEach(p => {
+      const on = p.getAttribute('data-panel') === tabName;
+      p.classList.toggle('is-active', on);
+    });
+
+    applyFilterAndSort();
+  }
+
+  // Events
+  tabs.forEach(t => t.addEventListener('click', () => switchTab(t.getAttribute('data-tab'))));
+  [q, selBrand, selTier, selType, selMileage, selSort].forEach(el => {
+    if (!el) return;
+    el.addEventListener('input', applyFilterAndSort);
+    el.addEventListener('change', applyFilterAndSort);
+  });
+
+  // Init
+  updateCounts();
+  switchTab('available');
+})();
