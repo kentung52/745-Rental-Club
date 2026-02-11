@@ -4410,7 +4410,7 @@ html {
 /* dropdown menu 精修（維持簡約） */
 .dropdown .dropdown-menu{
   border-radius: 14px;
-  overflow: hidden;
+  /* overflow: hidden; */
   box-shadow: 0 18px 50px rgba(0,0,0,.14);
   border: 1px solid rgba(0,0,0,.06);
 }
@@ -4453,3 +4453,53 @@ html {
 .white-space{
   white-space: nowrap;  
 }  
+
+
+
+/* ===== Mobile / Tablet (<992px): dropdown 不預留空間，只在 .show 時展開 ===== */
+@media (max-width: 991.98px){
+
+  /* 1) 手機版 dropdown-menu：預設完全不顯示（不佔高度） */
+  #navbarmain .dropdown-menu{
+    position: static !important;
+    float: none !important;
+    transform: none !important;
+
+    width: 100%;
+    min-width: 0 !important;
+
+    /* ✅ 關鍵：不要用 opacity/visibility 隱藏，直接 display:none */
+    display: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    margin: 8px 0 12px;
+    padding: 10px;
+
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,.06);
+    background: rgba(255,255,255,.96);
+    box-shadow: 0 18px 45px rgba(0,0,0,.10);
+  }
+
+  /* 2) 只有 Bootstrap 加上 .show 時才展開（這時才佔空間） */
+  #navbarmain .dropdown-menu.show{
+    display: block !important;
+  }
+
+  /* 3) 手機不要用 hover 展開（避免怪狀況） */
+  .dropdown:hover .dropdown-menu{
+    display: none !important;
+  }
+
+  /* dropdown-item：字大但可換行 */
+  #navbarmain .dropdown-item{
+    font-size: 30px;
+    font-weight: 800;
+    padding: 14px 14px;
+    border-radius: 12px;
+    white-space: normal;
+    line-height: 1.35;
+    color: #111;
+  }
+}
