@@ -554,3 +554,30 @@ document.addEventListener('DOMContentLoaded', buildNewsToc);
   updateCounts();
   switchTab('available');
 })();
+
+
+
+(function(){
+  const nav = document.getElementById('navbarmain');
+  const btn = document.querySelector('.navbar-toggler');
+  if(!nav || !btn) return;
+
+  // 建立 backdrop
+  const bd = document.createElement('div');
+  bd.className = 'mnav-backdrop';
+  document.body.appendChild(bd);
+
+  function openState(isOpen){
+    document.body.classList.toggle('mnav-open', isOpen);
+    bd.classList.toggle('show', isOpen);
+  }
+
+  // 監聽 collapse 狀態（Bootstrap 4 事件）
+  $(nav).on('shown.bs.collapse', function(){ openState(true); });
+  $(nav).on('hidden.bs.collapse', function(){ openState(false); });
+
+  // 點 backdrop 關閉
+  bd.addEventListener('click', function(){
+    $(nav).collapse('hide');
+  });
+})();

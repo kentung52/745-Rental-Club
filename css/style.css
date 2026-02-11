@@ -4503,3 +4503,172 @@ html {
     color: #111;
   }
 }
+
+
+
+/* =========================
+   Mobile Sidebar Nav (<992px)
+   - 不要背景模糊 / 不要遮罩
+   - 保留原本 navbar 漢堡按鈕，且永遠可點
+   ========================= */
+@media (max-width: 991.98px){
+
+  /* 1) 先把 navbar 本體疊到最上層，讓 toggler 永遠在 sidebar 上面 */
+  .navigation.navbar{
+    position: sticky;   /* 你原本就 sticky */
+    top: 0;
+    z-index: 30001;     /* ✅ 一定要 > sidebar */
+  }
+  .navigation.navbar .navbar-toggler{
+    position: relative;
+    z-index: 30002;     /* ✅ 漢堡按鈕最高 */
+  }
+
+  .navigation{ --mnav-offset: 92px; }
+  /* 2) sidebar（collapse）抽屜：不做 blur、不做遮罩 */
+  #navbarmain.navbar-collapse{
+    position: fixed;
+    top:  var(--mnav-offset) !important;                      /* ✅ 從最上面開始 */
+    height: calc(100vh - var(--mnav-offset)) !important;/* ✅ 高度扣掉 navbar */
+    border-top-left-radius: 18px;                       /* ✅ 更精緻 */
+    border-bottom-left-radius: 18px;
+    right: 0;
+    height: 100vh;
+    width: min(86vw, 380px);
+
+    background:
+      radial-gradient(700px 240px at 20% 10%, rgba(34,58,102,.10), rgba(34,58,102,0) 60%),
+      radial-gradient(600px 220px at 90% 20%, rgba(225,36,84,.08), rgba(225,36,84,0) 60%),
+      rgba(255,255,255,.98);
+
+    border-left: 1px solid rgba(0,0,0,.06);
+    box-shadow: -18px 0 45px rgba(0,0,0,.18);
+    margin-top: 30px;
+
+    /* ❌ 不要 blur */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    
+
+    padding: 16px 14px 18px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    transform: translateX(105%);
+    transition: transform .22s ease;
+    z-index: 30000;     /* ✅ 比 navbar 低一層，按鈕才點得到 */
+  }
+
+  #navbarmain.navbar-collapse.show{
+    transform: translateX(0);
+  }
+
+  /* 3) 內容左對齊、間距更像 app sidebar */
+  #navbarmain .navbar-nav{
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  #navbarmain .nav-link{
+    text-align: left;
+    width: 100%;
+    border-radius: 16px;
+
+    padding: 14px 14px;
+    font-size: 22px;
+    line-height: 1.25;
+
+    background: rgba(0,0,0,.02);
+    border: 1px solid rgba(0,0,0,.06);
+    box-shadow: 0 10px 22px rgba(0,0,0,.06);
+  }
+
+  #navbarmain .nav-link:active{
+    transform: translateY(-1px);
+    background: rgba(34,58,102,.06);
+    border-color: rgba(34,58,102,.16);
+    box-shadow: 0 14px 28px rgba(0,0,0,.12);
+  }
+
+  /* 4) dropdown：仍然不預留空間，只在 show 才展開 */
+  #navbarmain .dropdown-toggle{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  #navbarmain .dropdown-toggle::after{
+    display: inline-block !important;
+    width: .55em;
+    height: .55em;
+    border-right: 2px solid rgba(0,0,0,.55);
+    border-bottom: 2px solid rgba(0,0,0,.55);
+    transform: rotate(45deg);
+    content: "";
+    margin-left: auto;
+    transition: transform .18s ease;
+  }
+  #navbarmain .dropdown.show > .dropdown-toggle::after{
+    transform: rotate(-135deg);
+  }
+
+  #navbarmain .dropdown-menu{
+    position: static !important;
+    float: none !important;
+    transform: none !important;
+
+    width: 100%;
+    min-width: 0 !important;
+
+    display: none !important;  /* ✅ 不佔空間 */
+    margin: 10px 0 4px;
+    padding: 10px;
+
+    border-radius: 16px;
+    background: rgba(255,255,255,.98);
+    border: 1px solid rgba(0,0,0,.06);
+    box-shadow: 0 18px 45px rgba(0,0,0,.10);
+
+    position: relative;
+  }
+
+  #navbarmain .dropdown-menu::before{
+    content:"";
+    position:absolute;
+    left: 14px;
+    top: 12px;
+    bottom: 12px;
+    width: 3px;
+    border-radius: 999px;
+    background: rgba(34,58,102,.22);
+  }
+
+  #navbarmain .dropdown-menu.show{
+    display: block !important;
+  }
+
+  #navbarmain .dropdown-item{
+    font-size: 20px;
+    font-weight: 800;
+    padding: 12px 12px 12px 34px;
+    border-radius: 14px;
+    white-space: normal;
+    line-height: 1.35;
+    color: #111;
+  }
+
+  #navbarmain .dropdown-item:active{
+    background: rgba(34,58,102,.08);
+  }
+
+  .dropdown:hover .dropdown-menu{
+    display: none !important;
+  }
+
+  @media (max-width: 380px){
+    #navbarmain .nav-link{ font-size: 20px; padding: 13px 12px; }
+    #navbarmain .dropdown-item{ font-size: 18px; }
+  }
+}
