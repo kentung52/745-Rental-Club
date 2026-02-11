@@ -418,6 +418,7 @@ a:focus {
 .page-title .block h1 {
   color: #fff;
   font-size: 50px;
+   
 }
 
 .page-title .block h3 {
@@ -607,6 +608,7 @@ a:focus {
 .navbar-brand {
   margin-top: 10px;
 }
+
 
 .dropdown .dropdown-menu {
   position: absolute;
@@ -4315,3 +4317,139 @@ html {
 
 
 
+
+
+/* ===== Navbar Premium (Clean + Luxury) ===== */
+.navigation{
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+
+  /* 清楚簡約：白底 + 很淡的高級漸層 */
+  background:
+    radial-gradient(900px 260px at 12% 20%, rgba(34,58,102,.08), rgba(34,58,102,0) 60%),
+    radial-gradient(700px 240px at 88% 10%, rgba(225,36,84,.06), rgba(225,36,84,0) 60%),
+    rgba(255,255,255,.92);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+/* 額外的「細線高級感」：頂部一條很淡的品牌線 */
+.navigation::before{
+  content:"";
+  position:absolute;
+  left: 0;
+  top: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg,
+    rgba(34,58,102,.35),
+    rgba(34,58,102,0) 40%,
+    rgba(0,0,0,0) 60%,
+    rgba(225,36,84,.18)
+  );
+  pointer-events:none;
+}
+
+/* ===== Logo 放大、navbar 稍微變高 ===== */
+.navigation .navbar-brand{
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 14px 0;         /* ✅ 讓 navbar 高一點 */
+  margin-top: 0;
+}
+.navigation .navbar-brand img{
+  height: 150px;            /* ✅ Logo 放大 */
+  width: auto;
+  max-width: 320px;
+}
+
+/* ===== 右側導覽：全黑文字、不要紅色 ===== */
+#navbarmain{
+  padding: 0;
+}
+#navbarmain .navbar-nav{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+
+/* 所有狀態都維持黑系（含 active、hover） */
+#navbarmain .nav-link{
+  white-space: nowrap;
+  font-family: "Exo", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #111 !important;     /* ✅ 強制全黑 */
+  padding: 10px 12px;
+  border-radius: 999px;
+  position: relative;
+  letter-spacing: .2px;
+  transition: transform .16s ease, background .16s ease, box-shadow .16s ease, opacity .16s ease;
+}
+
+/* Hover：只做淡底 + 微浮起，不改字色 */
+#navbarmain .nav-link:hover{
+  background: rgba(0,0,0,.04);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.08);
+}
+
+/* Active：改成淡灰底，不要紅 */
+#navbarmain .nav-item.active > .nav-link{
+  background: rgba(0,0,0,.06);
+  color: #111 !important;
+  box-shadow: none;
+}
+
+/* dropdown menu 精修（維持簡約） */
+.dropdown .dropdown-menu{
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(0,0,0,.14);
+  border: 1px solid rgba(0,0,0,.06);
+}
+.dropdown .dropdown-item{
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+}
+.dropdown .dropdown-item:hover{
+  background: rgba(0,0,0,.04);
+  color: #111;
+}
+
+/* ===== 992 ~ 1199：避免爆版，字體稍縮，但 Logo 仍然明顯 ===== */
+@media (min-width: 992px) and (max-width: 1199.98px){
+  .navigation .navbar-brand img{
+    height: 100px;
+  }
+  #navbarmain .navbar-nav{
+    gap: 6px;
+  }
+  #navbarmain .nav-link{
+    font-size: 18px;
+    padding: 9px 10px;
+  }
+}
+
+/* ===== >=1200：更舒展一點 ===== */
+@media (min-width: 1200px){
+  .navigation .navbar-brand img{
+    height: 120px;
+  }
+  #navbarmain .nav-link{
+    font-size: 20px;
+    padding: 10px 12px;
+  }
+}
+
+
+.white-space{
+  white-space: nowrap;  
+}  
