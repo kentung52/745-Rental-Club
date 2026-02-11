@@ -4576,7 +4576,7 @@ html {
     border-radius: 16px;
 
     padding: 14px 14px;
-    font-size: 28px;
+    font-size: 40px;
     line-height: 1.25;
 
     background: rgba(0,0,0,.02);
@@ -4650,7 +4650,7 @@ html {
   }
 
   #navbarmain .dropdown-item{
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 800;
     padding: 12px 12px 12px 34px;
     border-radius: 14px;
