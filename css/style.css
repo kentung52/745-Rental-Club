@@ -1801,6 +1801,20 @@ a:focus {
   font-weight: 600;
 }
 
+@media (min-width: 992px) and (max-width: 1199.98px){
+  .footer .widget a h4{
+    font-size: 26px;     /* 原本 30px */
+    line-height: 1.2;
+    white-space: nowrap; /* 直接不換行，避免看起來被壓扁 */
+  }
+}
+
+.footer-title-nowrap{
+  white-space: nowrap;
+}
+
+
+
 .lh-35 {
   line-height: 35px;
 }
@@ -1825,6 +1839,7 @@ a:focus {
 .widget h4 {
   color: #223a66;
   font-size: 30px;
+  
 }
 
 .widget .footer-menu a {
@@ -3107,9 +3122,20 @@ html {
 }
 .car-detail-hero__inner{ position: relative; z-index: 1; }
 .car-detail-hero__top{
-  display:flex; justify-content: space-between; align-items:flex-end;
-  gap: 18px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "back kicker cta"
+    "title title title"
+    "meta  meta  meta";
+  align-items: center;
+  column-gap: 16px;
+  row-gap: 14px;
 }
+
+
+
+
 .car-detail-hero__kicker{
   display:inline-flex; align-items:center; gap:10px;
   padding: 8px 12px;
@@ -3128,6 +3154,34 @@ html {
   background: #e12454;
   box-shadow: 0 0 0 6px rgba(225,36,84,.16);
 }
+
+/* 讓 titleWrap 佔滿整個 car-detail-hero__top 的寬度（跨三欄） */
+.car-detail-hero__titleWrap{
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: -50px;
+}
+
+/* 只置中「檔車 / 重機二手車輛販售」這一行 */
+.car-detail-page__title{
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  /* 你原本的間距保留 */
+  margin: 25px 0 50px;
+  font-size: 60px;
+}
+
+
+@media (max-width: 768px){
+  .car-detail-page__title{
+    font-size: 46px;
+     margin: 35px 0 45px;
+  }
+}
+
+
 .car-detail-hero__title{
   margin: 14px 0 8px;
   color: #fff;
@@ -3388,34 +3442,213 @@ html {
   font-size: 16px;
 }
 
-/* Bottom CTA bar */
+/* =========================
+   Bottom CTA bar (REWORK)
+   ========================= */
+
 .car-ctaBar{
-  border-radius: 18px;
+  /* 跟上方拉開一點距離（你說太近） */
+  margin-top: 18px;
+  width: 65%;
+  max-width: 100%;
+  box-sizing: border-box;
+  border-radius: 22px;
   border: 1px solid rgba(0,0,0,.06);
   background:
-    radial-gradient(900px 240px at 15% 10%, rgba(34,58,102,.10), rgba(34,58,102,0) 55%),
-    radial-gradient(700px 260px at 85% 30%, rgba(225,36,84,.10), rgba(225,36,84,0) 60%),
-    #fff;
-  box-shadow: 0 18px 55px rgba(0,0,0,.08);
-  padding: 16px;
-  display:flex;
-  justify-content: space-between;
+    radial-gradient(900px 260px at 12% 10%, rgba(34,58,102,.12), rgba(34,58,102,0) 55%),
+    radial-gradient(700px 280px at 88% 30%, rgba(225,36,84,.10), rgba(225,36,84,0) 60%),
+    linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+  box-shadow: 0 18px 55px rgba(0,0,0,.10);
+
+  padding: 22px;
+
+  /* ✅ 改成 Grid：桌機永遠穩定一排，手機自動變一欄 */
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 32%);
+  grid-template-areas:
+    "text primary"
+    "nav  nav";
   align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
+  gap: 16px 18px;
 }
+
+/* 避免被擠爆的關鍵 */
+.car-ctaBar__text{
+  grid-area: text;
+  min-width: 0;
+}
+
 .car-ctaBar__title{
   font-family: "Exo", sans-serif;
   font-weight: 900;
   color: #1b2f66;
-  font-size: 20px;
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -.2px;
+  margin: 0;
 }
+
 .car-ctaBar__desc{
   color: #5d758a;
   font-weight: 700;
-  margin-top: 4px;
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.7;
 }
-.car-ctaBar__actions{ display:flex; gap: 10px; flex-wrap: wrap; }
+
+/* 右側按鈕群：只放兩顆主要 CTA（同一排） */
+.car-ctaBar__actions{
+  grid-area: primary;
+  min-width: 0;
+}
+
+/* 兩顆主要 CTA：桌機同列、靠右 */
+.car-ctaBar__primary{
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap; /* ✅ 桌機不要亂換行 */
+  min-width: 0;
+}
+
+.car-ctaBar__primary .btn{
+  white-space: nowrap;
+  padding: .9rem 1.6rem;
+  border-radius: 999px;
+}
+
+/* ✅ 私訊詢價：做高級色系（只影響 CTA 區塊內的 .btn-main） */
+.car-ctaBar .car-ctaBar__primary .btn-main{
+  background: linear-gradient(180deg, #253b7a 0%, #142447 100%);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 18px 40px rgba(34,58,102,.25);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 微光澤 */
+.car-ctaBar .car-ctaBar__primary .btn-main::after{
+  content:"";
+  position:absolute;
+  inset:-2px -30%;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.18) 50%, rgba(255,255,255,0) 100%);
+  transform: translateX(-60%) skewX(-12deg);
+  transition: transform .5s ease;
+  pointer-events:none;
+}
+
+.car-ctaBar .car-ctaBar__primary .btn-main:hover{
+  background: linear-gradient(180deg, #e12454 0%, #b0153c 100%);
+  border-color: transparent;
+  color:#fff;
+}
+
+.car-ctaBar .car-ctaBar__primary .btn-main:hover::after{
+  transform: translateX(60%) skewX(-12deg);
+}
+
+/* 次 CTA：預約賞車（保留你的框線語言，但更乾淨） */
+.car-ctaBar .car-ctaBar__primary .btn-solid-border{
+  background: rgba(255,255,255,.70);
+  border-color: rgba(34,58,102,.28);
+  color: #223a66;
+}
+
+.car-ctaBar .car-ctaBar__primary .btn-solid-border:hover{
+  background: rgba(34,58,102,.08);
+  border-color: rgba(34,58,102,.35);
+  color:#223a66;
+}
+
+/* ✅ 下方獨立導覽區：回到車輛總覽 */
+.car-ctaBar__nav{
+  grid-area: nav;
+
+  margin-top: 6px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0,0,0,.08);
+
+  display: flex;
+  justify-content: center; /* 桌機置中更穩 */
+}
+
+.car-ctaBar__nav .btn{
+  border-radius: 999px;
+  padding: .85rem 1.6rem;
+  background: rgba(255,255,255,.78);
+  border-color: rgba(34,58,102,.20);
+  color: #223a66;
+  white-space: nowrap;
+}
+
+/* =========================
+   Mobile / Tablet
+   ========================= */
+@media (max-width: 991.98px){
+
+  .car-ctaBar{
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    grid-template-columns: minmax(0, 1fr) minmax(180px, 40%);
+    grid-template-areas:
+      "text primary"
+      "nav  nav";
+
+    padding: 16px 14px;
+    gap: 12px 12px;
+  }
+
+  /* 文字保留空間 */
+  .car-ctaBar__text{ min-width: 0; }
+
+  /* ✅ 按鈕靠右，但不可以壓到文字太慘：允許換行 */
+  .car-ctaBar__primary{
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  /* 這一層先不要縮太小，保持跟桌機接近 */
+  .car-ctaBar__primary .btn{
+    padding: .75rem 1.25rem;
+    font-size: 13px;
+    border-radius: 999px;
+  }
+}
+
+/* ✅ 再小一點（真的太小）才縮按鈕、必要時變兩行 */
+@media (max-width: 430px){
+
+  .car-ctaBar{
+    grid-template-columns: 1fr; /* 這時才允許變成上下，但仍維持「同一個卡片」 */
+    grid-template-areas:
+      "text"
+      "primary"
+      "nav";
+  }
+
+  .car-ctaBar__primary{
+    justify-content: flex-start; /* 小螢幕按鈕靠左，視覺更穩 */
+  }
+
+  .car-ctaBar__primary .btn{
+    padding: .65rem 1.05rem;
+    font-size: 12px;
+  }
+
+  .car-ctaBar__nav{
+    justify-content: flex-start;
+  }
+}
+
+
+
+
+
 
 /* Side card (sticky on desktop) */
 .car-side{ margin-top: 0; }
@@ -4039,3 +4272,46 @@ html {
   color: #223a66;
   font-family: "Exo", sans-serif;
 }
+
+
+
+
+
+/* ===== 返回車輛列表按鈕 ===== */
+.car-backBtn{
+  grid-area: back;
+  justify-self: start;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  margin-bottom: 10px;
+
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.25);
+
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+
+  transition: all .2s ease;
+}
+
+.car-backBtn i{
+  font-size: 14px;
+}
+
+.car-backBtn:hover{
+  background: rgba(225,36,84,.25);
+  border-color: rgba(225,36,84,.6);
+  color: #fff;
+  transform: translateX(-2px);
+}
+
+
+
+

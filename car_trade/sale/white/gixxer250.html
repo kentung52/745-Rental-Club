@@ -178,7 +178,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 						<span class="car-pill"><i class="icofont-location-pin mr-1"></i>車輛所在地: 桃園</span>
 						<!-- <span class="car-pill"><i class="icofont-ui-calendar mr-1"></i>2021 年式</span>
 						<span class="car-pill"><i class="icofont-road mr-1"></i>9,800 km</span>
-						<span class="car-pill car-pill--primary"><i class="icofont-price mr-1"></i>NT$ 52,000</span> -->
+						<span class="car-pill car-pill--primary"><i class="icofont-price mr-1"></i>NTD$ 52,000</span> -->
 					</div>
 				</div>
 
@@ -197,7 +197,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 				</div>
 				<div class="car-quickbar__item">
 					<div class="car-quickbar__label">售價</div>
-					<div class="car-quickbar__value car-quickbar__value--price">NT$ 52,000</div>
+					<div class="car-quickbar__value car-quickbar__value--price">NTD$ 52,000</div>
 				</div>
 				<div class="car-quickbar__item">
 					<div class="car-quickbar__label">牌照 / 車種</div>
@@ -452,7 +452,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 						<aside class="car-side">
 							<div class="car-sideCard">
 								<div class="car-sideCard__top">
-									<div class="car-sideCard__price">NT$ 52,000</div>
+									<div class="car-sideCard__price">NTD$ 52,000</div>
 									<div class="car-sideCard__tag">在售</div>
 								</div>
 
@@ -485,8 +485,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
 								<div class="car-sideCard__actions">
 									<a class="btn btn-main btn-round-full btn-icon w-100"
-										fb-href href="#" target="_blank" rel="noopener">
-										立即詢價 <i class="icofont-facebook ml-3"></i>
+										line-href href="#" target="_blank" rel="noopener">
+										立即詢價 <i class="icofont-line ml-3"></i>
 									</a>
 									<a class="btn btn-solid-border btn-round-full btn-icon w-100" href="#refurb">
 										查看車輛整備紀錄 <i class="icofont-simple-right ml-3"></i>
@@ -507,14 +507,25 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 							<div class="car-ctaBar__title">想看更多整新細節或安排看車？</div>
 							<div class="car-ctaBar__desc">可私訊詢價，或填表預約賞車與試乘（依車況）。</div>
 						</div>
+
 						<div class="car-ctaBar__actions">
-							<a class="btn btn-main btn-round-full btn-icon" fb-href href="#"
-								target="_blank" rel="noopener">
-								私訊詢價 <i class="icofont-facebook ml-3"></i>
+							<!-- 主要 CTA：詢價/預約 -->
+							<div class="car-ctaBar__primary">
+							<a class="btn btn-main btn-round-full btn-icon" line-href href="#" target="_blank" rel="noopener">
+								私訊詢價 & 預約賞車 <i class="icofont-line ml-3"></i>
 							</a>
-							<a class="btn btn-solid-border btn-round-full btn-icon" href="sell_table.html">
+
+							<!-- <a class="btn btn-solid-border btn-round-full btn-icon" href="sell_table.html">
 								預約賞車 <i class="icofont-simple-right ml-3"></i>
+							</a> -->
+							</div>
+
+							<!-- 次要導覽：回到總覽（獨立區塊） -->
+							<div class="car-ctaBar__nav">
+							<a class="btn btn-transparent btn-round-full btn-icon" href="../../../car_trade.html">
+								<i class="icofont-simple-left mr-2"></i> 回到車輛總覽
 							</a>
+							</div>
 						</div>
 					</div>
 
@@ -613,12 +624,16 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
     // Step / 進度更新
     const humanIdx = idx + 1;
+
     if (elIdx) elIdx.textContent = String(humanIdx);
     if (elStepLabel) elStepLabel.textContent = `Step ${humanIdx} / ${thumbs.length}`;
     if (elBar) elBar.style.width = `${Math.round((humanIdx / thumbs.length) * 100)}%`;
 
     // 自動把目前縮圖滑到中間
-    t.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    // ✅ 只有「使用者操作」才捲縮圖
+	if (shouldScroll) {
+		t.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+	}
   }
 
   // 綁定縮圖
@@ -629,7 +644,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
   if (btnNext) btnNext.addEventListener('click', () => setActive(idx + 1));
 
   // 初次渲染（確保 Step/Bar 正確）
-  setActive(idx);
+  setActive(idx, false);
 })();
 </script>
 
@@ -640,7 +655,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 	<footer class="footer section gray-bg">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-4 mr-auto col-sm-6">
+				<div class=" col-xl-4 col-lg-3 col-sm-6">
 					<div class="widget mb-5 mb-lg-0">
 						<div class="logo mb-4">
 							<a href="../../../index.html"><img src="../../../images/745RentalLogo.png" alt=""
@@ -661,9 +676,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 					</div>
 				</div>
 
-				<div class="col-lg-2 col-md-6 col-sm-6">
+				<div class="col-xl-2 col-lg-3 col-md-6 col-sm-6">
 					<div class="widget mb-5 mb-lg-0">
-						<h4 class="text-capitalize mb-3">再來看看👀</h4>
+						<h4 class="text-capitalize mb-3 footer-title-nowrap">再來看看👀</h4>
 						<div class="divider mb-4"></div>
 
 						<ul class="list-unstyled footer-menu lh-35">
@@ -708,10 +723,10 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 					</div>
 				</div>
 
-				<div class="col-lg-2 col-md-6 col-sm-6">
+				<div class="col-xl-2 col-lg-3 col-md-6 col-sm-6">
 					<div class="widget mb-5 mb-lg-0">
 						<a href="../../../evaluate.html">
-							<h4 class="text-capitalize mb-3">撰寫回饋評論✏️</h4>
+							<h4 class="text-capitalize mb-3 footer-title-nowrap">撰寫回饋評論✏️</h4>
 						</a>
 						<div class="divider mb-4"></div>
 
