@@ -1026,7 +1026,7 @@ input[type="tel"]:focus,
 
 
 .feature-item .feature-icon b {
-  font-size: 22px;
+  font-size: 30px;
   background: linear-gradient(90deg, rgba(79,255,212,1), rgba(103,183,255,1), rgba(181,107,255,1));
   -webkit-background-clip: text;
   background-clip: text;
