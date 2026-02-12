@@ -166,6 +166,56 @@
 	</div>
 
 
+	<!-- ===== New Car CTA (Premium) ===== -->
+	<div class="newcar-cta">
+		<div class="newcar-cta__inner">
+
+			<div class="newcar-cta__left">
+				<div class="newcar-cta__kicker">
+					<span class="newcar-cta__dot"></span>
+					新車訂購 / 車款諮詢
+				</div>
+
+				<h3 class="newcar-cta__title">想購買全新車款？ 騎士窩替你把關<br>我們可以提供最新的報價與交車時間</h3>
+				<p class="newcar-cta__desc">
+					 不只是代訂新車。我們的專業服務人員會先深入了解你偏好風格與預算，
+  					 從專業角度提供購車建議與車款推薦，並協助你評估配備、顏色、分期與交期與交車全面檢查，全程把關讓你買
+					 得更放心。若有興趣請直接用 LINE 或 Facebook 私訊，我們會盡快為您服務。
+				</p>
+
+				<div class="newcar-cta__chips">
+					<span class="newcar-chip"><i class="icofont-check-circled mr-1"></i>車款/規格諮詢</span>
+					<span class="newcar-chip"><i class="icofont-ui-calendar mr-1"></i>配備/版本建議</span>
+					<span class="newcar-chip"><i class="icofont-ui-clock mr-1"></i>交期追蹤</span>
+					<span class="newcar-chip"><i class="icofont-credit-card mr-1"></i>分期/保險評估</span>
+				</div>
+			</div>
+
+			<div class="newcar-cta__right">
+				<a line-href href="#" class="newcar-btn newcar-btn--line" target="_blank" rel="noopener">
+					<span class="newcar-btn__icon"><i class="icofont-line"></i></span>
+					<span class="newcar-btn__text">
+					<b>LINE 立即洽詢</b>
+					<small>快速回覆 / 報價交期</small>
+					</span>
+					<i class="icofont-simple-right newcar-btn__arrow"></i>
+				</a>
+
+				<a fb-href href="#" class="newcar-btn newcar-btn--fb" target="_blank" rel="noopener">
+					<span class="newcar-btn__icon"><i class="icofont-facebook"></i></span>
+					<span class="newcar-btn__text">
+					<b>Facebook 私訊</b>
+					<small>新車訂購 / 車款推薦</small>
+					</span>
+					<i class="icofont-simple-right newcar-btn__arrow"></i>
+				</a>
+			</div>
+
+		</div>
+	</div>
+
+
+
     <!-- Tabs：避免長滑 -->
     <div class="car-tabs" role="tablist" aria-label="車輛分類">
       <button class="car-tab is-active" type="button" data-tab="available" role="tab" aria-selected="true">
@@ -384,8 +434,10 @@
         <div class="row car-grid" id="grid-sold">
           
 		<!-- ===== 已售範例卡 ===== -->	
-          <div class="col-md-6 col-lg-4 mb-4 car-item"
+        <div class="col-md-6 col-lg-4 mb-4 car-item"
                data-status="sold"
+			   data-tier="red"
+			   data-type="street"
                data-brand="triumph"
                data-year="2022"
                data-mileage="35000"
@@ -424,7 +476,7 @@
                 </div>
               </div>
             </article>
-          </div>
+        </div>
 
           <div class="col-12 car-empty-wrap" data-empty="sold" hidden>
             <div class="car-empty car-empty--soft">
