@@ -1027,7 +1027,7 @@ input[type="tel"]:focus,
 
 .feature-item .feature-icon b {
   font-size: 30px;
-  background: linear-gradient(90deg, rgba(79,255,212,1), rgba(103,183,255,1), rgba(181,107,255,1));
+  background: linear-gradient(90deg, rgb(61, 198, 164), rgba(103,183,255,1), rgba(181,107,255,1));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent; /* ✅ 讓文字顯示背景漸層 */
