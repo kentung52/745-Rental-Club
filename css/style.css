@@ -760,7 +760,7 @@ input[type="tel"]:focus,
   .top-bar-info{ gap: 8px 10px; }
   .top-bar-info li a{
     padding: 8px 10px;
-    font-size: 13px;
+    font-size: 16px;
   }
   .top-bar-info li a i{ font-size: 18px; }
 }
