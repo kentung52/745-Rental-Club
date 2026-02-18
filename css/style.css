@@ -3483,6 +3483,88 @@ input[type="tel"]:focus,
   color: #fff;
 }
 
+
+/* 里程保證（金色精品標籤） */
+/* 深金屬感 里程保證 */
+.car-mileage-badge{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 12px;
+  padding: 6px 16px;
+  border-radius: 999px;
+
+  font-family: "Exo", sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 1px;
+
+  /* 金屬層次 */
+  background:
+    linear-gradient(180deg,
+      #fff4cf 0%,
+      #f4cc73 15%,
+      #e0b24a 40%,
+      #c79127 65%,
+      #e7c46c 100%
+    );
+
+  color: #2b1c00;
+
+  /* ❌ 移除白色邊框 */
+  border: none;
+
+  box-shadow:
+    0 6px 14px rgba(0,0,0,.30),
+    inset 0 2px 4px rgba(255,255,255,.45),
+    inset 0 -3px 6px rgba(0,0,0,.25);
+
+  overflow: hidden; /* 防止反光溢出 */
+  white-space: nowrap;
+}
+
+/* 左側加一個小金點，更像「認證」 */
+.car-mileage-badge::before{
+  content:"";
+  width:8px;
+  height:8px;
+  border-radius:999px;
+  background:
+    radial-gradient(circle at 30% 30%,
+      #ffffff 0%,
+      #ffe8a3 30%,
+      #e3b84a 70%,
+      #b77a16 100%
+    );
+  box-shadow:
+    0 0 6px rgba(255,215,120,.5),
+    inset 0 1px 2px rgba(255,255,255,.8);
+}
+
+
+.car-mileage-badge::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:-40%;
+  width:60%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.35) 45%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-15deg);
+  pointer-events:none;
+}
+
+
+
+
+
+
 /* Main layout */
 .car-detail {
   background: #f4f9fc;
@@ -3974,6 +4056,82 @@ input[type="tel"]:focus,
   color: #222;
   font-size: 16px;
 }
+
+
+/* =========================
+   Side card - 里程格（不撐高、不擠壓）
+========================= */
+
+/* 里程那格：badge 絕對定位覆蓋，不用 padding-top 撐高度 */
+.car-sideSpec--mileage{
+  position: relative;
+}
+
+/* 標題那行：預留右側給 badge（只影響這一行，不會讓整格變高） */
+.car-sideSpec--mileage .car-sideSpec__k{
+  padding-right: 110px;     /* 依 badge 寬度微調 */
+  white-space: nowrap;      /* ✅ 避免「里 程」被擠到直排 */
+}
+
+/* 數字行：不往下推(不撐高)，但避免 km 被拆行 */
+.car-sideSpec--mileage .car-sideSpec__v{
+  margin-top: 4px;          /* 你原本就有的視覺間距即可 */
+}
+
+.car-sideSpec--mileage .mileage-value{
+  display: inline-block;
+  white-space: nowrap;      /* ✅ 35,000 km 不拆行 */
+}
+
+/* badge：固定右上角（所有尺寸都一致定位） */
+.car-sideSpec--mileage .car-mileage-badge{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin: 0;                /* 取消原本 margin-left 影響 */
+  transform: none;
+  padding: 5px 12px;        /* ✅ 讓桌機/手機都不會太大擠字 */
+  font-size: 11px;
+  letter-spacing: .8px;
+}
+
+/* 小手機：再縮一點，避免右上角太擠 */
+@media (max-width: 575.98px){
+  .car-sideSpec--mileage .car-sideSpec__k{
+    padding-right: 96px;
+  }
+  .car-sideSpec--mileage .car-mileage-badge{
+    top: 8px;
+    right: 8px;
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+  .car-sideSpec--mileage .mileage-value{
+    font-size: 15px;        /* 可選：更穩，不容易擠到換行 */
+  }
+}
+
+/* ===== 桌機版微調（更精緻比例） ===== */
+@media (min-width: 992px){
+
+  .car-sideSpec--mileage .car-mileage-badge{
+    padding: 4px 10px;      /* 原本 5px 12px → 微縮 */
+    font-size: 10.5px;      /* 字體小一點更高級 */
+    letter-spacing: .6px;
+    top: 8px;               /* 稍微往上貼齊 */
+    right: 10px;
+  }
+
+  /* 同步調整標題預留空間 */
+  .car-sideSpec--mileage .car-sideSpec__k{
+    padding-right: 95px;    /* 原本 110px → 縮小 */
+  }
+
+}
+
+
+
+
 
 .car-sideCard__actions {
   padding: 10px 16px 14px;
