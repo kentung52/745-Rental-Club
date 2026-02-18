@@ -262,24 +262,36 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 								</span>
 							</a>
 
+							<!-- ✅ 新增：Lightbox 組圖連結（可隱藏） -->
+							<div class="lb-hidden" id="carLbLinks" style="display:none;">
+							<a href="/images/buy_and_sell/sale/gixxer250_20260213/1.jpg" data-lightbox="car-group" data-title="車輛照片 1"></a>
+							<a href="/images/buy_and_sell/sale/gixxer250_20260213/2.jpg" data-lightbox="car-group" data-title="車輛照片 2"></a>
+							<a href="/images/buy_and_sell/sale/gixxer250_20260213/3.jpg" data-lightbox="car-group" data-title="車輛照片 3"></a>
+							<a href="/images/buy_and_sell/sale/gixxer250_20260213/4.jpg" data-lightbox="car-group" data-title="車輛照片 4"></a>
+							</div>
+
 							<div class="car-gallery__thumbs" id="galleryThumbs">
 								<!-- 只要照這個格式新增縮圖即可 -->
 								<button class="car-thumb is-active" type="button"
+								    data-index="0"
 									data-full="/images/buy_and_sell/sale/gixxer250_20260213/1.jpg">
 									<img src="/images/buy_and_sell/sale/gixxer250_20260213/1.jpg" alt="thumb1">
 								</button>
 
 								<button class="car-thumb" type="button"
+								    data-index="1"
 									data-full="/images/buy_and_sell/sale/gixxer250_20260213/2.jpg">
 									<img src="/images/buy_and_sell/sale/gixxer250_20260213/2.jpg" alt="thumb2">
 								</button>
 
 								<button class="car-thumb" type="button"
+								    data-index="2"
 									data-full="/images/buy_and_sell/sale/gixxer250_20260213/3.jpg">
 									<img src="/images/buy_and_sell/sale/gixxer250_20260213/3.jpg" alt="thumb3">
 								</button>
 
 								<button class="car-thumb" type="button"
+								    data-index="3"
 									data-full="/images/buy_and_sell/sale/gixxer250_20260213/4.jpg">
 									<img src="/images/buy_and_sell/sale/gixxer250_20260213/4.jpg" alt="thumb4">
 								</button>
@@ -342,6 +354,14 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 						<img id="rfMainImg" src="/images/buy_and_sell/sale/gixxer250_20260213/5.jpg" alt="維修整新照片">
 						</a>
 
+						<div class="lb-hidden" id="rfLbLinks" style="display:none;">
+							<a href="/images/buy_and_sell/sale/gixxer250_20260213/5.jpg" data-lightbox="refurb-group" data-title="整備 1"></a>
+							<a href="/images/buy_and_sell/sale/gixxer250_20260213/6.jpg" data-lightbox="refurb-group" data-title="整備 2"></a>
+							<a href="/images/buy_and_sell/sale/gixxer250_20260213/7.jpg" data-lightbox="refurb-group" data-title="整備 3"></a>
+							<a href="/images/buy_and_sell/sale/gixxer250_20260213/8.jpg" data-lightbox="refurb-group" data-title="整備 4"></a>
+							<a href="/images/buy_and_sell/sale/gixxer250_20260213/9.jpg" data-lightbox="refurb-group" data-title="整備 5"></a>
+						</div>
+
 						<!-- =============================
 						縮圖（HTML 直接管理：要加減步驟就加減 button）
 						- 只需要 data-full（大圖）
@@ -350,6 +370,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 						<div class="rf-thumbs" id="rfThumbs">
 
 						<button class="rf-thumb is-active" type="button"
+								data-index="0"
 								data-full="/images/buy_and_sell/sale/gixxer250_20260213/5.jpg"
 								data-alt="Step1 維修照片">
 							<img src="/images/buy_and_sell/sale/gixxer250_20260213/5.jpg" alt="step1">
@@ -357,6 +378,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 						</button>
 
 						<button class="rf-thumb" type="button"
+								data-index="1"
 								data-full="/images/buy_and_sell/sale/gixxer250_20260213/6.jpg"
 								data-alt="Step2 維修照片">
 							<img src="/images/buy_and_sell/sale/gixxer250_20260213/6.jpg" alt="step2">
@@ -364,6 +386,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 						</button>
 
 						<button class="rf-thumb" type="button"
+								data-index="2"
 								data-full="/images/buy_and_sell/sale/gixxer250_20260213/7.jpg"
 								data-alt="Step3 維修照片">
 							<img src="/images/buy_and_sell/sale/gixxer250_20260213/7.jpg" alt="step3">
@@ -371,13 +394,15 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 						</button>
 
 						<button class="rf-thumb" type="button"
+								data-index="3"
 								data-full="/images/buy_and_sell/sale/gixxer250_20260213/8.jpg"
 								data-alt="Step3 維修照片">
 							<img src="/images/buy_and_sell/sale/gixxer250_20260213/8.jpg" alt="step3">
 							<span class="rf-thumb__tag">4</span>
 						</button>
 
-						<button class="rf-thumb" type="button"
+						<button class="rf-thumb" type="button".
+								data-index="4"
 								data-full="/images/buy_and_sell/sale/gixxer250_20260213/9.jpg"
 								data-alt="Step3 維修照片">
 							<img src="/images/buy_and_sell/sale/gixxer250_20260213/9.jpg" alt="step3">
