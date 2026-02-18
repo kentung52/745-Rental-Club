@@ -3493,7 +3493,7 @@ input[type="tel"]:focus,
   gap: 8px;
   margin-left: 12px;
   padding: 6px 16px;
-  border-radius: 999px;
+  border-radius: 10px;
 
   font-family: "Exo", sans-serif;
   font-weight: 900;
