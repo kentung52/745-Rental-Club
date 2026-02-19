@@ -484,26 +484,50 @@ document.addEventListener('DOMContentLoaded', buildNewsToc);
     if (active !== 'wanted') {
       const shown = items.filter(x => !x.hidden);
 
+      const toInt = (v, fallback = 0) => {
+        const n = parseInt(v, 10);
+        return Number.isFinite(n) ? n : fallback;
+      };
+
+      // ✅ 容錯：支援 YYYY-M-D / YYYY-MM-DD
+      const toDateKey = (s) => {
+        if (!s) return 0;
+        const m = String(s).trim().match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+        if (!m) return 0;
+        const y = toInt(m[1], 0);
+        const mo = toInt(m[2], 1);
+        const d = toInt(m[3], 1);
+        // 做成 YYYYMMDD 方便比較
+        return y * 10000 + mo * 100 + d;
+      };
+
       shown.sort((a, b) => {
-        const aListed = parseDateKey(a.getAttribute('data-listed'));
-        const bListed = parseDateKey(b.getAttribute('data-listed'));
+        const aListed = toDateKey(a.getAttribute('data-listed'));
+        const bListed = toDateKey(b.getAttribute('data-listed'));
 
-        const aPrice = parseInt(a.getAttribute('data-price') || '0', 10);
-        const bPrice = parseInt(b.getAttribute('data-price') || '0', 10);
+        const aPrice = toInt(a.getAttribute('data-price'), 0);
+        const bPrice = toInt(b.getAttribute('data-price'), 0);
 
-        const aMileage = parseInt(a.getAttribute('data-mileage') || '0', 10);
-        const bMileage = parseInt(b.getAttribute('data-mileage') || '0', 10);
+        const aMileage = toInt(a.getAttribute('data-mileage'), 0);
+        const bMileage = toInt(b.getAttribute('data-mileage'), 0);
+
+        // ✅ 退回用 data-year（特別適合 sold 沒 listed）
+        const aYear = toInt(a.getAttribute('data-year'), 0);
+        const bYear = toInt(b.getAttribute('data-year'), 0);
 
         if (sortRule === 'price_asc') return aPrice - bPrice;
         if (sortRule === 'price_desc') return bPrice - aPrice;
         if (sortRule === 'mileage_asc') return aMileage - bMileage;
 
-        // 預設：最新上架（listed_desc）
-        return bListed - aListed;
+        // listed_desc：先比 listed，沒有就比 year，最後比 mileage
+        if (bListed !== aListed) return bListed - aListed;
+        if (bYear !== aYear) return bYear - aYear;
+        return aMileage - bMileage;
       });
 
       shown.forEach(el => grid.appendChild(el));
     }
+
 
     // Empty state
     const empty = grid.querySelector('[data-empty="' + active + '"]');
