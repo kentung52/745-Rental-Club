@@ -787,7 +787,7 @@ input[type="tel"]:focus,
   content: "";
   position: absolute;
   inset: 0;
-  background: #fff url("/images/index/holiday.jpg") no-repeat center center;
+  background: #fff url("/images/index/228_holiday.jpg") no-repeat center center;
   background-size: contain;
   opacity: 0;
   animation: bannerDmFade 12s infinite;
