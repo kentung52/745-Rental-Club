@@ -2679,7 +2679,7 @@ input[type="tel"]:focus,
 
 .car-hero__desc {
   margin: 0 0 16px;
-  font-size: 22px;
+  font-size: 18px;
   color: #5d758a;
   line-height: 1.8;
 }
@@ -2892,7 +2892,7 @@ input[type="tel"]:focus,
 }
 
 .newcar-cta__chips span{
-  font-size: 22px;
+  font-size: 18px;
 }
 
 
@@ -3296,6 +3296,10 @@ input[type="tel"]:focus,
   box-shadow: 0 16px 40px rgba(0, 0, 0, .06);
 }
 
+.car-empty p{
+  font-size: 18px;
+}
+
 .car-empty--soft {
   border-style: solid;
   border-color: rgba(0, 0, 0, .06);
@@ -3303,7 +3307,7 @@ input[type="tel"]:focus,
 }
 
 .car-empty__icon i {
-  font-size: 54px;
+  font-size: 60px;
   color: rgba(34, 58, 102, .75);
 }
 
