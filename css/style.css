@@ -2690,6 +2690,10 @@ input[type="tel"]:focus,
   gap: 10px;
 }
 
+.car-hero__chips span{
+  font-size: 18px;
+}
+
 .car-chip {
   display: inline-flex;
   align-items: center;
