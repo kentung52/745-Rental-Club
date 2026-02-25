@@ -4779,12 +4779,12 @@ input[type="tel"]:focus,
   .navigation.navbar {
     position: sticky;
     top: 0;
-    z-index: 30001;
+    z-index: 1031;
   }
 
   .navigation.navbar .navbar-toggler {
     position: relative;
-    z-index: 30002;
+    z-index: 1032;
   }
 
   .navigation {
