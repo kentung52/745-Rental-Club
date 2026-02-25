@@ -2653,7 +2653,7 @@ input[type="tel"]:focus,
   font-weight: 800;
   letter-spacing: .6px;
   color: rgba(34, 58, 102, .85);
-  font-size: 14px;
+  font-size: 18px;
   text-transform: uppercase;
   padding: 8px 12px;
   border-radius: 999px;
