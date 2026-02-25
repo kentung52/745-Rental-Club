@@ -2710,6 +2710,10 @@ input[type="tel"]:focus,
   min-width: 220px;
 }
 
+.car-hero__right a{
+  font-size: 24px;
+}
+
 .car-hero__cta {
   padding: .85rem 2.2rem;
   box-shadow: 0 18px 40px rgba(34, 58, 102, .22);
