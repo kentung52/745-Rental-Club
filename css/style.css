@@ -5199,7 +5199,7 @@ input[type="tel"]:focus,
 /* grid */
 .campaign-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
 }
 
@@ -5367,7 +5367,7 @@ input[type="tel"]:focus,
   }
 
   .campaign-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 
   .campaign-cta__box {
