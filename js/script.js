@@ -719,3 +719,90 @@ document.addEventListener('DOMContentLoaded', buildNewsToc);
   // 初次渲染（確保 Step/Bar 正確）
   setActive(idx, false);
 })();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // reveal
+  const revealEls = document.querySelectorAll('.dbx-reveal');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => observer.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  }
+
+  // gallery slider
+  const slides = document.querySelectorAll('.dbx-gallery__slide');
+  const dots = document.querySelectorAll('#dbxGalleryDots button');
+  const prevBtn = document.getElementById('dbxGalleryPrev');
+  const nextBtn = document.getElementById('dbxGalleryNext');
+  let currentSlide = 0;
+  let sliderTimer = null;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('is-active', i === index);
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('is-active', i === index);
+    });
+
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    if (!slides.length) return;
+    showSlide((currentSlide + 1) % slides.length);
+  }
+
+  function prevSlide() {
+    if (!slides.length) return;
+    showSlide((currentSlide - 1 + slides.length) % slides.length);
+  }
+
+  function startSlider() {
+    if (slides.length > 1) {
+      sliderTimer = setInterval(nextSlide, 4800);
+    }
+  }
+
+  function resetSlider() {
+    if (sliderTimer) clearInterval(sliderTimer);
+    startSlider();
+  }
+
+  if (slides.length) {
+    showSlide(0);
+
+    prevBtn?.addEventListener('click', () => {
+      prevSlide();
+      resetSlider();
+    });
+
+    nextBtn?.addEventListener('click', () => {
+      nextSlide();
+      resetSlider();
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        showSlide(index);
+        resetSlider();
+      });
+    });
+
+    startSlider();
+  }
+});
+
+
