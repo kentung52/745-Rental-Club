@@ -5956,7 +5956,7 @@ input[type="tel"]:focus,
 }
 
 .promo-card__arrow {
-  width: 40px;
+  width: 100px;
   height: 40px;
   border-radius: 999px;
   display: inline-flex;
@@ -6081,7 +6081,7 @@ input[type="tel"]:focus,
   }
 
   .promo-card__arrow {
-    width: 36px;
+    width: 100px;
     height: 36px;
   }
 }
