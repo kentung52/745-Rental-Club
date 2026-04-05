@@ -1103,16 +1103,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const insuranceLines = [];
 
-    if (els.insuranceBusiness.checked && car.insuranceAvailable.business) {
+    const hasBusiness =
+      els.insuranceBusiness.checked && car.insuranceAvailable.business;
+
+    const hasRoadside =
+      els.insuranceRoadside.checked && car.insuranceAvailable.roadside;
+
+    if (hasBusiness) {
       insuranceLines.push(
         `免營業損失保險 ${formatPrice(car.insurance.business)} × ${billingDays} 天`
       );
     }
 
-    if (els.insuranceRoadside.checked && car.insuranceAvailable.roadside) {
+    if (hasRoadside) {
       insuranceLines.push(
         `道路救援安心險 ${formatPrice(car.insurance.roadside)} × ${billingDays} 天`
       );
+    }
+
+    if (hasBusiness && hasRoadside) {
+      insuranceLines.push(`雙保險優惠折抵 -${formatPrice(100)}`);
     }
 
     els.featured.innerHTML = `
@@ -1120,7 +1130,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <h4>${car.name}</h4>
       <p>
         ${categoryText[els.category.value]} · 每日租金 ${formatPrice(car.pricePerDay)} · 出租 ${billingDays} 天<br>
-        ${insuranceLines.length ? insuranceLines.join(" / ") : "未加購保險"}<br>
+        ${insuranceLines.length ? insuranceLines.join(" <br> ") : "未加購保險"}<br>
         預估總額 ${formatPrice(total)}
       </p>
       <a href="${car.link}">查看這台車</a>
@@ -1139,13 +1149,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let insuranceSum = 0;
 
-    if (els.insuranceBusiness.checked && car.insuranceAvailable.business) {
+    const hasBusiness =
+      els.insuranceBusiness.checked && car.insuranceAvailable.business;
+
+    const hasRoadside =
+      els.insuranceRoadside.checked && car.insuranceAvailable.roadside;
+
+    if (hasBusiness) {
       insuranceSum += car.insurance.business * billingDays;
     }
 
-    if (els.insuranceRoadside.checked && car.insuranceAvailable.roadside) {
+    if (hasRoadside) {
       insuranceSum += car.insurance.roadside * billingDays;
     }
+
+    /* 兩種保險同時加購，保險總額折抵 100 元 */
+    let insuranceDiscount = 0;
+    if (hasBusiness && hasRoadside) {
+      insuranceDiscount = 100;
+    }
+
+    insuranceSum = Math.max(0, insuranceSum - insuranceDiscount);
 
     const total = rentalSubtotal + insuranceSum;
 
