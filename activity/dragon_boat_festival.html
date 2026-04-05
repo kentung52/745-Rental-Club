@@ -249,8 +249,8 @@
       <div class="dbx-offer-grid">
         <article class="dbx-offer-card dbx-offer-card--primary">
           <span class="dbx-offer-card__label">計費方式</span>
-          <h3>租二送二</h3>
-          <p>選租店內任一車款並參與優惠方案僅需承租該車輛兩日的24小時方案即可獲贈額外兩天騎程時間。</p>
+          <h3>租二天送二天</h3>
+          <p>選租店內任一二輪車款並參與優惠方案僅需支付24小時方案租金x2，即可享有租車時長共四天與里程上限700公里可使用。</p>
         </article>
 
         <article class="dbx-offer-card">
@@ -294,6 +294,122 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="dbx-section dbx-reveal">
+        <div class="dbx-section__head">
+            <span class="dbx-chip">BUDGET ESTIMATOR</span>
+            <h2>快速估算你的租車總額</h2>
+            <p>先選車種與車型，再設定出租天數與保險，立即查看預估總額。</p>
+        </div>
+
+        <div class="dbx-budget">
+            <div class="dbx-budget__panel dbx-budget__panel--controls">
+            <div class="dbx-budget__panel-head">
+                <span class="dbx-budget__eyebrow">Rental Planner</span>
+                <h3>租車條件設定</h3>
+            </div>
+
+            <div class="dbx-budget__group">
+                <label class="dbx-budget__label" for="dbxBudgetCategory">選擇車種</label>
+                <select id="dbxBudgetCategory" class="dbx-budget__select">
+                <option value="white">白牌</option>
+                <option value="yellow">黃牌</option>
+                <option value="red">紅牌</option>
+                <option value="sports">跑車</option>
+                </select>
+            </div>
+
+            <div class="dbx-budget__group">
+                <label class="dbx-budget__label" for="dbxBudgetModel">選擇車型</label>
+                <select id="dbxBudgetModel" class="dbx-budget__select"></select>
+            </div>
+
+            <div class="dbx-budget__group">
+                <label class="dbx-budget__label" for="dbxCampaignBillingDays">活動計費方式</label>
+                <select id="dbxCampaignBillingDays" class="dbx-budget__select">
+                    <option value="2">租二送二（固定計費 2 天）</option>
+                    <option value="3">租三送二（固定計費 3 天）</option>
+                </select>
+                <p class="dbx-budget__hint">
+                    本活動依方案固定計費，非依實際租借總天數逐日累加。
+                </p>
+            </div>
+
+            <div class="dbx-budget__group">
+                <label class="dbx-budget__label">加購保險</label>
+                <div class="dbx-budget__insuranceGrid">
+                <label class="dbx-budget__choice dbx-budget__choice--block">
+                    <input type="checkbox" id="dbxInsuranceBusiness">
+                    <span>
+                    <b>免營業損失保險</b>
+                    <small>依車型計價，可與其他保險同時加購</small>
+                    </span>
+                </label>
+
+                <label class="dbx-budget__choice dbx-budget__choice--block">
+                    <input type="checkbox" id="dbxInsuranceRoadside">
+                    <span>
+                    <b>道路救援安心險</b>
+                    <small>依車型計價，可與其他保險同時加購</small>
+                    </span>
+                </label>
+                </div>
+
+                <p class="dbx-budget__hint">
+                部分白牌車保費較低，系統會自動套用對應價格。
+                </p>
+            </div>
+            </div>
+
+            <div class="dbx-budget__panel dbx-budget__panel--result">
+            <div class="dbx-budget__panel-head">
+                <span class="dbx-budget__eyebrow">Estimated Total</span>
+                <h3>試算結果</h3>
+            </div>
+
+            <div class="dbx-budget__summary">
+                <div class="dbx-budget__summaryItem">
+                <span>目前選擇車型</span>
+                <strong id="dbxSelectedModel">-</strong>
+                </div>
+                <div class="dbx-budget__summaryItem">
+                <span>預估總額</span>
+                <strong id="dbxEstimatedTotal">NT$ 0</strong>
+                </div>
+            </div>
+
+            <div class="dbx-budget__breakdown">
+                <div class="dbx-budget__breakdownRow">
+                    <span>每日租金</span>
+                    <strong id="dbxDailyPrice">NT$ 0</strong>
+                </div>
+                <div class="dbx-budget__breakdownRow">
+                    <span>本次計費天數</span>
+                    <strong id="dbxDaysText">0 天</strong>
+                </div>
+                <div class="dbx-budget__breakdownRow">
+                    <span>租金小計（每日租金 × 計費天數）</span>
+                    <strong id="dbxRentalSubtotal">NT$ 0</strong>
+                </div>
+                <div class="dbx-budget__breakdownRow">
+                    <span>保險費用</span>
+                    <strong id="dbxInsuranceTotal">NT$ 0</strong>
+                </div>
+                <div class="dbx-budget__breakdownRow dbx-budget__breakdownRow--total">
+                    <span>總金額</span>
+                    <strong id="dbxGrandTotal">NT$ 0</strong>
+                </div>
+            </div>
+
+            <div class="dbx-budget__featured" id="dbxFeaturedCar">
+                <span class="dbx-budget__featuredLabel">車型資訊</span>
+                <h4>請先選擇車型</h4>
+                <p>系統會依你選擇的車種與車型，計算租金與保險總額。</p>
+                <a href="/introduce.html">查看所有車款</a>
+            </div>
+            </div>
+        </div>
     </section>
 
     <!-- 5. 車種照片幻燈片區 -->
