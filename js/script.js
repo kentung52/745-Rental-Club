@@ -1134,6 +1134,7 @@ document.addEventListener('DOMContentLoaded', () => {
         預估總額 ${formatPrice(total)}
       </p>
       <a href="${car.link}">查看這台車</a>
+      <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=885wivoh">預約此車輛</a>
     `;
   }
 
