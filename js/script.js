@@ -1101,11 +1101,18 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    const insuranceLines = [];
+
     if (els.insuranceBusiness.checked && car.insuranceAvailable.business) {
-      insuranceLines.push(`免營業損失保險 ${formatPrice(car.insurance.business)}`);
+      insuranceLines.push(
+        `免營業損失保險 ${formatPrice(car.insurance.business)} × ${billingDays} 天`
+      );
     }
+
     if (els.insuranceRoadside.checked && car.insuranceAvailable.roadside) {
-      insuranceLines.push(`道路救援安心險 ${formatPrice(car.insurance.roadside)}`);
+      insuranceLines.push(
+        `道路救援安心險 ${formatPrice(car.insurance.roadside)} × ${billingDays} 天`
+      );
     }
 
     els.featured.innerHTML = `
@@ -1131,8 +1138,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const rentalSubtotal = car.pricePerDay * billingDays;
 
     let insuranceSum = 0;
-    if (els.insuranceBusiness.checked) insuranceSum += car.insurance.business;
-    if (els.insuranceRoadside.checked) insuranceSum += car.insurance.roadside;
+
+    if (els.insuranceBusiness.checked && car.insuranceAvailable.business) {
+      insuranceSum += car.insurance.business * billingDays;
+    }
+
+    if (els.insuranceRoadside.checked && car.insuranceAvailable.roadside) {
+      insuranceSum += car.insurance.roadside * billingDays;
+    }
 
     const total = rentalSubtotal + insuranceSum;
 
