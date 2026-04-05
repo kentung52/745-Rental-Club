@@ -816,6 +816,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Honda CB150R",
         pricePerDay: 1000,
         insurance: { business: 300, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/white_motor/cb150r.html"
       },
       {
@@ -823,6 +824,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Honda CBR150R",
         pricePerDay: 1500,
         insurance: { business: 300, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/white_motor/cbr150r.html"
       },
       {
@@ -830,6 +832,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Honda MSX125",
         pricePerDay: 1000,
         insurance: { business: 300, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/white_motor/msx125.html"
       },
       {
@@ -837,6 +840,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Suzuki GSXR150 (小阿魯)",
         pricePerDay: 1000,
         insurance: { business: 300, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/white_motor/gsxr150.html"
       },
       {
@@ -844,6 +848,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Yamaha R15V4",
         pricePerDay: 1500,
         insurance: { business: 300, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/white_motor/r15v4.html"
       },
       {
@@ -851,6 +856,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Yamaha MT-15",
         pricePerDay: 1000,
         insurance: { business: 300, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/white_motor/mt15.html"
       },
       {
@@ -858,6 +864,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Honda CBR250RR",
         pricePerDay: 2300,
         insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/white_motor/cbr250rr.html"
       },
       {
@@ -865,6 +872,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Suzuki Gixxer250SF",
         pricePerDay: 1500,
         insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/white_motor/gixxer250sf.html"
       },
       {
@@ -872,6 +880,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Husqvarna 黑箭 250",
         pricePerDay: 1500,
         insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/white_motor/husqvarna250.html"
       }
     ],
@@ -881,6 +890,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Honda CB350",
         pricePerDay: 1800,
         insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/yellow_motor/cb350.html"
       },
       {
@@ -888,6 +898,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Honda CBR500R",
         pricePerDay: 2400,
         insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/yellow_motor/cbr500r.html"
       },
       {
@@ -895,6 +906,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Honda Rebel500S",
         pricePerDay: 2400,
         insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/yellow_motor/rebel500.html"
       },
       {
@@ -902,6 +914,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Triumph Speed400",
         pricePerDay: 2400,
         insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/yellow_motor/speed400.html"
       },
       {
@@ -909,6 +922,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "KTM Duke390 ADV",
         pricePerDay: 2400,
         insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/yellow_motor/duke390_adv.html"
       }
     ],
@@ -918,6 +932,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Honda CB650R E-Clutch",
         pricePerDay: 2900,
         insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/red_motor/cb650r.html"
       },
       {
@@ -925,6 +940,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Honda CBR650R",
         pricePerDay: 2900,
         insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/red_motor/cbr650r.html"
       },
       {
@@ -932,6 +948,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Suzuki GSX-R1000R",
         pricePerDay: 3500,
         insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/red_motor/gsx-r1000r.html"
       },
       {
@@ -939,6 +956,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Yamaha R7",
         pricePerDay: 2900,
         insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/red_motor/r7.html"
       },
       {
@@ -946,50 +964,57 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Yamaha MT-09",
         pricePerDay: 3200,
         insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/red_motor/mt09.html"
       },
       {
         id: "r6",
         name: "Triumph Street Triple 765R",
-        pricePerDay: 3100,
+        pricePerDay: 3200,
         insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/red_motor/street_triple765r.html"
       },
       {
         id: "r7",
-        name: "CB650R",
-        pricePerDay: 3100,
+        name: "Triumph Street Triple R",
+        pricePerDay: 3200,
         insurance: { business: 500, roadside: 500 },
-        link: "/car_introduce_red.html"
+        insuranceAvailable: { business: true, roadside: true },
+        link: "/car_introduce/red_motor/speed_triple_r1050.html"
       },
       {
         id: "r8",
-        name: "CB650R",
-        pricePerDay: 3100,
+        name: "YAMAHA TMAX",
+        pricePerDay: 2900,
         insurance: { business: 500, roadside: 500 },
-        link: "/car_introduce_red.html"
+        insuranceAvailable: { business: true, roadside: true },
+        link: "/car_introduce/red_motor/tmax.html"
       },
       {
         id: "r9",
-        name: "CB650R",
-        pricePerDay: 3100,
+        name: "Triumph Trident 660",
+        pricePerDay: 2900,
         insurance: { business: 500, roadside: 500 },
-        link: "/car_introduce_red.html"
+        insuranceAvailable: { business: true, roadside: true },
+        link: "/car_introduce/red_motor/trident660.html"
       },
       {
         id: "r10",
-        name: "ZX-6R",
+        name: "Kawasaki Z900RS",
         pricePerDay: 3900,
-        insurance: { business: 500, roadside: 950 },
-        link: "/car_introduce_red.html"
+        insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
+        link: "/car_introduce/red_motor/z900rs.html"
       }
     ],
     sports: [
       {
         id: "s1",
         name: "Mazda MX-5 RF",
-        pricePerDay: 4800,
-        insurance: { business: 1800, roadside: 1200 },
+        pricePerDay: 3800,
+        insurance: { business: 500, roadside: 0 },
+        insuranceAvailable: { business: true, roadside: false },
         link: "/car_introduce/mx5.html"
       }
     ]
@@ -1008,6 +1033,8 @@ document.addEventListener('DOMContentLoaded', () => {
     campaignDays: document.getElementById("dbxCampaignBillingDays"),
     insuranceBusiness: document.getElementById("dbxInsuranceBusiness"),
     insuranceRoadside: document.getElementById("dbxInsuranceRoadside"),
+    insuranceBusinessWrap: document.getElementById("dbxInsuranceBusinessWrap"),
+    insuranceRoadsideWrap: document.getElementById("dbxInsuranceRoadsideWrap"),
     selectedModel: document.getElementById("dbxSelectedModel"),
     dailyPrice: document.getElementById("dbxDailyPrice"),
     daysText: document.getElementById("dbxDaysText"),
@@ -1035,6 +1062,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }).join("");
   }
 
+  function syncInsuranceAvailability(car) {
+    if (!car || !car.insuranceAvailable) return;
+
+    const businessAvailable = !!car.insuranceAvailable.business;
+    const roadsideAvailable = !!car.insuranceAvailable.roadside;
+
+    if (els.insuranceBusinessWrap) {
+      els.insuranceBusinessWrap.style.display = businessAvailable ? "" : "none";
+    }
+    els.insuranceBusiness.disabled = !businessAvailable;
+    if (!businessAvailable) {
+      els.insuranceBusiness.checked = false;
+    }
+
+    if (els.insuranceRoadsideWrap) {
+      els.insuranceRoadsideWrap.style.display = roadsideAvailable ? "" : "none";
+    }
+    els.insuranceRoadside.disabled = !roadsideAvailable;
+    if (!roadsideAvailable) {
+      els.insuranceRoadside.checked = false;
+    }
+  }
+
   function getSelectedCar() {
     const cars = getCategoryCars();
     return cars.find((car) => car.id === els.model.value) || cars[0] || null;
@@ -1051,11 +1101,10 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const insuranceLines = [];
-    if (els.insuranceBusiness.checked) {
+    if (els.insuranceBusiness.checked && car.insuranceAvailable.business) {
       insuranceLines.push(`免營業損失保險 ${formatPrice(car.insurance.business)}`);
     }
-    if (els.insuranceRoadside.checked) {
+    if (els.insuranceRoadside.checked && car.insuranceAvailable.roadside) {
       insuranceLines.push(`道路救援安心險 ${formatPrice(car.insurance.roadside)}`);
     }
 
@@ -1076,6 +1125,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const car = getSelectedCar();
     if (!car) return;
+
+    syncInsuranceAvailability(car);
 
     const rentalSubtotal = car.pricePerDay * billingDays;
 
