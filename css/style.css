@@ -6972,27 +6972,249 @@ input[type="tel"]:focus,
   display: block;
 }
 
-.dbx-gallery__caption {
-  position: absolute;
-  left: 34px;
-  bottom: 24px;
-  color: #fff;
-  text-shadow: 0 8px 20px rgba(0,0,0,0.35);
+/* ===== Gallery viewport / plaque caption ===== */
+
+.dbx-gallery__viewport {
+  position: relative;
+  overflow: hidden;
+  border-radius: 34px;
+  border: 1px solid var(--dbx-border);
+  background: linear-gradient(180deg, rgba(255,250,247,0.96), rgba(250,242,236,0.98));
+  box-shadow:
+    0 24px 48px rgba(51, 18, 20, 0.08),
+    inset 0 1px 0 rgba(255,255,255,0.82);
+
+  /* 預留底部空間讓銘牌掛在圖片外，不遮住照片 */
+  padding: clamp(14px, 1.6vw, 22px)
+           clamp(14px, 1.6vw, 22px)
+           clamp(72px, 10vw, 118px);
 }
 
-.dbx-gallery__caption span {
-  display: inline-block;
-  margin-bottom: 8px;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  font-weight: 700;
-  color: rgba(255,255,255,0.78);
+.dbx-gallery__track {
+  position: relative;
+  aspect-ratio: 16 / 10;
+}
+
+.dbx-gallery__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.015);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.dbx-gallery__slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.dbx-gallery__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: clamp(18px, 2vw, 26px);
+  display: block;
+}
+
+/* ===== Premium plaque ===== */
+
+.dbx-gallery__caption {
+  position: absolute;
+  left: clamp(14px, 2vw, 30px);
+  bottom: clamp(14px, 2vw, 24px);
+  z-index: 4;
+
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: min(76%, 820px);
+  min-height: clamp(44px, 5vw, 72px);
+  padding:
+    clamp(10px, 1vw, 15px)
+    clamp(18px, 2vw, 30px);
+
+  border-radius: clamp(18px, 2.2vw, 28px);
+  border: 1px solid rgba(204, 154, 52, 0.82);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,248,233,0.98) 0%,
+      rgba(245,227,188,0.97) 42%,
+      rgba(223,184,105,0.96) 100%
+    );
+
+  box-shadow:
+    0 10px 22px rgba(53, 28, 8, 0.14),
+    inset 0 1px 0 rgba(255,255,255,0.76),
+    inset 0 -1px 0 rgba(133,90,21,0.22);
+
+  overflow: hidden;
+  isolation: isolate;
+
+  animation: dbxCaptionPlaqueFloat 4.8s ease-in-out infinite;
+}
+
+.dbx-gallery__caption::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.34) 0%,
+      rgba(255,255,255,0.10) 34%,
+      rgba(255,255,255,0) 100%
+    );
+  pointer-events: none;
+  z-index: -1;
+}
+
+.dbx-gallery__caption::after {
+  content: "";
+  position: absolute;
+  top: -38%;
+  left: -24%;
+  width: 26%;
+  height: 180%;
+  transform: rotate(18deg);
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.28) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  pointer-events: none;
+  animation: dbxCaptionShine 5.2s ease-in-out infinite;
 }
 
 .dbx-gallery__caption strong {
   display: block;
-  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
-  letter-spacing: -0.03em;
+  margin: 0;
+
+  font-family: "Exo", sans-serif;
+  font-size: clamp(0.98rem, 1.9vw, 2rem);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+
+  color: #9a4717;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.42),
+    0 6px 14px rgba(123, 75, 14, 0.12);
+}
+
+@keyframes dbxCaptionPlaqueFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes dbxCaptionShine {
+  0%, 100% {
+    left: -24%;
+    opacity: 0;
+  }
+  16% {
+    opacity: 0.85;
+  }
+  42% {
+    left: 110%;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dbx-gallery__caption,
+  .dbx-gallery__caption::after {
+    animation: none;
+  }
+}
+
+/* ===== 1200 以下：稍微收斂比例 ===== */
+@media (max-width: 1199.98px) {
+  .dbx-gallery__viewport {
+    padding-bottom: clamp(68px, 10vw, 104px);
+  }
+
+  .dbx-gallery__caption {
+    max-width: min(80%, 640px);
+  }
+}
+
+/* ===== 平板 ===== */
+@media (max-width: 991.98px) {
+  .dbx-gallery__viewport {
+    padding:
+      16px
+      16px
+      clamp(64px, 12vw, 96px);
+    border-radius: 28px;
+  }
+
+  .dbx-gallery__caption {
+    left: 16px;
+    bottom: 14px;
+    max-width: calc(100% - 32px);
+    min-height: 42px;
+    padding: 10px 18px;
+    border-radius: 22px;
+  }
+
+  .dbx-gallery__caption strong {
+    font-size: clamp(0.94rem, 2.3vw, 1.32rem);
+  }
+}
+
+/* ===== 手機 ===== */
+@media (max-width: 767.98px) {
+  .dbx-gallery__viewport {
+    padding:
+      12px
+      12px
+      74px;
+    border-radius: 24px;
+  }
+
+  .dbx-gallery__slide img {
+    border-radius: 18px;
+  }
+
+  .dbx-gallery__caption {
+    left: 12px;
+    bottom: 12px;
+    max-width: calc(100% - 24px);
+    min-height: 40px;
+    padding: 9px 16px;
+    border-radius: 20px;
+  }
+
+  .dbx-gallery__caption strong {
+    font-size: clamp(0.92rem, 4vw, 1.12rem);
+    white-space: normal;
+    line-height: 1.14;
+  }
+}
+
+/* ===== 很小的手機 ===== */
+@media (max-width: 479.98px) {
+  .dbx-gallery__viewport {
+    padding-bottom: 68px;
+  }
+
+  .dbx-gallery__caption {
+    padding: 8px 14px;
+  }
+
+  .dbx-gallery__caption strong {
+    font-size: 0.9rem;
+  }
 }
 
 .dbx-gallery__arrow {
@@ -7206,7 +7428,7 @@ input[type="tel"]:focus,
   display: block;
   margin-bottom: 8px;
   color: rgba(255,239,214,0.78);
-  font-size: 0.78rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.08em;
 }
@@ -7216,6 +7438,7 @@ input[type="tel"]:focus,
   text-decoration: none;
   font-weight: 800;
   line-height: 1.7;
+  font-size: 1.5rem;
 }
 
 .dbx-contact-card--line {
