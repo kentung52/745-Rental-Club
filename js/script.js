@@ -1201,3 +1201,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+// Home offer section reveal
+(function () {
+  const homeOfferSections = document.querySelectorAll('.js-hp-offer-reveal');
+  if (!homeOfferSections.length) return;
+
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.18
+  });
+
+  homeOfferSections.forEach(function (section) {
+    observer.observe(section);
+  });
+})();
