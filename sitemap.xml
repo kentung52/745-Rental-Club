@@ -15,10 +15,12 @@
 		<priority>0.80</priority>
 		<lastmod>2026-04-11T00:00:00+08:00</lastmod>
 	</url>
+	<url>
 	<loc>https://745-rental-club.vercel.app/activity.html</loc> <!-- 活動總覽 -->
 		<priority>0.80</priority>
 		<lastmod>2026-04-11T00:00:00+08:00</lastmod>
 	</url>
+	<url>
 	<loc>https://745-rental-club.vercel.app/activity/dragon_boat_festival.html</loc> <!-- 端午節連假活動 -->
 		<priority>0.80</priority>
 		<lastmod>2026-04-11T00:00:00+08:00</lastmod>
