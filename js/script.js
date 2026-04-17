@@ -882,6 +882,14 @@ document.addEventListener('DOMContentLoaded', () => {
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/white_motor/husqvarna250.html"
+      },
+      {
+        id: "w10",
+        name: "Suzuki V-storm 250SX",
+        pricePerDay: 1500,
+        insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
+        link: "/car_introduce/white_motor/v_storm250sx.html"
       }
     ],
     yellow: [
