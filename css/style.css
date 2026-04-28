@@ -8700,3 +8700,550 @@ input[type="tel"]:focus,
     min-width: 0;
   }
 }
+
+
+
+
+
+/* =========================
+   745 Ship / Rescue V3
+========================= */
+
+.rs745-rescue-page {
+  background: #f4f7fb;
+  overflow: hidden;
+}
+
+.rs745-rescue-page * {
+  box-sizing: border-box;
+}
+
+/* Hero */
+.ship-hero-v3 {
+  padding: 88px 0 94px;
+  background:
+    radial-gradient(circle at 6% 16%, rgba(225, 36, 84, .12), transparent 30%),
+    linear-gradient(135deg, #ffffff 0%, #eef3f9 100%);
+}
+
+.ship-hero-v3__layout {
+  display: grid;
+  grid-template-columns: minmax(360px, 560px) minmax(0, 1fr);
+  gap: clamp(54px, 7vw, 116px);
+  align-items: center;
+}
+
+.ship-hero-v3__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 15px;
+  margin-bottom: 26px;
+  border-radius: 999px;
+  background: #fff;
+  color: #e12454;
+  box-shadow: 0 12px 30px rgba(20, 38, 65, .08);
+}
+
+.ship-hero-v3__eyebrow i {
+  font-size: 20px;
+}
+
+.ship-hero-v3__eyebrow span {
+  font-family: "Exo", sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.ship-hero-v3__title {
+  margin: 0;
+  color: #142641;
+  font-family: "Exo", sans-serif;
+  font-weight: 900;
+  font-size: clamp(44px, 4.9vw, 72px);
+  line-height: 1.06;
+  letter-spacing: -1.5px;
+}
+
+.ship-hero-v3__title span {
+  display: block;
+}
+
+.ship-hero-v3__desc {
+  max-width: 540px;
+  margin: 26px 0 0;
+  color: #4f6680;
+  font-size: 20px;
+  line-height: 1.9;
+}
+
+.ship-hero-v3__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.ship-hero-v3__tags span {
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: rgba(34, 58, 102, .08);
+  color: #223a66;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.ship-hero-v3__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.ship-hero-v3__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-width: 146px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-family: "Exo", sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  transition: .25s ease;
+}
+
+.ship-hero-v3__btn--primary {
+  background: #e12454;
+  color: #fff;
+  border: 2px solid #e12454;
+  box-shadow: 0 14px 30px rgba(225, 36, 84, .22);
+}
+
+.ship-hero-v3__btn--outline {
+  background: #fff;
+  color: #223a66;
+  border: 2px solid #223a66;
+}
+
+.ship-hero-v3__btn:hover {
+  transform: translateY(-2px);
+  color: #fff;
+  background: #223a66;
+  border-color: #223a66;
+}
+
+.ship-hero-v3__visual {
+  min-width: 0;
+}
+
+.ship-hero-v3__slider-frame {
+  width: 100%;
+  max-width: 720px;
+  margin-left: auto;
+  padding: 14px;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 0 28px 80px rgba(20, 38, 65, .16);
+}
+
+.ship-hero-v3__slider {
+  overflow: hidden;
+  border-radius: 20px;
+  background: #eef3f9;
+}
+
+.ship-hero-v3__slider,
+.ship-hero-v3__slider .slick-list,
+.ship-hero-v3__slider .slick-track,
+.ship-hero-v3__slider .slick-slide,
+.ship-hero-v3__slider .slick-slide > div {
+  min-height: clamp(340px, 30vw, 440px);
+}
+
+.ship-hero-v3__slider img {
+  width: 100%;
+  height: clamp(340px, 30vw, 440px);
+  display: block;
+  object-fit: cover;
+}
+
+/* Services */
+.ship-services-v3 {
+  padding: 82px 0 48px;
+}
+
+.ship-section-head {
+  max-width: 820px;
+  margin-bottom: 34px;
+}
+
+.ship-section-head span {
+  color: #e12454;
+  font-family: "Exo", sans-serif;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.ship-section-head h2 {
+  margin: 10px 0 12px;
+  color: #142641;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.18;
+}
+
+.ship-section-head p {
+  color: #5d758a;
+  font-size: 20px;
+}
+
+.ship-services-v3__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.ship-service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 28px;
+  background: #fff;
+  border: 1px solid rgba(20, 38, 65, .08);
+  box-shadow: 0 20px 56px rgba(20, 38, 65, .08);
+  overflow: hidden;
+}
+
+.ship-service-card__icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  border-radius: 18px;
+  background: rgba(34, 58, 102, .08);
+  color: #223a66;
+  font-size: 30px;
+}
+
+.ship-service-card--urgent .ship-service-card__icon {
+  background: rgba(225, 36, 84, .1);
+  color: #e12454;
+}
+
+.ship-service-card__label {
+  width: fit-content;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(34, 58, 102, .08);
+  color: #223a66;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.ship-service-card--urgent .ship-service-card__label {
+  background: #e12454;
+  color: #fff;
+}
+
+.ship-service-card h3 {
+  margin: 18px 0 10px;
+  color: #142641;
+  font-size: 34px;
+}
+
+.ship-service-card > p {
+  color: #5d758a;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.ship-service-card__price {
+  margin-top: 22px;
+  border-top: 1px solid rgba(20, 38, 65, .1);
+}
+
+.ship-service-card__price div {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(20, 38, 65, .1);
+}
+
+.ship-service-card__price small {
+  display: block;
+  color: #5d758a;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.ship-service-card__price strong {
+  display: block;
+  margin-top: 5px;
+  color: #142641;
+  font-size: 26px;
+}
+
+.ship-service-card__quote {
+  margin-top: 22px;
+  padding: 22px;
+  border-radius: 20px;
+  background: #f4f7fb;
+  border-left: 5px solid #223a66;
+}
+
+.ship-service-card__quote strong {
+  display: block;
+  color: #142641;
+  font-size: 26px;
+  font-family: "Exo", sans-serif;
+}
+
+.ship-service-card__quote p {
+  margin: 6px 0 0;
+  color: #5d758a;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.ship-service-card ul {
+  margin: 24px 0 28px;
+  padding-left: 20px;
+}
+
+.ship-service-card li {
+  margin-bottom: 9px;
+  color: #5d758a;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.ship-service-card .btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* Process */
+.ship-process-v3 {
+  padding: 36px 0 76px;
+}
+
+.ship-process-v3__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.ship-process-v3__item {
+  padding: 26px 22px;
+  border-radius: 22px;
+  background: #fff;
+  border: 1px solid rgba(20, 38, 65, .08);
+  box-shadow: 0 14px 36px rgba(20, 38, 65, .055);
+}
+
+.ship-process-v3__item span {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #e12454;
+  font-size: 18px;
+  font-family: "Exo", sans-serif;
+  font-weight: 900;
+}
+
+.ship-process-v3__item h4 {
+  margin: 0 0 8px;
+  color: #142641;
+  font-size: 24px;
+}
+
+.ship-process-v3__item p {
+  margin: 0;
+  color: #5d758a;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* CTA */
+.ship-cta-v3 {
+  padding: 0 0 90px;
+}
+
+.ship-cta-v3__box {
+  padding: clamp(34px, 5vw, 58px);
+  border-radius: 32px;
+  background:
+    linear-gradient(rgba(20, 38, 65, .9), rgba(20, 38, 65, .9)),
+    url("/images/consignment/cta-bg.jpg") center center / cover no-repeat;
+  text-align: center;
+  box-shadow: 0 24px 70px rgba(20, 38, 65, .18);
+}
+
+.ship-cta-v3__box h2 {
+  color: #fff;
+  font-size: clamp(30px, 4vw, 46px);
+}
+
+.ship-cta-v3__box p {
+  max-width: 760px;
+  margin: 16px auto 28px;
+  color: rgba(255,255,255,.78);
+  font-size: 20px;
+}
+
+.ship-cta-v3__box div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* Tablet */
+@media (max-width: 991.98px) {
+  .ship-hero-v3 {
+    padding: 64px 0 72px;
+  }
+
+  .ship-hero-v3__layout {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .ship-hero-v3__slider-frame {
+    max-width: none;
+    margin-left: 0;
+  }
+
+  .ship-services-v3__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ship-process-v3__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 575.98px) {
+  .ship-hero-v3 {
+    padding: 44px 0 54px;
+  }
+
+  .ship-hero-v3__eyebrow {
+    padding: 8px 12px;
+    margin-bottom: 20px;
+  }
+
+  .ship-hero-v3__eyebrow span {
+    font-size: 12px;
+    letter-spacing: .8px;
+  }
+
+  .ship-hero-v3__title {
+    font-size: clamp(34px, 10vw, 43px);
+    line-height: 1.14;
+    letter-spacing: -.5px;
+  }
+
+  .ship-hero-v3__desc {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .ship-hero-v3__tags {
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .ship-hero-v3__tags span {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .ship-hero-v3__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 26px;
+  }
+
+  .ship-hero-v3__btn {
+    min-width: 0;
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+
+  .ship-hero-v3__slider-frame {
+    padding: 8px;
+    border-radius: 20px;
+  }
+
+  .ship-hero-v3__slider {
+    border-radius: 14px;
+  }
+
+  .ship-hero-v3__slider,
+  .ship-hero-v3__slider .slick-list,
+  .ship-hero-v3__slider .slick-track,
+  .ship-hero-v3__slider .slick-slide,
+  .ship-hero-v3__slider .slick-slide > div {
+    min-height: clamp(230px, 62vw, 300px);
+  }
+
+  .ship-hero-v3__slider img {
+    height: clamp(230px, 62vw, 300px);
+  }
+
+  .ship-services-v3 {
+    padding: 54px 0 34px;
+  }
+
+  .ship-section-head p,
+  .ship-cta-v3__box p {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .ship-service-card {
+    padding: 24px 20px;
+    border-radius: 24px;
+  }
+
+  .ship-process-v3 {
+    padding: 26px 0 56px;
+  }
+
+  .ship-process-v3__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .ship-cta-v3 {
+    padding-bottom: 60px;
+  }
+
+  .ship-cta-v3__box div {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .ship-cta-v3__box .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .ship-hero-v3__actions {
+    grid-template-columns: 1fr;
+  }
+
+  .ship-hero-v3__title {
+    font-size: 32px;
+  }
+}
+
+
