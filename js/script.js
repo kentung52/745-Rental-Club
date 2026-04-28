@@ -1010,10 +1010,18 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         id: "r10",
         name: "Kawasaki Z900RS",
-        pricePerDay: 3900,
+        pricePerDay: 3500,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
         link: "/car_introduce/red_motor/z900rs.html"
+      },
+      {
+        id: "r11",
+        name: "Kawasaki XSR900",
+        pricePerDay: 3200,
+        insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
+        link: "/car_introduce/red_motor/xsr900.html"
       }
     ],
     sports: [
