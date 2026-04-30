@@ -8901,7 +8901,7 @@ input[type="tel"]:focus,
 
 .ship-services-v3__grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
 
@@ -8953,7 +8953,7 @@ input[type="tel"]:focus,
 .ship-service-card h3 {
   margin: 18px 0 10px;
   color: #142641;
-  font-size: 34px;
+  font-size: 32px;
 }
 
 .ship-service-card > p {
