@@ -1058,7 +1058,10 @@ document.addEventListener('DOMContentLoaded', () => {
     insuranceTotal: document.getElementById("dbxInsuranceTotal"),
     estimatedTotal: document.getElementById("dbxEstimatedTotal"),
     grandTotal: document.getElementById("dbxGrandTotal"),
-    featured: document.getElementById("dbxFeaturedCar")
+    featured: document.getElementById("dbxFeaturedCar"),
+    gearOptions: document.querySelectorAll(".gear-option"),
+    gearTotal: document.getElementById("dbxGearTotal"),
+    gearSelectWrap: document.getElementById("dbxGearSelectWrap")
   };
 
   if (!els.category || !els.model || !els.campaignDays) return;
@@ -1162,6 +1165,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     syncInsuranceAvailability(car);
 
+    const isSportsCar = els.category.value === "sports";
+
+    if (els.gearSelectWrap) {
+      els.gearSelectWrap.style.display = isSportsCar ? "none" : "";
+    }
+
+    if (isSportsCar) {
+      els.gearOptions.forEach(function (item) {
+        item.checked = false;
+      });
+    }
+
     const rentalSubtotal = car.pricePerDay * billingDays;
 
     let insuranceSum = 0;
@@ -1188,13 +1203,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     insuranceSum = Math.max(0, insuranceSum - insuranceDiscount);
 
-    const total = rentalSubtotal + insuranceSum;
+    const gearDailySum = Array.from(els.gearOptions).reduce((sum, item) => {
+      return item.checked ? sum + Number(item.dataset.price || 0) : sum;
+    }, 0);
+
+    const gearSum = gearDailySum * billingDays;
+
+    const total = rentalSubtotal + insuranceSum + gearSum;
 
     els.selectedModel.textContent = car.name;
     els.dailyPrice.textContent = formatPrice(car.pricePerDay);
     els.daysText.textContent = `${billingDays} 天`;
     els.rentalSubtotal.textContent = formatPrice(rentalSubtotal);
     els.insuranceTotal.textContent = formatPrice(insuranceSum);
+    if (els.gearTotal) {
+      els.gearTotal.textContent = formatPrice(gearSum);
+    }
     els.estimatedTotal.textContent = formatPrice(total);
     els.grandTotal.textContent = formatPrice(total);
 
@@ -1210,6 +1234,9 @@ document.addEventListener('DOMContentLoaded', () => {
   els.campaignDays.addEventListener("change", updateBudget);
   els.insuranceBusiness.addEventListener("change", updateBudget);
   els.insuranceRoadside.addEventListener("change", updateBudget);
+  els.gearOptions.forEach(function (item) {
+    item.addEventListener("change", updateBudget);
+  });
 
   populateModels();
   updateBudget();

@@ -295,6 +295,71 @@
     </section>
 
     <section class="dbx-section dbx-reveal">
+      <div class="dbx-gear-promo">
+        <div class="dbx-gear-promo__content">
+          <span class="dbx-chip">騎士用品租借</span>
+          <h2>裝備一起備齊，連假出遊更安心</h2>
+          <p>
+            承租車輛時可加租防摔手套、防摔衣、安全帽與 GoPro 運動相機，
+            適合臨時出遊、外地旅客或想紀錄旅程的騎士。
+          </p>
+
+          <div class="dbx-gear-promo__tags">
+            <span>防摔裝備</span>
+            <span>安全帽</span>
+            <span>GoPro 紀錄</span>
+            <span>租二送一</span>
+          </div>
+        </div>
+
+        <div class="dbx-gear-promo__gallery">
+          <a href="/images/car_introduce/equipment/1.jpg" data-lightbox="gear-rental">
+            <img src="/images/car_introduce/equipment/1.jpg" alt="防摔手套租借">
+            <span>防摔手套</span>
+          </a>
+
+          <a href="/images/car_introduce/equipment/2.jpg" data-lightbox="gear-rental">
+            <img src="/images/car_introduce/equipment/2.jpg" alt="防摔衣租借">
+            <span>防摔衣</span>
+          </a>
+
+          <a href="/images/car_introduce/equipment/3.jpg" data-lightbox="gear-rental">
+            <img src="/images/car_introduce/equipment/3.jpg" alt="安全帽租借">
+            <span>安全帽</span>
+          </a>
+
+          <a href="/images/car_introduce/equipment/4.jpg" data-lightbox="gear-rental">
+            <img src="/images/car_introduce/equipment/4.jpg" alt="GoPro 運動相機套裝租借">
+            <span>GoPro 套裝</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="dbx-section dbx-reveal">
+      <div class="dbx-delivery-promo">
+        <div class="dbx-delivery-promo__icon">
+          <i class="icofont-truck-loaded"></i>
+        </div>
+
+        <div class="dbx-delivery-promo__content">
+          <span class="dbx-chip">加購服務</span>
+          <h2>可加購指定地點收送車服務</h2>
+          <p>
+            若您所在位置距離騎士窩較遠，或行程上不方便親自取還車，承租店內任一車款時，可與服務人員聯絡加購指定地點收送車服務，服務範圍不限依當天出車順序安排，費用依距離與地點不同而有所調整，歡迎聯繫我們了解更多細節與報價，
+            讓行程安排更彈性。
+          </p>
+
+          <div class="dbx-delivery-promo__notes">
+            <span>適合外地旅客</span>
+            <span>行程彈性安排</span>
+            <span>指定地點收送</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dbx-section dbx-reveal">
         <div class="dbx-section__head">
             <span class="dbx-chip">BUDGET ESTIMATOR</span>
             <h2>快速估算你的租車總額</h2>
@@ -326,7 +391,7 @@
             <div class="dbx-budget__group">
                 <label class="dbx-budget__label" for="dbxCampaignBillingDays">活動計費方式</label>
                 <select id="dbxCampaignBillingDays" class="dbx-budget__select">
-                    <option value="2">租二送一（固定計費 2 天）</option>
+                    <option value="2">勞動節連假方案租二送一（固定計費 2 天）</option>
                 </select>
                 <p class="dbx-budget__hint">
                     本活動依方案固定計費，非依實際租借總天數逐日累加。
@@ -353,11 +418,85 @@
                 </label>
                 </div>
 
+                <div class="dbx-budget__group dbx-gear-select" id="dbxGearSelectWrap">
+                  <label class="dbx-budget__label">加租騎士用品</label>
+
+                  <div class="dbx-budget__insuranceGrid dbx-gear-options">
+                    <label class="dbx-budget__choice dbx-budget__choice--gear">
+                      <input type="checkbox" class="gear-option" data-price="100">
+
+                      <div class="gear-card">
+                        <div class="gear-left">
+                          <b>防摔手套</b>
+                          <small>Alpinestars 專業防護</small>
+                        </div>
+
+                        <div class="gear-right">
+                          <span>NT$100</span>
+                          <small>/ 天</small>
+                        </div>
+                      </div>
+                    </label>
+
+                    <label class="dbx-budget__choice dbx-budget__choice--gear">
+                      <input type="checkbox" class="gear-option" data-price="200">
+
+                      <div class="gear-card">
+                        <div class="gear-left">
+                          <b>防摔衣</b>
+                          <small>Alpinestars 專業防護</small>
+                        </div>
+
+                        <div class="gear-right">
+                          <span>NT$200</span>
+                          <small>/ 天</small>
+                        </div>
+                      </div>
+                    </label>
+
+                    <label class="dbx-budget__choice dbx-budget__choice--gear">
+                      <input type="checkbox" class="gear-option" data-price="200">
+
+                      <div class="gear-card">
+                        <div class="gear-left">
+                          <b>安全帽</b>
+                          <small>附贈全新帽套</small>
+                        </div>
+
+                        <div class="gear-right">
+                          <span>NT$200</span>
+                          <small>/ 天</small>
+                        </div>
+                      </div>
+                    </label>
+
+                    <label class="dbx-budget__choice dbx-budget__choice--gear">
+                      <input type="checkbox" class="gear-option" data-price="400">
+
+                      <div class="gear-card">
+                        <div class="gear-left">
+                          <b>GoPro 運動相機套裝 </b>
+                          <small>專業騎行錄影 紀錄精彩瞬間</small>
+                        </div>
+
+                        <div class="gear-right">
+                          <span>NT$400</span>
+                          <small>/ 天</small>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
                 <p class="dbx-budget__hint">
                 部分白牌車保費較低，系統會自動套用對應價格。
                 </p>
             </div>
+
+            
             </div>
+
+            
 
             <div class="dbx-budget__panel dbx-budget__panel--result">
             <div class="dbx-budget__panel-head">
@@ -393,6 +532,10 @@
                     <span>保險費用</span>
                     <strong id="dbxInsuranceTotal">NT$ 0</strong>
                 </div>
+                <div class="dbx-budget__breakdownRow">
+                    <span>用品租借</span>
+                    <strong id="dbxGearTotal">NT$ 0</strong>
+                </div>
                 <div class="dbx-budget__breakdownRow dbx-budget__breakdownRow--total">
                     <span>總金額</span>
                     <strong id="dbxGrandTotal">NT$ 0</strong>
@@ -408,6 +551,8 @@
             </div>
         </div>
     </section>
+
+    
 
     <!-- Mid CTA -->
     <section class="dbx-section dbx-reveal">

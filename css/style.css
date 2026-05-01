@@ -6249,6 +6249,188 @@ input[type="tel"]:focus,
   transform: translateY(0);
 }
 
+
+/* =========================
+   Gear Promo Gallery
+========================= */
+
+.dbx-gear-promo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 34px;
+  align-items: center;
+  padding: 42px;
+  border-radius: 34px;
+  border: 1px solid rgba(34, 58, 102, 0.08);
+  background:
+    radial-gradient(circle at 92% 12%, rgba(34,58,102,.08), transparent 28%),
+    linear-gradient(135deg, rgba(255,255,255,.96), rgba(244,249,252,.96));
+  box-shadow: 0 24px 60px rgba(61, 20, 22, 0.08);
+}
+
+.dbx-gear-promo__content h2 {
+  margin: 16px 0 14px;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  color: var(--dbx-ink);
+}
+
+.dbx-gear-promo__content p {
+  margin: 0;
+  max-width: 760px;
+  color: #3f3437;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.dbx-gear-promo__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.dbx-gear-promo__tags span {
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgba(34,58,102,.12);
+  color: #223a66;
+  font-weight: 800;
+}
+
+.dbx-gear-promo__gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-width: 360px;
+  justify-self: end;
+}
+
+.dbx-gear-promo__gallery a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(34,58,102,.12);
+}
+
+.dbx-gear-promo__gallery img {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  padding: 12px;
+  background: #fff;
+  transition: transform .35s ease;
+}
+
+.dbx-gear-promo__gallery span {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(34,58,102,.92);
+  color: #fff;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.dbx-gear-promo__gallery a:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 991.98px) {
+  .dbx-gear-promo {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .dbx-gear-promo__gallery {
+    max-width: none;
+    justify-self: stretch;
+  }
+
+  .dbx-gear-promo__gallery img {
+    height: 180px;
+  }
+}
+
+
+/* =========================
+   Delivery Promo
+========================= */
+
+.dbx-delivery-promo {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 32px 36px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 92% 10%, rgba(225,36,84,.08), transparent 30%),
+    linear-gradient(135deg, #ffffff, #fff8f1);
+  border: 1px solid rgba(143, 49, 35, 0.12);
+  box-shadow: 0 20px 50px rgba(61, 20, 22, 0.08);
+}
+
+.dbx-delivery-promo__icon {
+  width: 74px;
+  height: 74px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #223a66;
+  color: #fff;
+  box-shadow: 0 16px 34px rgba(34,58,102,.18);
+}
+
+.dbx-delivery-promo__icon i {
+  font-size: 38px;
+}
+
+.dbx-delivery-promo__content h2 {
+  margin: 14px 0 10px;
+  color: var(--dbx-ink);
+  font-size: clamp(1.7rem, 2.4vw, 2.4rem);
+  line-height: 1.25;
+}
+
+.dbx-delivery-promo__content p {
+  margin: 0;
+  color: #4b3c35;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.dbx-delivery-promo__notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.dbx-delivery-promo__notes span {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgba(34,58,102,.12);
+  color: #223a66;
+  font-weight: 800;
+}
+
+@media (max-width: 575.98px) {
+  .dbx-delivery-promo {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+}
+
 /* hero */
 /* =========================
    Hero redesign
@@ -8042,6 +8224,135 @@ input[type="tel"]:focus,
 }
 
 
+
+/* =========================
+   Budget Gear Options
+========================= */
+
+.dbx-gear-select {
+  padding-top: 4px;
+}
+
+.dbx-budget__choice--gear {
+  min-height: 88px;
+}
+
+.dbx-budget__choice--gear span {
+  display: block;
+}
+
+.dbx-budget__choice--gear b {
+  display: block;
+  color: #1f1a17;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.dbx-budget__choice--gear small {
+  display: block;
+  margin-top: 4px;
+  color: #80664b;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.dbx-budget__choice--gear:has(input:checked) {
+  border-color: rgba(143, 49, 35, 0.38);
+  background:
+    linear-gradient(135deg, rgba(255,248,236,.96), rgba(255,255,255,.96));
+  box-shadow: 0 14px 34px rgba(143, 49, 35, 0.10);
+}
+
+@media (max-width: 575.98px) {
+  .dbx-budget__choice--gear {
+    min-height: auto;
+  }
+
+  .dbx-budget__choice--gear b {
+    font-size: 17px;
+  }
+}
+
+
+/* 結構 */
+.gear-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.gear-left b {
+  font-size: 18px;
+  color: #1f1a17;
+}
+
+.gear-left small {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  color: #6F8BA4;
+}
+
+/* 右側價格（重點） */
+.gear-right {
+  text-align: right;
+}
+
+.gear-right span {
+  font-size: 20px;
+  font-weight: 800;
+  color: #c17a39;
+}
+
+.gear-right small {
+  display: block;
+  font-size: 12px;
+  color: #9a3f17;
+}
+
+/* checkbox 對齊 */
+.dbx-budget__choice--gear {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* hover */
+.dbx-budget__choice--gear:hover {
+  transform: translateY(-2px);
+}
+
+/* checked 狀態 */
+.dbx-budget__choice--gear:has(input:checked) {
+  border-color: #e12454;
+  background: rgba(225,36,84,0.05);
+}
+
+@media (max-width: 575px) {
+  .gear-left b {
+    font-size: 20px;
+  }
+
+  .gear-right span {
+    font-size: 22px;
+  }
+}
+
+
+/* 桌機版：避免右側試算結果被左側表單高度撐開 */
+@media (min-width: 992px) {
+  .dbx-budget {
+    align-items: start;
+  }
+
+  .dbx-budget__panel--result {
+    position: sticky;
+    top: 28px;
+    align-self: start;
+  }
+}
 
 /* =========================
    Home Offer Section
