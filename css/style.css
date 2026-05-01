@@ -9247,3 +9247,90 @@ input[type="tel"]:focus,
 }
 
 
+
+
+.rental-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.rental-kicker {
+  display: block;
+  margin-bottom: 4px;
+  color: #6F8BA4;
+}
+
+.rental-list {
+  margin: 0 0 22px;
+}
+
+.rental-list li {
+  position: relative;
+  padding: 8px 0 8px 24px;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  line-height: 1.45;
+}
+
+.rental-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: #e12454;
+  font-weight: 900;
+}
+
+.rental-highlight {
+  /* color: #e12454; */
+  font-weight: 600;
+}
+
+.rental-card .btn-index {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+@media (max-width: 991.98px) {
+  .feature-item {
+    margin-bottom: 28px !important;
+  }
+
+  .rental-list li {
+    font-size: 22px;
+    line-height: 1.5;
+  }
+}
+
+
+/* 桌機版：第二張出租卡壓縮資訊密度 */
+@media (min-width: 992px) {
+  .rental-card h4 {
+    font-size: 28px;
+    line-height: 1.25;
+    margin-bottom: 18px;
+  }
+
+  .rental-card .rental-kicker {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+
+  .rental-list li {
+    font-size: 20px;
+    line-height: 1.35;
+    padding: 7px 0 7px 24px;
+  }
+
+  .rental-list li::before {
+    top: 7px;
+  }
+
+  .rental-highlight {
+    font-size: 20px;
+  }
+
+  .rental-card .btn-index {
+    font-size: 16px;
+    padding: 12px 34px;
+  }
+}
