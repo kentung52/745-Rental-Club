@@ -787,7 +787,7 @@ input[type="tel"]:focus,
   content: "";
   position: absolute;
   inset: 0;
-  background: #fff url("/images/index/holiday.jpg") no-repeat center center;
+  background: #fff url("/images/index/DM/holiday.jpg") no-repeat center center;
   background-size: contain;
   opacity: 0;
   animation: bannerDmFade 12s infinite;
@@ -9687,4 +9687,47 @@ input[type="tel"]:focus,
   border: 2px solid rgba(255, 235, 150, .85);
   opacity: 0;
   animation: newServicePulse 1.8s ease-in-out infinite;
+}
+
+
+/* =========================
+   Promo Card: Black & White
+========================= */
+
+.promo-card--disabled {
+  position: relative;
+}
+
+.promo-card--disabled .promo-card__inner {
+  filter: grayscale(1);
+  opacity: .72;
+}
+
+.promo-card--disabled .promo-card__inner:hover {
+  transform: none;
+}
+
+.promo-card--disabled .promo-card__media::after {
+  content: "活動已結束";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .42);
+  color: #fff;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.promo-card--disabled .promo-card__chip,
+.promo-card--disabled .promo-card__corner {
+  background: #555 !important;
+  color: #fff !important;
+}
+
+.promo-card--disabled .promo-card__arrow {
+  background: #555 !important;
 }
