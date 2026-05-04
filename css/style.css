@@ -2068,7 +2068,7 @@ input[type="tel"]:focus,
 
 .backtop i {
   color: #fff;
-  font-size: 20px;
+  font-size: 40px;
 }
 
 .reveal {
@@ -2098,7 +2098,7 @@ input[type="tel"]:focus,
 
 .line-float i {
   color: #fff;
-  font-size: 24px;
+  font-size: 40px;
 }
 
 .line-float.reveal {
