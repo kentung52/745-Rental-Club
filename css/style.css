@@ -2077,39 +2077,7 @@ input[type="tel"]:focus,
   opacity: 1;
 }
 
-/* LINE 浮動按鈕 */
-.line-float {
-  position: fixed;
-  background: #06c755;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  right: 55px;
-  width: 60px;
-  height: 60px;
-  bottom: 130px;
-  text-align: center;
-  border-radius: 50px;
-  opacity: 0;
-  transition: all .3s;
-  cursor: pointer;
-}
 
-.line-float i {
-  color: #fff;
-  font-size: 40px;
-}
-
-.line-float.reveal {
-  opacity: 1;
-}
-
-.line-float:hover {
-  background: #04a742;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, .25);
-}
 
 /* =========================
   Misc utilities
@@ -9730,4 +9698,91 @@ input[type="tel"]:focus,
 
 .promo-card--disabled .promo-card__arrow {
   background: #555 !important;
+}
+
+
+
+/* 活動按鈕 */
+.backtop.promo-backtop {
+  width: 78px;
+  height: 78px;
+  right: 55px;
+  bottom: 45px;
+  flex-direction: column;
+  gap: 3px;
+  background: linear-gradient(135deg, #e12454, #ffb300);
+  box-shadow: 0 12px 28px rgba(225, 36, 84, .35);
+}
+
+.backtop.promo-backtop i {
+  font-size: 25px;
+  color: #fff;
+}
+
+.backtop.promo-backtop span {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.backtop.promo-backtop:hover {
+  transform: translateY(-3px);
+  color: #fff;
+}
+
+
+
+
+/* LINE 浮動按鈕 */
+.line-float {
+  position: fixed;
+  background: #06c755;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 55px;
+  width: 78px;
+  height: 78px;
+  bottom: 150px;
+  text-align: center;
+  border-radius: 50px;
+  opacity: 0;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.line-float i {
+  color: #fff;
+  font-size: 40px;
+}
+
+.line-float.reveal {
+  opacity: 1;
+}
+
+.line-float:hover {
+  background: #04a742;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, .25);
+}
+
+
+
+/* 手機版再縮小一點，避免擋內容 */
+@media (max-width: 575.98px) {
+  .backtop.promo-backtop {
+    width: 72px;
+    height: 72px;
+    right: 22px;
+    bottom: 28px;
+  }
+
+  .line-float {
+    width: 60px;
+    height: 60px;
+    right: 28px;
+    bottom: 125px;
+  }
 }
