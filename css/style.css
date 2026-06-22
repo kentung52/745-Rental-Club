@@ -787,7 +787,7 @@ input[type="tel"]:focus,
   content: "";
   position: absolute;
   inset: 0;
-  background: #fff url("/images/index/DM/holiday.jpg") no-repeat center center;
+  background: #fff url("/images/car_introduce/red_car/gsx1000/1.jpg") no-repeat center center;
   background-size: contain;
   opacity: 0;
   animation: bannerDmFade 12s infinite;
@@ -1905,6 +1905,16 @@ input[type="tel"]:focus,
     margin-top: 10px;
     font-size: 13px;
     color: #6d5b2e;
+  }
+
+
+  /* =========================
+    Holiday plan status toggle
+    將活動銘牌 class 從 holiday-plan 改成 holiday-plan-end 即可隱藏；
+    活動恢復時再改回 holiday-plan。
+  ========================= */
+  .holiday-plan-end {
+    display: none !important;
   }
 
   @keyframes holidayGlow {
