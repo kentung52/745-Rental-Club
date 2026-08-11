@@ -7009,7 +7009,10 @@ input[type="tel"]:focus,
   margin-bottom: 10px;
   color: #5a5051;
   line-height: 1.8;
+  
+  
 }
+
 
 .dbx-insurance__panel {
   position: relative;
@@ -10216,6 +10219,9 @@ input[type="tel"]:focus,
   color: #566862;
 }
 
+.headline_feature {
+  font-size: 22px;
+}
 
 .circle-page
 .dbx-insurance__panel {
