@@ -11024,14 +11024,14 @@ input[type="tel"]:focus,
    Circle 頁面 - 保險價格右側顯示
    ========================================================= */
 
-.circle-page .circle-insurance-copy {
+.insurance-copy {
     flex: 1 1 auto;
     min-width: 0;
 }
 
 
 /* 右側價格 */
-.circle-page .circle-insurance-price {
+.insurance-price {
     flex: 0 0 auto;
 
     align-self: center;
@@ -11054,15 +11054,15 @@ input[type="tel"]:focus,
 /* 手機版避免價格把左側說明擠得太窄 */
 @media (max-width: 600px) {
 
-    .circle-page .dbx-budget__choice--block {
+    .dbx-budget__choice--block {
         flex-wrap: wrap;
     }
 
-    .circle-page .circle-insurance-copy {
+    .insurance-copy {
         flex: 1 1 calc(100% - 34px);
     }
 
-    .circle-page .circle-insurance-price {
+    .insurance-price {
         width: 100%;
 
         margin-left: 0;

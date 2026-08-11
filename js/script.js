@@ -961,6 +961,14 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       {
         id: "r4",
+        name: "Yamaha R6",
+        pricePerDay: 3500,
+        insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
+        link: "/car_introduce/red_motor/r6.html"
+      },
+      {
+        id: "r5",
         name: "Yamaha R7",
         pricePerDay: 2900,
         insurance: { business: 500, roadside: 500 },
@@ -968,7 +976,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link: "/car_introduce/red_motor/r7.html"
       },
       {
-        id: "r5",
+        id: "r6",
         name: "Yamaha MT-09",
         pricePerDay: 3200,
         insurance: { business: 500, roadside: 500 },
@@ -976,7 +984,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link: "/car_introduce/red_motor/mt09.html"
       },
       {
-        id: "r6",
+        id: "r7",
         name: "Triumph Street Triple 765R",
         pricePerDay: 3200,
         insurance: { business: 500, roadside: 500 },
@@ -984,7 +992,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link: "/car_introduce/red_motor/street_triple765r.html"
       },
       {
-        id: "r7",
+        id: "r8",
         name: "Triumph Street Triple R",
         pricePerDay: 3200,
         insurance: { business: 500, roadside: 500 },
@@ -992,7 +1000,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link: "/car_introduce/red_motor/speed_triple_r1050.html"
       },
       {
-        id: "r8",
+        id: "r9",
         name: "YAMAHA TMAX",
         pricePerDay: 2900,
         insurance: { business: 500, roadside: 500 },
@@ -1000,7 +1008,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link: "/car_introduce/red_motor/tmax.html"
       },
       {
-        id: "r9",
+        id: "r10",
         name: "Triumph Trident 660",
         pricePerDay: 2900,
         insurance: { business: 500, roadside: 500 },
@@ -1008,7 +1016,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link: "/car_introduce/red_motor/trident660.html"
       },
       {
-        id: "r10",
+        id: "r11",
         name: "Kawasaki Z900RS",
         pricePerDay: 3500,
         insurance: { business: 500, roadside: 500 },
@@ -1016,7 +1024,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link: "/car_introduce/red_motor/z900rs.html"
       },
       {
-        id: "r11",
+        id: "r12",
         name: "Kawasaki XSR900",
         pricePerDay: 3200,
         insurance: { business: 500, roadside: 500 },
