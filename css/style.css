@@ -11074,3 +11074,112 @@ input[type="tel"]:focus,
         font-size: 15px;
     }
 }
+
+
+/* =========================================================
+   Budget Estimator - Selected Car Preview
+   所有活動頁面共用
+   ========================================================= */
+
+.dbx-budget__carPreview {
+  position: relative;
+  z-index: 1;
+
+  margin-top: 18px;
+  padding: 14px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(244, 247, 244, 0.96)
+    );
+
+  border:
+    1px solid rgba(80, 90, 85, 0.14);
+
+  box-shadow:
+    0 10px 26px rgba(30, 45, 40, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+
+
+/* =========================
+   圖片視窗
+   ========================= */
+
+.dbx-budget__carPreviewMedia {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef2ef,
+      #f5f3ee
+    );
+
+  border:
+    1px solid rgba(70, 85, 78, 0.10);
+}
+
+
+/* =========================
+   車輛圖片
+   ========================= */
+
+.dbx-budget__carPreviewMedia img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.2s ease;
+}
+
+
+.dbx-budget__carPreviewMedia:hover img {
+  transform: scale(1.025);
+}
+
+
+/* 尚未設定圖片 */
+.dbx-budget__carPreviewMedia img.is-empty {
+  opacity: 0;
+}
+
+
+/* =========================
+   Mobile
+   ========================= */
+
+@media (max-width: 575.98px) {
+
+  .dbx-budget__carPreview {
+    padding: 11px;
+    border-radius: 18px;
+  }
+
+
+  .dbx-budget__carPreviewMedia {
+    border-radius: 14px;
+  }
+
+
+  
+}

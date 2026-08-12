@@ -815,80 +815,100 @@ document.addEventListener('DOMContentLoaded', () => {
         id: "w1",
         name: "Honda CB150R",
         pricePerDay: 1000,
+        weekdayPrice: 700,
         insurance: { business: 300, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/white_car/cb150/1.jpg",
         link: "/car_introduce/white_motor/cb150r.html"
       },
       {
         id: "w2",
         name: "Honda CBR150R",
         pricePerDay: 1500,
+        weekdayPrice: 1000,
         insurance: { business: 300, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/white_car/cbr150/1.jpg",
         link: "/car_introduce/white_motor/cbr150r.html"
       },
       {
         id: "w3",
         name: "Honda MSX125",
         pricePerDay: 1000,
+        weekdayPrice: 700,
         insurance: { business: 300, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/white_car/msx125/1.jpg",
         link: "/car_introduce/white_motor/msx125.html"
       },
       {
         id: "w4",
         name: "Suzuki GSXR150 (小阿魯)",
         pricePerDay: 1000,
+        weekdayPrice: 700,
         insurance: { business: 300, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/white_car/gsx-r150/1.jpg",
         link: "/car_introduce/white_motor/gsxr150.html"
       },
       {
         id: "w5",
         name: "Yamaha R15V4",
         pricePerDay: 1500,
+        weekdayPrice: 1000,
         insurance: { business: 300, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/white_car/r15m/1.jpg",
         link: "/car_introduce/white_motor/r15v4.html"
       },
       {
         id: "w6",
         name: "Yamaha MT-15",
         pricePerDay: 1000,
+        weekdayPrice: 700,
         insurance: { business: 300, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/white_car/mt15/1.jpg",
         link: "/car_introduce/white_motor/mt15.html"
       },
       {
         id: "w7",
         name: "Honda CBR250RR",
         pricePerDay: 2300,
+        weekdayPrice: 1300,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/white_car/cbr250rr/1.jpg",
         link: "/car_introduce/white_motor/cbr250rr.html"
       },
       {
         id: "w8",
         name: "Suzuki Gixxer250SF",
         pricePerDay: 1500,
+        weekdayPrice: 1000,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/white_car/Gixxer250SF/1.jpg",
         link: "/car_introduce/white_motor/gixxer250sf.html"
       },
       {
         id: "w9",
         name: "Husqvarna 黑箭 250",
         pricePerDay: 1500,
+        weekdayPrice: 1000,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/white_car/黑鍵250/1.jpg",
         link: "/car_introduce/white_motor/husqvarna250.html"
       },
       {
         id: "w10",
         name: "Suzuki V-storm 250SX",
         pricePerDay: 1500,
+        weekdayPrice: 1000,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/white_car/v-storm250/1.jpg",
         link: "/car_introduce/white_motor/v_storm250sx.html"
       }
     ],
@@ -897,40 +917,50 @@ document.addEventListener('DOMContentLoaded', () => {
         id: "y1",
         name: "Honda CB350",
         pricePerDay: 1800,
+        weekdayPrice: 1000,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/yellow_car/cb350/1.jpg",
         link: "/car_introduce/yellow_motor/cb350.html"
       },
       {
         id: "y2",
         name: "Honda CBR500R",
         pricePerDay: 2400,
+        weekdayPrice: 1300,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/yellow_car/cbr500r/1.jpg",
         link: "/car_introduce/yellow_motor/cbr500r.html"
       },
       {
         id: "y3",
         name: "Honda Rebel500S",
         pricePerDay: 2400,
+        weekdayPrice: 1300,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/yellow_car/rebel500s/1.jpg",
         link: "/car_introduce/yellow_motor/rebel500.html"
       },
       {
         id: "y4",
         name: "Triumph Speed400",
         pricePerDay: 2400,
+        weekdayPrice: 1300,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/yellow_car/speed400/1.jpg",
         link: "/car_introduce/yellow_motor/speed400.html"
       },
       {
         id: "y5",
         name: "KTM Duke390 ADV",
         pricePerDay: 2400,
+        weekdayPrice: 1300,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/yellow_car/duke390_adv/1.jpg",
         link: "/car_introduce/yellow_motor/duke390_adv.html"
       }
     ],
@@ -939,96 +969,120 @@ document.addEventListener('DOMContentLoaded', () => {
         id: "r1",
         name: "Honda CB650R E-Clutch",
         pricePerDay: 2900,
+        weekdayPrice: 1500,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/red_car/cb650/1.jpg",
         link: "/car_introduce/red_motor/cb650r.html"
       },
       {
         id: "r2",
         name: "Honda CBR650R",
         pricePerDay: 2900,
+        weekdayPrice: 1500,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/red_car/cbr650/1.jpg",
         link: "/car_introduce/red_motor/cbr650r.html"
       },
       {
         id: "r3",
         name: "Suzuki GSX-R1000R",
         pricePerDay: 3500,
+        weekdayPrice: 1900,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/red_car/gsx1000/1.jpg",
         link: "/car_introduce/red_motor/gsx-r1000r.html"
       },
       {
         id: "r4",
         name: "Yamaha R6",
         pricePerDay: 3500,
+        weekdayPrice: 1900,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/red_car/r6/1.jpg",
         link: "/car_introduce/red_motor/r6.html"
       },
       {
         id: "r5",
         name: "Yamaha R7",
         pricePerDay: 2900,
+        weekdayPrice: 1500,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/red_car/r7/1.jpg",
         link: "/car_introduce/red_motor/r7.html"
       },
       {
         id: "r6",
         name: "Yamaha MT-09",
         pricePerDay: 3200,
+        weekdayPrice: 1700,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/red_car/mt09/1.jpg",
         link: "/car_introduce/red_motor/mt09.html"
       },
       {
         id: "r7",
         name: "Triumph Street Triple 765R",
         pricePerDay: 3200,
+        weekdayPrice: 1700,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/red_car/765/1.jpg",
         link: "/car_introduce/red_motor/street_triple765r.html"
       },
       {
         id: "r8",
         name: "Triumph Street Triple R",
         pricePerDay: 3200,
+        weekdayPrice: 1700,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/red_car/speed_triple_1050/1.jpg",
         link: "/car_introduce/red_motor/speed_triple_r1050.html"
       },
       {
         id: "r9",
         name: "YAMAHA TMAX",
         pricePerDay: 2900,
+        weekdayPrice: 1500,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/red_car/tmax/1.jpg",
         link: "/car_introduce/red_motor/tmax.html"
       },
       {
         id: "r10",
         name: "Triumph Trident 660",
         pricePerDay: 2900,
+        weekdayPrice: 1500,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/red_car/trident660/1.jpg",
         link: "/car_introduce/red_motor/trident660.html"
       },
       {
         id: "r11",
         name: "Kawasaki Z900RS",
         pricePerDay: 3500,
+        weekdayPrice: 1900,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/red_car/z900rs/1.jpg",
         link: "/car_introduce/red_motor/z900rs.html"
       },
       {
         id: "r12",
         name: "Kawasaki XSR900",
         pricePerDay: 3200,
+        weekdayPrice: 1700,
         insurance: { business: 500, roadside: 500 },
         insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/red_car/xsr900/1.jpg",
         link: "/car_introduce/red_motor/xsr900.html"
       }
     ],
@@ -1039,6 +1093,7 @@ document.addEventListener('DOMContentLoaded', () => {
         pricePerDay: 3800,
         insurance: { business: 500, roadside: 0 },
         insuranceAvailable: { business: true, roadside: false },
+        image: "/images/car_introduce/mx5/6.jpg",
         link: "/car_introduce/mx5.html"
       }
     ]
@@ -1069,7 +1124,12 @@ document.addEventListener('DOMContentLoaded', () => {
     featured: document.getElementById("dbxFeaturedCar"),
     gearOptions: document.querySelectorAll(".gear-option"),
     gearTotal: document.getElementById("dbxGearTotal"),
-    gearSelectWrap: document.getElementById("dbxGearSelectWrap")
+    gearSelectWrap: document.getElementById("dbxGearSelectWrap"),
+    dailyPriceLabel: document.getElementById("dbxDailyPriceLabel"),
+    daysLabel: document.getElementById("dbxDaysLabel"),
+    rentalSubtotalLabel: document.getElementById("dbxRentalSubtotalLabel"),
+    carPreviewImage: document.getElementById("rtwBudgetCarImage"),
+    carPreviewName: document.getElementById("rtwBudgetCarPhotoName")
   };
 
   if (!els.category || !els.model || !els.campaignDays) return;
@@ -1088,6 +1148,54 @@ document.addEventListener('DOMContentLoaded', () => {
       return `<option value="${car.id}">${car.name}</option>`;
     }).join("");
   }
+
+  function syncCampaignOptions() {
+  /* 只處理環島頁 */
+  const isCirclePage = document.querySelector(".circle-page") !== null;
+  if (!isCirclePage) return;
+
+  const isSportsCar =
+    els.category.value === "sports";
+
+  const options = Array.from(els.campaignDays.options);
+
+  let firstAvailableOption = null;
+  let currentSelectionValid = false;
+
+  options.forEach(function (option) {
+    const vehicleType = option.dataset.vehicle;
+
+    /* 沒有設定 vehicle 的 option 不處理 */
+    if (!vehicleType) return;
+
+    const shouldShow = isSportsCar ? vehicleType === "sports" : vehicleType === "motorcycle";
+
+    option.hidden = !shouldShow;
+    option.disabled = !shouldShow;
+
+    if (shouldShow && !firstAvailableOption) {
+      firstAvailableOption = option;
+    }
+
+    if (shouldShow && option.selected) {
+      currentSelectionValid = true;
+    }
+
+  });
+
+  /*
+   * 例如原本選七日，
+   * 接著切到 Mazda，
+   * 七日已不合法，所以自動改成 Mazda 5 日方案。
+   */
+  if (!currentSelectionValid && firstAvailableOption) {
+    options.forEach(function (option) {
+      option.selected = false;
+    });
+
+    firstAvailableOption.selected = true;
+  }
+}
 
   function syncInsuranceAvailability(car) {
     if (!car || !car.insuranceAvailable) return;
@@ -1117,6 +1225,44 @@ document.addEventListener('DOMContentLoaded', () => {
     return cars.find((car) => car.id === els.model.value) || cars[0] || null;
   }
 
+  function getRoadsideInsuranceTotal(car, billingDays) {
+    return Math.min(
+      car.insurance.roadside * billingDays,
+      1000
+    );
+  }
+
+  function getRentalSubtotal(
+  car,
+  billingDays,
+  priceMode
+) {
+  /* =========================
+     武嶺方案
+     24 小時 + 平日方案
+     ========================= */
+  if (priceMode === "wuling") {
+    const weekdayPrice = Number(car.weekdayPrice);
+    /*
+     * 正常來說 Mazda 不可能進入這裡，
+     * 因為 UI 已經把武嶺方案隱藏。
+     */
+    if (!Number.isFinite(weekdayPrice)) {
+      console.error(`[Budget] ${car.name} 沒有設定 weekdayPrice`);     
+      return car.pricePerDay * billingDays;
+    }
+
+    return (car.pricePerDay + weekdayPrice);
+  }
+
+  /* =========================
+     一般活動方案
+     保持原本算法
+     ========================= */
+
+  return (car.pricePerDay * billingDays);
+}
+
   function updateFeatured(car, billingDays, insuranceSum, total) {
     if (!car) {
       els.featured.innerHTML = `
@@ -1143,8 +1289,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (hasRoadside) {
+      const roadsideTotal =
+        getRoadsideInsuranceTotal(car, billingDays);
+
       insuranceLines.push(
-        `道路救援安心險 ${formatPrice(car.insurance.roadside)} × ${billingDays} 天`
+        `道路救援安心險 ${formatPrice(roadsideTotal)}（最高 ${formatPrice(1000)}）`
       );
     }
 
@@ -1156,7 +1305,11 @@ document.addEventListener('DOMContentLoaded', () => {
       <span class="dbx-budget__featuredLabel">車型資訊</span>
       <h4>${car.name}</h4>
       <p>
-        ${categoryText[els.category.value]} · 每日租金 ${formatPrice(car.pricePerDay)} · 出租 ${billingDays} 天<br>
+        ${
+          els.campaignDays.options[els.campaignDays.selectedIndex].dataset.priceMode === "wuling"
+            ? `${categoryText[els.category.value]} · 武嶺方案 · 24小時 + 平日`
+            : `${categoryText[els.category.value]} · 每日租金 ${formatPrice(car.pricePerDay)} · 計費天數 ${billingDays} 天`
+        }<br>
         ${insuranceLines.length ? insuranceLines.join(" <br> ") : "未加購保險"}<br>
         預估總額 ${formatPrice(total)}
       </p>
@@ -1166,10 +1319,43 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateBudget() {
-    const billingDays = Number(els.campaignDays.value);
 
+    const selectedPlan = els.campaignDays.options[els.campaignDays.selectedIndex];
+
+    if (!selectedPlan) return;
+
+    /*
+    * 環島頁使用 data-billing-days。
+    * 其他舊活動頁仍可直接使用 option.value。
+    */
+    const billingDays = Number(selectedPlan.dataset.billingDays || selectedPlan.value);
+
+    /*
+    * 舊活動沒有 data-price-mode，
+    * 就自動使用原本 daily 算法。
+    */
+    const priceMode = selectedPlan.dataset.priceMode || "daily";
     const car = getSelectedCar();
     if (!car) return;
+
+    if (els.carPreviewImage) {
+      if (car.image) {
+        els.carPreviewImage.src = car.image;
+        els.carPreviewImage.alt = `${car.name} 車輛照片`;
+        els.carPreviewImage.classList.remove("is-empty");
+      } else {
+        els.carPreviewImage.removeAttribute("src");
+        els.carPreviewImage.alt = "";
+
+        els.carPreviewImage.classList.add("is-empty");
+      }
+    }
+
+    if (els.carPreviewName) {
+
+      els.carPreviewName.textContent = car.name;
+
+    }
 
     syncInsuranceAvailability(car);
 
@@ -1185,7 +1371,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    const rentalSubtotal = car.pricePerDay * billingDays;
+    const rentalSubtotal = getRentalSubtotal(car, billingDays, priceMode);
 
     let insuranceSum = 0;
 
@@ -1200,7 +1386,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (hasRoadside) {
-      insuranceSum += car.insurance.roadside * billingDays;
+      insuranceSum += getRoadsideInsuranceTotal(car, billingDays);
     }
 
     /* 兩種保險同時加購，保險總額折抵 100 元 */
@@ -1220,8 +1406,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const total = rentalSubtotal + insuranceSum + gearSum;
 
     els.selectedModel.textContent = car.name;
-    els.dailyPrice.textContent = formatPrice(car.pricePerDay);
-    els.daysText.textContent = `${billingDays} 天`;
+    if (priceMode === "wuling") {
+      if (els.dailyPriceLabel) {
+        els.dailyPriceLabel.textContent = "24小時 + 平日方案";
+      }
+
+      els.dailyPrice.textContent = `${formatPrice(car.pricePerDay)} + ${formatPrice(car.weekdayPrice)}`;
+
+      if (els.daysLabel) {
+        els.daysLabel.textContent = "方案計價方式";
+      }
+
+      els.daysText.textContent = "24小時 + 平日";
+
+      if (els.rentalSubtotalLabel) {
+        els.rentalSubtotalLabel.textContent = "租金小計（24小時 + 平日方案）";
+      }
+
+    } else {
+      if (els.dailyPriceLabel) {
+        els.dailyPriceLabel.textContent = "每日租金";
+      }
+
+      els.dailyPrice.textContent = formatPrice(car.pricePerDay);
+
+      if (els.daysLabel) {
+        els.daysLabel.textContent = "本次計費天數";
+      }
+
+      els.daysText.textContent = `${billingDays} 天`;
+
+
+      if (els.rentalSubtotalLabel) {
+        els.rentalSubtotalLabel.textContent = "租金小計（每日租金 × 計費天數）";
+      }
+
+    }
     els.rentalSubtotal.textContent = formatPrice(rentalSubtotal);
     els.insuranceTotal.textContent = formatPrice(insuranceSum);
     if (els.gearTotal) {
@@ -1235,6 +1455,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   els.category.addEventListener("change", function () {
     populateModels();
+    syncCampaignOptions();
     updateBudget();
   });
 
@@ -1247,6 +1468,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   populateModels();
+  syncCampaignOptions();
   updateBudget();
 })();
 
