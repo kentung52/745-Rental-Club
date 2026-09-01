@@ -787,7 +787,7 @@ input[type="tel"]:focus,
   content: "";
   position: absolute;
   inset: 0;
-  background: #fff url("/images/car_introduce/red_car/gsx1000/1.jpg") no-repeat center center;
+  background: #fff url("/images/activity/moon_festival/cover.jpg") no-repeat center center;
   background-size: contain;
   opacity: 0;
   animation: bannerDmFade 12s infinite;
@@ -11182,4 +11182,1503 @@ input[type="tel"]:focus,
 
 
   
+}
+
+
+
+
+
+
+/* =========================================================
+   Mid-Autumn Festival Theme
+   中秋節活動頁專用
+   Scope: <main class="dbx-page moon-page">
+   ========================================================= */
+
+.moon-page {
+  /* ===== 中秋節專屬色票 ===== */
+  --moon-red-900: #54151f;
+  --moon-red-800: #681b27;
+  --moon-red-700: #862936;
+  --moon-red-600: #a43b48;
+
+  --moon-gold-600: #b77d2c;
+  --moon-gold-500: #cf9d46;
+  --moon-gold-400: #e2bb70;
+  --moon-gold-300: #f0d69c;
+
+  --moon-cream-100: #fffaf0;
+  --moon-cream-200: #fff4d9;
+  --moon-cream-300: #f8e7b8;
+
+  --moon-ink: #322120;
+  --moon-text: #6e5952;
+
+  /*
+   * 覆蓋 DBX 共用變數。
+   * 只在 moon-page 內生效。
+   */
+  --dbx-red-900: var(--moon-red-900);
+  --dbx-red-800: var(--moon-red-800);
+  --dbx-red-700: var(--moon-red-700);
+  --dbx-red-600: var(--moon-red-600);
+
+  --dbx-gold-500: var(--moon-gold-500);
+  --dbx-gold-400: var(--moon-gold-400);
+  --dbx-gold-300: var(--moon-gold-300);
+
+  --dbx-ink: var(--moon-ink);
+  --dbx-text: var(--moon-text);
+
+  --dbx-bg: #fbf2dc;
+  --dbx-panel: rgba(255, 250, 239, 0.94);
+  --dbx-border: rgba(134, 41, 54, 0.13);
+
+  --dbx-shadow:
+    0 18px 38px rgba(91, 39, 29, 0.08);
+
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at 5% 5%,
+      rgba(134, 41, 54, 0.10),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 92% 7%,
+      rgba(226, 187, 112, 0.22),
+      transparent 22%
+    ),
+    linear-gradient(
+      180deg,
+      #fbf1d7 0%,
+      #fffaf0 32%,
+      #f8edd4 100%
+    );
+
+  color: var(--moon-ink);
+}
+
+
+/* =========================================================
+   頁面背景月光裝飾
+   ========================================================= */
+
+.moon-page::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+
+  width: 520px;
+  height: 520px;
+
+  right: -250px;
+  top: 520px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 38% 35%,
+      rgba(255, 250, 215, 0.95) 0%,
+      rgba(240, 209, 142, 0.42) 43%,
+      rgba(207, 157, 70, 0.12) 62%,
+      transparent 70%
+    );
+
+  box-shadow:
+    0 0 80px rgba(221, 178, 91, 0.10);
+
+  pointer-events: none;
+}
+
+
+.moon-page::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+
+  width: 420px;
+  height: 420px;
+
+  left: -260px;
+  top: 1450px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(134, 41, 54, 0.08);
+
+  box-shadow:
+    0 0 0 36px rgba(207, 157, 70, 0.025),
+    0 0 0 72px rgba(134, 41, 54, 0.018);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   原本兩顆模糊背景光球
+   ========================================================= */
+
+.moon-page .dbx-bg--red {
+  background:
+    radial-gradient(
+      circle,
+      rgba(134, 41, 54, 0.38),
+      transparent 66%
+    );
+}
+
+
+.moon-page .dbx-bg--gold {
+  background:
+    radial-gradient(
+      circle,
+      rgba(226, 187, 112, 0.46),
+      transparent 66%
+    );
+}
+
+
+/* =========================================================
+   Kicker / Chip
+   ========================================================= */
+
+.moon-page .dbx-kicker,
+.moon-page .dbx-chip {
+  color: var(--moon-red-700);
+
+  border-color:
+    rgba(134, 41, 54, 0.15);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 251, 239, 0.98),
+      rgba(250, 233, 190, 0.94)
+    );
+
+  box-shadow:
+    0 7px 18px rgba(112, 57, 34, 0.05);
+}
+
+
+.moon-page .dbx-chip--light {
+  color: #fff4d7;
+
+  background:
+    rgba(255, 245, 218, 0.10);
+
+  border-color:
+    rgba(255, 224, 166, 0.22);
+}
+
+
+/* =========================================================
+   Hero
+   ========================================================= */
+
+.moon-page .dbx-hero__panel {
+  border-color:
+    rgba(134, 41, 54, 0.12);
+
+  background:
+    radial-gradient(
+      circle at 87% 22%,
+      rgba(236, 204, 131, 0.26),
+      transparent 22%
+    ),
+    radial-gradient(
+      circle at 8% 8%,
+      rgba(134, 41, 54, 0.07),
+      transparent 23%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 251, 241, 0.98),
+      rgba(250, 238, 207, 0.96)
+    );
+
+  box-shadow:
+    0 26px 58px rgba(91, 39, 29, 0.09);
+}
+
+
+/* Hero 上方原本金線 */
+
+.moon-page .dbx-hero__panel::before {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(134, 41, 54, 0.36),
+      rgba(224, 181, 92, 0.92),
+      rgba(134, 41, 54, 0.36),
+      transparent
+    );
+}
+
+
+/*
+ * 中秋月亮光暈
+ * 使用現有 Hero panel 的 ::after
+ * 不新增 HTML
+ */
+
+.moon-page .moon-hero .dbx-hero__panel::after {
+  content: "";
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  top: -125px;
+  right: 110px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 40% 38%,
+      rgba(255, 250, 217, 0.95) 0%,
+      rgba(244, 214, 150, 0.62) 44%,
+      rgba(207, 157, 70, 0.10) 66%,
+      transparent 72%
+    );
+
+  box-shadow:
+    0 0 50px rgba(224, 180, 89, 0.14);
+
+  opacity: 0.72;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.moon-page .dbx-hero__panel-main,
+.moon-page .dbx-hero__panel-side {
+  position: relative;
+  z-index: 1;
+}
+
+
+.moon-page .dbx-hero__gold-line {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--moon-red-700),
+      var(--moon-gold-500),
+      var(--moon-gold-300)
+    );
+}
+
+
+.moon-page .dbx-title {
+  color: #451820;
+}
+
+
+.moon-page .dbx-subtitle {
+  color: #6c5650;
+}
+
+
+/* 右側中秋節小插畫圓框 */
+
+.moon-page .dbx-hero__festival-emblem-ring {
+  border-color:
+    rgba(177, 125, 44, 0.25);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 250, 228, 0.92) 0%,
+      rgba(248, 229, 180, 0.62) 52%,
+      rgba(226, 187, 112, 0.08) 70%,
+      transparent 74%
+    );
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.56),
+    0 20px 38px rgba(105, 56, 32, 0.09);
+}
+
+
+.moon-page .dbx-hero__festival-emblem-leaf {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(134, 41, 54, 0.23),
+      rgba(220, 174, 86, 0.34)
+    );
+}
+
+
+/* =========================================================
+   Section 標題
+   ========================================================= */
+
+.moon-page .dbx-section__head h2 {
+  color: #3f2521;
+}
+
+
+.moon-page .dbx-section__head p {
+  color: #725f57;
+}
+
+
+/* =========================================================
+   DM
+   ========================================================= */
+
+.moon-page .dbx-dm-showcase {
+  border-color:
+    rgba(134, 41, 54, 0.12);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 252, 244, 0.98),
+      rgba(249, 233, 195, 0.96)
+    );
+
+  box-shadow:
+    0 26px 58px rgba(83, 39, 26, 0.09);
+}
+
+
+.moon-page .dbx-dm-showcase__frame {
+  background:
+    linear-gradient(
+      135deg,
+      #581923,
+      #361418
+    );
+}
+
+
+.moon-page .dbx-dm-showcase__frame::before {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(238, 205, 139, 0.90),
+      rgba(255,255,255,0.08),
+      rgba(134, 41, 54, 0.42)
+    );
+}
+
+
+.moon-page .dbx-dm-showcase__badge {
+  background:
+    linear-gradient(
+      135deg,
+      var(--moon-red-700),
+      var(--moon-red-900)
+    );
+
+  color: #fff3d2;
+
+  box-shadow:
+    0 10px 22px rgba(84, 21, 31, 0.22);
+}
+
+
+.moon-page .dbx-dm-showcase__line {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(134, 41, 54, 0.45),
+      rgba(226, 187, 112, 0.92),
+      rgba(134, 41, 54, 0.45),
+      transparent
+    );
+}
+
+
+.moon-page .dbx-dm-showcase__side-mark {
+  background:
+    linear-gradient(
+      180deg,
+      var(--moon-gold-400),
+      var(--moon-red-700)
+    );
+}
+
+
+/* DM 旁邊的淡淡月餅紋樣 */
+
+.moon-page .moon-dm-section {
+  position: relative;
+}
+
+
+.moon-page .moon-dm-section::after {
+  content: "";
+  position: absolute;
+
+  width: 105px;
+  height: 105px;
+
+  right: -28px;
+  top: 95px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(134, 41, 54, 0.10);
+
+  background:
+    repeating-radial-gradient(
+      circle,
+      rgba(183, 125, 44, 0.08) 0 2px,
+      transparent 2px 11px
+    );
+
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   Offer Cards
+   ========================================================= */
+
+.moon-page .dbx-offer-card {
+  border-color:
+    rgba(134, 41, 54, 0.11);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 253, 247, 0.98),
+      rgba(250, 238, 207, 0.96)
+    );
+
+  box-shadow:
+    0 18px 38px rgba(91, 39, 29, 0.07);
+}
+
+
+.moon-page .dbx-offer-card--primary {
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at 88% 15%,
+      rgba(226, 187, 112, 0.15),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #862936,
+      #54151f
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 22px 46px rgba(84, 21, 31, 0.20);
+}
+
+
+/* 月餅壓紋感 */
+
+.moon-page .dbx-offer-card--primary::after {
+  content: "";
+  position: absolute;
+
+  width: 150px;
+  height: 150px;
+
+  right: -48px;
+  bottom: -60px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(245, 217, 157, 0.22);
+
+  background:
+    repeating-radial-gradient(
+      circle,
+      rgba(245, 217, 157, 0.12) 0 2px,
+      transparent 2px 13px
+    );
+
+  pointer-events: none;
+}
+
+
+.moon-page .dbx-offer-card--primary > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+.moon-page .dbx-offer-card__label {
+  color: #967251;
+}
+
+
+.moon-page
+.dbx-offer-card--primary
+.dbx-offer-card__label {
+  color: #efd7a2;
+}
+
+
+.moon-page .dbx-offer-card h3 {
+  color: #432820;
+}
+
+
+.moon-page .dbx-offer-card--primary h3 {
+  color: #fff7df;
+}
+
+
+.moon-page .dbx-offer-card p {
+  color: #6e5b53;
+}
+
+
+.moon-page .dbx-offer-card--primary p {
+  color: rgba(255, 249, 232, 0.90);
+}
+
+
+/* =========================================================
+   Insurance
+   ========================================================= */
+
+.moon-page .dbx-insurance__content {
+  border-color:
+    rgba(134, 41, 54, 0.12);
+
+  background:
+    linear-gradient(
+      180deg,
+      #fffdfa,
+      #faedcd
+    );
+}
+
+
+.moon-page .dbx-insurance__content h2 {
+  color: #43261f;
+}
+
+
+.moon-page .dbx-insurance__content p,
+.moon-page .dbx-insurance__content li {
+  color: #6d5952;
+}
+
+
+.moon-page .dbx-insurance__panel {
+  border-color:
+    rgba(134, 41, 54, 0.17);
+
+  background:
+    radial-gradient(
+      circle at 68% 35%,
+      rgba(238, 205, 139, 0.22),
+      transparent 26%
+    ),
+    linear-gradient(
+      135deg,
+      #862936,
+      #54151f
+    );
+}
+
+
+.moon-page .dbx-insurance__panel::before {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(240, 214, 156, 0.90),
+      transparent
+    );
+}
+
+
+.moon-page .dbx-insurance__seal {
+  color: #fff6de;
+}
+
+
+/* =========================================================
+   Gear
+   ========================================================= */
+
+.moon-page .dbx-gear-promo {
+  border-color:
+    rgba(134, 41, 54, 0.10);
+
+  background:
+    radial-gradient(
+      circle at 92% 12%,
+      rgba(226, 187, 112, 0.14),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #fffdfa,
+      #faedcd
+    );
+
+  box-shadow:
+    0 24px 60px rgba(83, 39, 26, 0.08);
+}
+
+
+.moon-page .dbx-gear-promo__content h2 {
+  color: #43261f;
+}
+
+
+.moon-page .dbx-gear-promo__content p {
+  color: #6a5750;
+}
+
+
+.moon-page .dbx-gear-promo__tags span {
+  color: var(--moon-red-700);
+
+  border-color:
+    rgba(134, 41, 54, 0.15);
+
+  background: #fffdf8;
+}
+
+
+/* =========================================================
+   Delivery
+   ========================================================= */
+
+.moon-page .dbx-delivery-promo {
+  border-color:
+    rgba(134, 41, 54, 0.11);
+
+  background:
+    radial-gradient(
+      circle at 92% 10%,
+      rgba(226, 187, 112, 0.15),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #fffdf9,
+      #faedce
+    );
+
+  box-shadow:
+    0 20px 50px rgba(83, 39, 26, 0.08);
+}
+
+
+.moon-page .dbx-delivery-promo__icon {
+  background:
+    linear-gradient(
+      135deg,
+      var(--moon-red-700),
+      var(--moon-red-900)
+    );
+
+  color: #fff7df;
+
+  box-shadow:
+    0 16px 34px rgba(84, 21, 31, 0.19);
+}
+
+
+.moon-page .dbx-delivery-promo__content h2 {
+  color: #43261f;
+}
+
+
+.moon-page .dbx-delivery-promo__content p {
+  color: #6c5851;
+}
+
+
+.moon-page .dbx-delivery-promo__notes span {
+  color: var(--moon-red-700);
+
+  border-color:
+    rgba(134, 41, 54, 0.15);
+
+  background: #fffdfa;
+}
+
+
+/* =========================================================
+   Budget Estimator
+   只改視覺，不碰 JS 功能
+   ========================================================= */
+
+.moon-page .dbx-budget__panel {
+  background:
+    linear-gradient(
+      180deg,
+      #fffefa,
+      #fff9ea
+    );
+
+  border-color:
+    rgba(134, 41, 54, 0.13);
+
+  box-shadow:
+    0 20px 50px rgba(83, 39, 26, 0.08);
+}
+
+
+.moon-page .dbx-budget__panel::before {
+  background:
+    radial-gradient(
+      420px 220px at 10% 0%,
+      rgba(226, 187, 112, 0.11),
+      transparent 60%
+    ),
+    radial-gradient(
+      300px 200px at 100% 100%,
+      rgba(134, 41, 54, 0.055),
+      transparent 60%
+    );
+}
+
+
+.moon-page .dbx-budget__panel--result {
+  background:
+    linear-gradient(
+      180deg,
+      #faedce,
+      #fffdf8 58%
+    );
+}
+
+
+.moon-page .dbx-budget__eyebrow {
+  background:
+    rgba(207, 157, 70, 0.11);
+
+  border-color:
+    rgba(177, 125, 44, 0.18);
+
+  color: #956422;
+}
+
+
+.moon-page .dbx-budget__panel-head h3 {
+  color: #42251f;
+}
+
+
+.moon-page .dbx-budget__label {
+  color: #684437;
+}
+
+
+.moon-page .dbx-budget__select {
+  color: #432c27;
+
+  background: #fffefa;
+
+  border-color:
+    rgba(134, 41, 54, 0.16);
+}
+
+
+.moon-page .dbx-budget__select:focus {
+  border-color:
+    var(--moon-red-700);
+
+  box-shadow:
+    0 0 0 3px rgba(134, 41, 54, 0.08);
+}
+
+
+.moon-page .dbx-budget__choice {
+  color: #50352e;
+
+  background: #fffefa;
+
+  border-color:
+    rgba(134, 41, 54, 0.13);
+}
+
+
+.moon-page .dbx-budget__choice input {
+  accent-color:
+    var(--moon-red-700);
+}
+
+
+.moon-page
+.dbx-budget__choice:has(input:checked) {
+  border-color:
+    rgba(134, 41, 54, 0.38);
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff3d5,
+      #fffdfa
+    );
+
+  box-shadow:
+    0 12px 28px rgba(84, 21, 31, 0.08);
+}
+
+
+.moon-page .dbx-budget__hint {
+  color: #8a7569;
+}
+
+
+.moon-page .dbx-budget__summaryItem {
+  background:
+    linear-gradient(
+      180deg,
+      #fffdf6,
+      #f8e5b5
+    );
+
+  border-color:
+    rgba(183, 125, 44, 0.20);
+}
+
+
+.moon-page .dbx-budget__summaryItem span,
+.moon-page .dbx-budget__breakdownRow span {
+  color: #836a59;
+}
+
+
+.moon-page .dbx-budget__summaryItem strong {
+  color: var(--moon-red-700);
+}
+
+
+.moon-page .dbx-budget__breakdown {
+  background:
+    rgba(255, 252, 243, 0.97);
+
+  border-color:
+    rgba(177, 125, 44, 0.16);
+}
+
+
+.moon-page .dbx-budget__breakdownRow {
+  border-bottom-color:
+    rgba(134, 41, 54, 0.10);
+}
+
+
+.moon-page .dbx-budget__breakdownRow strong {
+  color: #47312a;
+}
+
+
+.moon-page
+.dbx-budget__breakdownRow--total strong {
+  color: var(--moon-red-700);
+}
+
+
+.moon-page .dbx-budget__featured {
+  background:
+    linear-gradient(
+      135deg,
+      #f9e9c3,
+      #fff8e8
+    );
+
+  border-color:
+    rgba(177, 125, 44, 0.16);
+}
+
+
+.moon-page .dbx-budget__featuredLabel {
+  background:
+    rgba(134, 41, 54, 0.08);
+
+  color:
+    var(--moon-red-700);
+}
+
+
+.moon-page .dbx-budget__featured h4 {
+  color: #432820;
+}
+
+
+.moon-page .dbx-budget__featured p {
+  color: #756057;
+}
+
+
+.moon-page .dbx-budget__featured a {
+  background:
+    linear-gradient(
+      180deg,
+      var(--moon-red-700),
+      var(--moon-red-900)
+    );
+
+  color: #fff8e7;
+
+  box-shadow:
+    0 12px 24px rgba(84, 21, 31, 0.18);
+}
+
+
+/* 騎士用品價格 */
+
+.moon-page .gear-right span {
+  color: var(--moon-red-700);
+}
+
+
+.moon-page .gear-right small {
+  color: #9b7441;
+}
+
+
+/* 中秋桂花點綴 */
+
+.moon-page .moon-budget-section {
+  position: relative;
+}
+
+
+.moon-page .moon-budget-section::after {
+  content: "";
+  position: absolute;
+
+  width: 85px;
+  height: 85px;
+
+  right: 1%;
+  top: 85px;
+
+  background:
+    radial-gradient(circle at 25% 35%, #d6a34d 0 4px, transparent 5px),
+    radial-gradient(circle at 45% 22%, #e2ba67 0 3px, transparent 4px),
+    radial-gradient(circle at 65% 40%, #c78f38 0 4px, transparent 5px),
+    radial-gradient(circle at 38% 58%, #dfb35c 0 3px, transparent 4px),
+    radial-gradient(circle at 72% 66%, #d19a42 0 4px, transparent 5px),
+    radial-gradient(circle at 52% 78%, #e7c77f 0 3px, transparent 4px);
+
+  opacity: 0.48;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   Mid CTA
+   ========================================================= */
+
+.moon-page .dbx-mid-cta {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 244, 216, 0.34),
+      rgba(134, 41, 54, 0.50),
+      rgba(207, 157, 70, 0.42),
+      rgba(255, 249, 232, 0.26)
+    );
+
+  box-shadow:
+    0 30px 80px rgba(84, 21, 31, 0.19);
+}
+
+
+.moon-page .dbx-mid-cta__inner {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(233, 194, 117, 0.18),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(205, 143, 75, 0.14),
+      transparent 36%
+    ),
+    linear-gradient(
+      145deg,
+      #681b27 0%,
+      #862936 48%,
+      #4e141c 100%
+    );
+}
+
+
+.moon-page .dbx-mid-cta__inner h2 {
+  color: #fff8df;
+}
+
+
+.moon-page .dbx-mid-cta__inner p {
+  color:
+    rgba(255, 247, 226, 0.88);
+}
+
+
+.moon-page
+.dbx-mid-cta__btn--primary {
+  background:
+    linear-gradient(
+      180deg,
+      #f2d69b,
+      #d8a950
+    );
+
+  color: #571820;
+
+  border-color:
+    rgba(255, 228, 173, 0.60);
+}
+
+
+.moon-page
+.dbx-mid-cta__btn--primary:hover {
+  color: #4e141c;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffe7b2,
+      #e3bb6c
+    );
+}
+
+
+/* =========================================================
+   Gallery
+   ========================================================= */
+
+.moon-page .dbx-gallery__arrow {
+  border-color:
+    rgba(134, 41, 54, 0.18);
+
+  color:
+    var(--moon-red-700);
+
+  background:
+    rgba(255, 250, 239, 0.94);
+}
+
+
+.moon-page .dbx-gallery__dots button {
+  background:
+    rgba(134, 41, 54, 0.18);
+}
+
+
+.moon-page
+.dbx-gallery__dots button.is-active {
+  background:
+    linear-gradient(
+      135deg,
+      var(--moon-gold-500),
+      var(--moon-red-700)
+    );
+}
+
+
+/* =========================================================
+   Vehicle Cards
+   ========================================================= */
+
+.moon-page .dbx-type-card {
+  border-color:
+    rgba(134, 41, 54, 0.11);
+
+  background:
+    linear-gradient(
+      180deg,
+      #fffefa,
+      #faedcd
+    );
+
+  box-shadow:
+    0 16px 36px rgba(83, 39, 26, 0.07);
+}
+
+
+.moon-page .dbx-type-card__body h3 {
+  color: #432820;
+}
+
+
+.moon-page .dbx-type-card__body p {
+  color: #705c54;
+}
+
+
+.moon-page .dbx-type-card__body a {
+  color:
+    var(--moon-red-700);
+}
+
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.moon-page .dbx-faq__item {
+  border-color:
+    rgba(134, 41, 54, 0.12);
+
+  background:
+    linear-gradient(
+      180deg,
+      #fffefa,
+      #fbefcf
+    );
+
+  box-shadow:
+    0 12px 26px rgba(83, 39, 26, 0.055);
+}
+
+
+.moon-page .dbx-faq__item summary {
+  color: #432820;
+}
+
+
+.moon-page .dbx-faq__item p {
+  color: #705c54;
+}
+
+
+/* =========================================================
+   Bottom CTA
+   ========================================================= */
+
+.moon-page .dbx-cta {
+  background:
+    radial-gradient(
+      circle at 84% 42%,
+      rgba(238, 205, 139, 0.20),
+      transparent 24%
+    ),
+    linear-gradient(
+      135deg,
+      #862936,
+      #54151f
+    );
+
+  border-color:
+    rgba(255, 242, 210, 0.10);
+
+  box-shadow:
+    0 24px 46px rgba(84, 21, 31, 0.21);
+}
+
+
+.moon-page .dbx-cta::before {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(240, 214, 156, 0.88),
+      transparent
+    );
+}
+
+
+.moon-page .dbx-cta__main h2 {
+  color: #fff8df;
+}
+
+
+.moon-page .dbx-cta__main p {
+  color:
+    rgba(255, 247, 227, 0.88);
+}
+
+
+.moon-page .dbx-contact-card {
+  background:
+    rgba(255, 248, 230, 0.10);
+
+  border-color:
+    rgba(246, 218, 164, 0.18);
+}
+
+
+.moon-page .dbx-contact-card span {
+  color:
+    rgba(246, 218, 164, 0.80);
+}
+
+
+.moon-page .dbx-contact-card a {
+  color: #fffaf0;
+}
+
+
+.moon-page .dbx-contact-card--line {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(226, 187, 112, 0.18),
+      rgba(255,255,255,0.07)
+    );
+}
+
+
+/* =========================================================
+   Mobile
+   手機版降低裝飾存在感，避免畫面太擠
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .moon-page::before {
+    width: 320px;
+    height: 320px;
+
+    right: -210px;
+  }
+
+
+  .moon-page::after {
+    display: none;
+  }
+
+
+  .moon-page
+  .moon-hero
+  .dbx-hero__panel::after {
+
+    width: 170px;
+    height: 170px;
+
+    top: -90px;
+    right: -35px;
+
+    opacity: 0.48;
+  }
+
+
+  .moon-page
+  .moon-dm-section::after,
+
+  .moon-page
+  .moon-budget-section::after {
+
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   Mid-Autumn extra illustration assets
+   讓中秋節頁面更有記憶點
+   ========================================================= */
+
+/* Hero 主視覺更大更醒目 */
+.moon-page .moon-hero .dbx-hero__panel-side {
+  position: relative;
+  min-height: 320px;
+}
+
+.moon-page .moon-hero-emblem {
+  width: clamp(270px, 28vw, 340px);
+  height: clamp(270px, 28vw, 340px);
+}
+
+.moon-page .moon-hero-emblem .dbx-hero__festival-emblem-media {
+  width: 84%;
+  height: 84%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.moon-page .moon-hero-emblem .dbx-hero__festival-emblem-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 18px 26px rgba(90, 37, 31, 0.16));
+  animation: moonArtFloat 5.8s ease-in-out infinite;
+}
+
+/* Hero 圓環再加一點月光感 */
+.moon-page .moon-hero-emblem .dbx-hero__festival-emblem-ring::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 248, 222, 0.58),
+      rgba(255, 248, 222, 0.06) 60%,
+      transparent 72%
+    );
+  pointer-events: none;
+}
+
+/* 兩個裝飾區塊定位 */
+.moon-page .moon-dm-section,
+.moon-page .moon-budget-section {
+  position: relative;
+  overflow: visible;
+}
+
+/* 通用浮動裝飾插畫 */
+.moon-page .moon-floating-art {
+  position: absolute;
+  z-index: 4;
+  width: 150px;
+  aspect-ratio: 1 / 1;
+  padding: 8px;
+  border-radius: 50%;
+  background: rgba(255, 250, 241, 0.96);
+  border: 1px solid rgba(177, 125, 44, 0.18);
+  box-shadow:
+    0 16px 32px rgba(90, 37, 31, 0.10),
+    0 0 0 10px rgba(255, 244, 216, 0.48);
+  pointer-events: none;
+}
+
+.moon-page .moon-floating-art::before {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 233, 185, 0.42),
+      rgba(255, 233, 185, 0.08) 55%,
+      transparent 72%
+    );
+  z-index: -1;
+}
+
+.moon-page .moon-floating-art img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* 月兔徽章：偏右上、像節慶貼紙 */
+.moon-page .moon-floating-art--rabbit {
+  right: 14px;
+  top: 96px;
+  transform: rotate(8deg);
+  animation: moonArtFloatAlt 6.6s ease-in-out infinite;
+}
+
+/* 柚子月餅徽章：放在預算試算區右上 */
+.moon-page .moon-floating-art--pomelo {
+  right: -6px;
+  top: 86px;
+  transform: rotate(-8deg);
+  animation: moonArtFloat 6.9s ease-in-out infinite;
+}
+
+/* 讓 DM 區與試算區留一點視覺呼吸 */
+.moon-page .moon-dm-section .dbx-dm-showcase,
+.moon-page .moon-budget-section .dbx-budget {
+  position: relative;
+  z-index: 1;
+}
+
+/* 動畫 */
+@keyframes moonArtFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-8deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-5deg);
+  }
+}
+
+@keyframes moonArtFloatAlt {
+  0%, 100% {
+    transform: translateY(0) rotate(8deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(11deg);
+  }
+}
+
+/* Hero 主視覺使用單獨動畫，避免被上面覆蓋 */
+.moon-page .moon-hero-emblem .dbx-hero__festival-emblem-image {
+  animation-name: moonHeroArtFloat;
+}
+
+@keyframes moonHeroArtFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* 平板 */
+@media (max-width: 991.98px) {
+  .moon-page .moon-floating-art {
+    width: 128px;
+  }
+
+  .moon-page .moon-floating-art--rabbit {
+    right: 8px;
+    top: 88px;
+  }
+
+  .moon-page .moon-floating-art--pomelo {
+    right: 0;
+    top: 84px;
+  }
+}
+
+/* 手機 */
+@media (max-width: 768px) {
+  .moon-page .moon-hero .dbx-hero__panel-side {
+    min-height: 220px;
+  }
+
+  .moon-page .moon-hero-emblem {
+    width: 220px;
+    height: 220px;
+  }
+
+  .moon-page .moon-floating-art {
+    width: 92px;
+    padding: 5px;
+    box-shadow:
+      0 10px 22px rgba(90, 37, 31, 0.10),
+      0 0 0 6px rgba(255, 244, 216, 0.42);
+  }
+
+  .moon-page .moon-floating-art--rabbit {
+    top: 72px;
+    right: 2px;
+  }
+
+  .moon-page .moon-floating-art--pomelo {
+    top: 70px;
+    right: 0;
+  }
 }
