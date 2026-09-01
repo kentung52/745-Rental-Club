@@ -318,6 +318,54 @@
 		<priority>0.70</priority>
 		<lastmod>2026-04-11T00:00:00+08:00</lastmod>
 	</url>
+
+	<url>
+	<loc>https://745-rental-club.vercel.app/activity/moon_festival.html</loc>  <!-- 中秋節活動 -->
+		<priority>0.70</priority>
+		<lastmod>2026-04-11T00:00:00+08:00</lastmod>
+	</url>
+
+	<url>
+	<loc>https://745-rental-club.vercel.app/activity/dragon_boat_festival.html</loc>  <!-- 端午節活動 -->
+		<priority>0.70</priority>
+		<lastmod>2026-04-11T00:00:00+08:00</lastmod>
+	</url>
+
+	<url>
+	<loc>https://745-rental-club.vercel.app/activity/circle.html</loc>  <!-- 環島節活動 -->
+		<priority>0.70</priority>
+		<lastmod>2026-04-11T00:00:00+08:00</lastmod>
+	</url>
+
+	<url>
+	<loc>https://745-rental-club.vercel.app/activity/labor_day.html</loc>  <!-- 勞動節活動 -->
+		<priority>0.70</priority>
+		<lastmod>2026-04-11T00:00:00+08:00</lastmod>
+	</url>
+
+	<url>
+	<loc>https://745-rental-club.vercel.app/ship.html</loc>  <!-- 車輛託運 -->
+		<priority>0.70</priority>
+		<lastmod>2026-04-11T00:00:00+08:00</lastmod>
+	</url>
+
+	<url>
+	<loc>https://745-rental-club.vercel.app/car_trade/sold/red/2017cbr650f.html</loc>  <!-- 販售車輛CBR650F -->
+		<priority>0.70</priority>
+		<lastmod>2026-04-11T00:00:00+08:00</lastmod>
+	</url>
+
+	<url>
+	<loc>https://745-rental-club.vercel.app/car_trade/sold/white/gixxer250.html</loc>  <!-- 販售車輛Gixxer250 -->
+		<priority>0.70</priority>
+		<lastmod>2026-04-11T00:00:00+08:00</lastmod>
+	</url>
+
+	<url>
+	<loc>https://745-rental-club.vercel.app/car_trade/sold/red/trident660.html</loc>  <!-- 販售車輛Trident660 -->
+		<priority>0.70</priority>
+		<lastmod>2026-04-11T00:00:00+08:00</lastmod>
+	</url>
 		
 </urlset>
 
