@@ -962,6 +962,16 @@ document.addEventListener('DOMContentLoaded', () => {
         insuranceAvailable: { business: true, roadside: true },
         image: "/images/car_introduce/yellow_car/duke390_adv/1.jpg",
         link: "/car_introduce/yellow_motor/duke390_adv.html"
+      },
+      {
+        id: "y6",
+        name: "Yamaha XMAX300",
+        pricePerDay: 2400,
+        weekdayPrice: 1300,
+        insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/yellow_car/xmax/1.jpg",
+        link: "/car_introduce/yellow_motor/xmax.html"
       }
     ],
     red: [

@@ -209,6 +209,12 @@
 		<priority>0.70</priority>
 		<lastmod>2026-04-11T00:00:00+08:00</lastmod>
 	</url>
+
+	<url>
+	<loc>https://745-rental-club.vercel.app/car_introduce/yellow_motor/xmax.html</loc>  <!-- XMAX300 -->
+		<priority>0.70</priority>
+		<lastmod>2026-04-11T00:00:00+08:00</lastmod>
+	</url>	
 	
 	<url>
 	<loc>https://745-rental-club.vercel.app/car_introduce/yellow_motor/cbr500r.html</loc>  <!-- CBR500R -->
