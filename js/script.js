@@ -723,7 +723,9 @@ document.addEventListener('DOMContentLoaded', buildNewsToc);
 
 document.addEventListener('DOMContentLoaded', () => {
   // reveal
-  const revealEls = document.querySelectorAll('.dbx-reveal');
+  const revealEls = document.querySelectorAll(
+    '.dbx-reveal, .autumn-reveal'
+  );
 
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
@@ -741,10 +743,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // gallery slider
-  const slides = document.querySelectorAll('.dbx-gallery__slide');
+  const slides = document.querySelectorAll(
+    '.dbx-gallery__slide, .autumn-gallery__slide'
+  );
+
   const dots = document.querySelectorAll('#dbxGalleryDots button');
   const prevBtn = document.getElementById('dbxGalleryPrev');
   const nextBtn = document.getElementById('dbxGalleryNext');
+
   let currentSlide = 0;
   let sliderTimer = null;
 

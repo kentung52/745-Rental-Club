@@ -787,7 +787,7 @@ input[type="tel"]:focus,
   content: "";
   position: absolute;
   inset: 0;
-  background: #fff url("/images/activity/moon_festival/cover.jpg") no-repeat center center;
+  background: #fff url("/images/activity/autumn_sale/首頁DM.jpg") no-repeat center center;
   background-size: contain;
   opacity: 0;
   animation: bannerDmFade 12s infinite;
@@ -12681,4 +12681,1695 @@ input[type="tel"]:focus,
     top: 70px;
     right: 0;
   }
+}
+
+
+
+/* ============================================================
+   AUTUMN SALE THEME
+   Scope: .autumn-theme
+
+   說明：
+   1. 不修改原本活動頁版型
+   2. 不修改 Hero emblem / icon 定位
+   3. 不修改 Budget DOM
+   4. 僅覆蓋顏色、材質、陰影與秋季裝飾
+============================================================ */
+
+
+/* ============================================================
+   01. Theme Tokens
+============================================================ */
+
+.autumn-theme {
+  --autumn-bg: #f3eadb;
+  --autumn-bg-soft: #faf4e9;
+  --autumn-bg-light: #fffaf2;
+
+  --autumn-card: #fffaf3;
+  --autumn-card-soft: #f8efe2;
+
+  --autumn-khaki: #c7ad83;
+  --autumn-khaki-light: #dec9a7;
+
+  --autumn-camel: #b48761;
+  --autumn-camel-light: #caa27b;
+
+  --autumn-coffee: #795846;
+  --autumn-coffee-dark: #533b30;
+
+  --autumn-brown: #493329;
+  --autumn-text: #665044;
+  --autumn-muted: #8d7566;
+
+  --autumn-orange: #c67843;
+  --autumn-orange-dark: #9f5934;
+
+  --autumn-gold: #d4aa65;
+  --autumn-gold-light: #ead2a7;
+
+  --autumn-border: rgba(121, 88, 70, .15);
+
+  --autumn-shadow:
+    0 18px 42px rgba(83, 59, 43, .09);
+
+  --dbx-red-900: #574034;
+  --dbx-red-800: #674a3b;
+  --dbx-red-700: #795846;
+  --dbx-red-600: #997052;
+
+  --dbx-gold-500: #c49a5b;
+  --dbx-gold-400: #d7b476;
+  --dbx-gold-300: #ead4ab;
+
+  --dbx-ink: #493329;
+  --dbx-text: #665044;
+  --dbx-bg: #f3eadb;
+  --dbx-panel: rgba(255, 250, 243, .94);
+  --dbx-border: rgba(121, 88, 70, .14);
+  --dbx-shadow: 0 18px 40px rgba(83, 59, 43, .08);
+}
+
+
+/* ============================================================
+   02. Main Background
+============================================================ */
+
+.autumn-theme.dbx-page {
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at 5% 5%,
+      rgba(190, 143, 99, .20),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 92% 7%,
+      rgba(220, 183, 117, .22),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 78% 48%,
+      rgba(180, 133, 92, .09),
+      transparent 24%
+    ),
+    linear-gradient(
+      180deg,
+      #f0e2cf 0%,
+      #f8efe2 28%,
+      #f3e8d8 63%,
+      #faf3e9 100%
+    );
+
+  color: var(--autumn-brown);
+}
+
+
+/* 細微紙張質感 */
+.autumn-theme.dbx-page::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  opacity: .30;
+
+  background-image:
+    linear-gradient(
+      rgba(112, 84, 62, .024) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(112, 84, 62, .018) 1px,
+      transparent 1px
+    );
+
+  background-size: 36px 36px;
+}
+
+
+/* 原本叫 red，但秋季頁改成焦糖光 */
+.autumn-theme .dbx-bg--red {
+  background:
+    radial-gradient(
+      circle,
+      rgba(177, 124, 82, .42),
+      transparent 68%
+    );
+}
+
+
+/* 原本 gold 改成暖金 */
+.autumn-theme .dbx-bg--gold {
+  background:
+    radial-gradient(
+      circle,
+      rgba(215, 178, 107, .48),
+      transparent 68%
+    );
+}
+
+
+/* ============================================================
+   03. Chips / Headings
+============================================================ */
+
+.autumn-theme .dbx-kicker,
+.autumn-theme .dbx-chip {
+  border-color:
+    rgba(158, 106, 68, .18);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 251, 244, .96),
+      rgba(244, 230, 209, .94)
+    );
+
+  color:
+    var(--autumn-coffee);
+
+  box-shadow:
+    0 7px 18px rgba(94, 64, 44, .05);
+}
+
+
+.autumn-theme .dbx-section__head h2 {
+  color:
+    var(--autumn-brown);
+}
+
+
+.autumn-theme .dbx-section__head p {
+  color:
+    var(--autumn-text);
+}
+
+
+.autumn-theme .dbx-section__head h2::after {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(196, 154, 91, 0),
+      rgba(196, 154, 91, 1),
+      rgba(196, 154, 91, 0)
+    );
+}
+
+
+/* ============================================================
+   04. Hero
+   只換色，不動版型
+============================================================ */
+
+.autumn-theme .dbx-hero__bg-shape--left {
+  background:
+    radial-gradient(
+      circle at 30% 50%,
+      rgba(184, 130, 87, .16),
+      transparent 70%
+    );
+}
+
+
+.autumn-theme .dbx-hero__bg-shape--right {
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(218, 180, 111, .24),
+      transparent 70%
+    );
+}
+
+
+.autumn-theme .dbx-hero__panel {
+  border-color:
+    rgba(134, 94, 66, .14);
+
+  background:
+    radial-gradient(
+      circle at 88% 20%,
+      rgba(221, 188, 130, .24),
+      transparent 23%
+    ),
+    radial-gradient(
+      circle at 7% 8%,
+      rgba(190, 144, 105, .16),
+      transparent 22%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 249, 239, .97),
+      rgba(240, 222, 198, .97)
+    );
+
+  box-shadow:
+    0 24px 58px rgba(82, 57, 40, .10),
+    inset 0 1px 0 rgba(255, 255, 255, .86);
+}
+
+
+.autumn-theme .dbx-hero__panel::before {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(194, 147, 78, .86),
+      rgba(225, 195, 139, .90),
+      transparent
+    );
+}
+
+
+.autumn-theme .dbx-hero__gold-line {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(194, 147, 78, 0),
+      rgba(194, 147, 78, 1),
+      rgba(225, 195, 139, .82)
+    );
+}
+
+
+.autumn-theme .dbx-title {
+  color:
+    var(--autumn-brown);
+}
+
+
+.autumn-theme .dbx-subtitle {
+  color:
+    var(--autumn-text);
+}
+
+
+/* Hero info 卡 */
+.autumn-theme .dbx-hero__meta-item {
+  border-color:
+    rgba(132, 91, 63, .13);
+
+  background:
+    rgba(255, 250, 241, .78);
+
+  box-shadow:
+    0 10px 22px rgba(73, 49, 34, .05);
+}
+
+
+.autumn-theme .dbx-hero__meta-item span {
+  color:
+    var(--autumn-muted);
+}
+
+
+.autumn-theme .dbx-hero__meta-item strong {
+  color:
+    var(--autumn-brown);
+}
+
+
+.autumn-theme .dbx-hero__meta-item--accent {
+  background:
+    linear-gradient(
+      135deg,
+      #b78b63,
+      #8b654b
+    );
+
+  border-color:
+    rgba(103, 72, 52, .22);
+}
+
+
+.autumn-theme .dbx-hero__meta-item--accent span {
+  color:
+    rgba(255, 246, 228, .80);
+}
+
+
+.autumn-theme .dbx-hero__meta-item--accent strong {
+  color:
+    #fffaf1;
+}
+
+
+/* ============================================================
+   05. Hero Emblem
+   保留原位置與尺寸
+============================================================ */
+
+.autumn-theme .dbx-hero__festival-emblem-ring {
+  border-color:
+    rgba(186, 139, 81, .35);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 250, 237, .76) 0%,
+      rgba(224, 198, 158, .28) 47%,
+      rgba(211, 172, 110, .04) 70%
+    );
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, .40),
+    0 20px 42px rgba(95, 66, 42, .10);
+}
+
+
+.autumn-theme .dbx-hero__festival-emblem-image {
+  filter:
+    drop-shadow(
+      0 12px 20px rgba(90, 59, 37, .17)
+    );
+}
+
+
+/* ============================================================
+   06. DM
+============================================================ */
+
+.autumn-theme .dbx-dm-showcase {
+  color:
+    var(--autumn-brown);
+}
+
+
+.autumn-theme .dbx-dm-showcase__line {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(190, 144, 78, .72),
+      transparent
+    );
+}
+
+
+.autumn-theme .dbx-dm-showcase__frame {
+  border-color:
+    rgba(132, 94, 67, .15);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 251, 244, .96),
+      rgba(238, 221, 199, .94)
+    );
+
+  box-shadow:
+    0 22px 52px rgba(89, 62, 43, .10);
+}
+
+
+.autumn-theme .dbx-dm-showcase__frame::before {
+  border-color:
+    rgba(199, 160, 96, .32);
+}
+
+
+.autumn-theme .dbx-dm-showcase__badge {
+  background:
+    linear-gradient(
+      135deg,
+      #c28754,
+      #9b6845
+    );
+
+  color:
+    #fffaf2;
+
+  box-shadow:
+    0 12px 26px rgba(105, 72, 48, .20);
+}
+
+
+.autumn-theme .dbx-dm-showcase__side-mark {
+  background:
+    linear-gradient(
+      180deg,
+      #d0ac74,
+      #ad7d54
+    );
+}
+
+
+/* ============================================================
+   07. Offer Cards
+============================================================ */
+
+.autumn-theme .dbx-offer-card {
+  border-color:
+    var(--autumn-border);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 251, 244, .96),
+      rgba(247, 236, 220, .96)
+    );
+
+  box-shadow:
+    var(--autumn-shadow);
+}
+
+
+.autumn-theme .dbx-offer-card h3 {
+  color:
+    var(--autumn-brown);
+}
+
+
+.autumn-theme .dbx-offer-card p {
+  color:
+    var(--autumn-text);
+}
+
+
+.autumn-theme .dbx-offer-card__label {
+  color:
+    #9c7558;
+}
+
+
+/* 重點卡：不再使用酒紅 */
+.autumn-theme .dbx-offer-card--primary {
+  background:
+    linear-gradient(
+      145deg,
+      #b88c65 0%,
+      #997154 55%,
+      #795845 100%
+    );
+
+  border-color:
+    rgba(111, 77, 54, .20);
+
+  box-shadow:
+    0 20px 44px rgba(91, 64, 44, .16);
+}
+
+
+.autumn-theme .dbx-offer-card--primary::before {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(242, 216, 171, .86),
+      transparent
+    );
+}
+
+
+.autumn-theme
+.dbx-offer-card--primary
+.dbx-offer-card__label {
+  color:
+    rgba(255, 241, 217, .83);
+}
+
+
+.autumn-theme
+.dbx-offer-card--primary h3 {
+  color:
+    #fff9ee;
+}
+
+
+.autumn-theme
+.dbx-offer-card--primary p {
+  color:
+    rgba(255, 249, 239, .92);
+}
+
+
+/* ============================================================
+   08. Insurance
+============================================================ */
+
+.autumn-theme .dbx-insurance__content,
+.autumn-theme .dbx-insurance__panel {
+  border-color:
+    var(--autumn-border);
+
+  box-shadow:
+    var(--autumn-shadow);
+}
+
+
+.autumn-theme .dbx-insurance__content {
+  background:
+    linear-gradient(
+      180deg,
+      #fffaf3,
+      #f7ede0
+    );
+}
+
+
+.autumn-theme .dbx-insurance__content h2 {
+  color:
+    var(--autumn-brown);
+}
+
+
+.autumn-theme .dbx-insurance__content p,
+.autumn-theme .dbx-insurance__content li {
+  color:
+    var(--autumn-text);
+}
+
+
+/* 右側大色塊改咖啡／駝色 */
+.autumn-theme .dbx-insurance__panel {
+  background:
+    radial-gradient(
+      circle at 70% 34%,
+      rgba(231, 199, 146, .20),
+      transparent 25%
+    ),
+    linear-gradient(
+      145deg,
+      #b48965 0%,
+      #987055 48%,
+      #745342 100%
+    );
+}
+
+
+.autumn-theme .dbx-insurance__panel::before {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(244, 218, 174, .86),
+      transparent
+    );
+}
+
+
+.autumn-theme .dbx-insurance__seal {
+  color:
+    #fffaf0;
+}
+
+
+/* ============================================================
+   09. Gear Promo
+============================================================ */
+
+.autumn-theme .dbx-gear-promo {
+  border-color:
+    rgba(124, 88, 62, .13);
+
+  background:
+    radial-gradient(
+      circle at 92% 12%,
+      rgba(194, 155, 101, .13),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #fffaf3,
+      #f3e5d2
+    );
+
+  box-shadow:
+    var(--autumn-shadow);
+}
+
+
+.autumn-theme .dbx-gear-promo__content h2 {
+  color:
+    var(--autumn-brown);
+}
+
+
+.autumn-theme .dbx-gear-promo__content p {
+  color:
+    var(--autumn-text);
+}
+
+
+.autumn-theme .dbx-gear-promo__tags span {
+  border-color:
+    rgba(127, 91, 65, .16);
+
+  background:
+    #fff9ef;
+
+  color:
+    var(--autumn-coffee);
+}
+
+
+.autumn-theme .dbx-gear-promo__gallery a {
+  background:
+    #fffaf3;
+
+  box-shadow:
+    0 12px 28px rgba(87, 62, 44, .12);
+}
+
+
+.autumn-theme .dbx-gear-promo__gallery img {
+  background:
+    #fffaf3;
+}
+
+
+.autumn-theme .dbx-gear-promo__gallery span {
+  background:
+    rgba(103, 76, 59, .92);
+
+  color:
+    #fffaf1;
+}
+
+
+/* ============================================================
+   10. Delivery
+============================================================ */
+
+.autumn-theme .dbx-delivery-promo {
+  border-color:
+    rgba(129, 91, 65, .14);
+
+  background:
+    radial-gradient(
+      circle at 92% 10%,
+      rgba(207, 166, 107, .15),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #fffaf3,
+      #f2e3cf
+    );
+
+  box-shadow:
+    var(--autumn-shadow);
+}
+
+
+.autumn-theme .dbx-delivery-promo__icon {
+  background:
+    linear-gradient(
+      145deg,
+      #957058,
+      #6f5141
+    );
+
+  box-shadow:
+    0 16px 34px rgba(86, 60, 43, .19);
+}
+
+
+.autumn-theme .dbx-delivery-promo__content h2 {
+  color:
+    var(--autumn-brown);
+}
+
+
+.autumn-theme .dbx-delivery-promo__content p {
+  color:
+    var(--autumn-text);
+}
+
+
+.autumn-theme .dbx-delivery-promo__notes span {
+  border-color:
+    rgba(130, 91, 63, .16);
+
+  background:
+    #fffaf1;
+
+  color:
+    var(--autumn-coffee);
+}
+
+
+/* ============================================================
+   11. Budget Estimator
+============================================================ */
+
+.autumn-theme .dbx-budget__panel {
+  background:
+    linear-gradient(
+      #fffaf3,
+      #fffaf3
+    ) padding-box,
+
+    linear-gradient(
+      135deg,
+      rgba(201, 166, 109, .45),
+      rgba(137, 98, 71, .20)
+    ) border-box;
+
+  box-shadow:
+    0 20px 50px rgba(76, 52, 37, .09),
+    inset 0 2px 0 rgba(255, 255, 255, .78);
+}
+
+
+.autumn-theme .dbx-budget__panel::before {
+  background:
+    radial-gradient(
+      420px 220px at 10% 0%,
+      rgba(209, 173, 115, .14),
+      transparent 60%
+    ),
+    radial-gradient(
+      300px 200px at 100% 100%,
+      rgba(139, 99, 73, .08),
+      transparent 60%
+    );
+}
+
+
+.autumn-theme .dbx-budget__eyebrow {
+  background:
+    rgba(166, 119, 68, .10);
+
+  border-color:
+    rgba(166, 119, 68, .18);
+
+  color:
+    #986b3e;
+}
+
+
+.autumn-theme .dbx-budget__panel-head h3 {
+  color:
+    var(--autumn-brown);
+}
+
+
+.autumn-theme .dbx-budget__label {
+  color:
+    #755641;
+}
+
+
+.autumn-theme .dbx-budget__select {
+  border-color:
+    rgba(105, 74, 52, .14);
+
+  background:
+    #fffaf3;
+
+  color:
+    var(--autumn-brown);
+}
+
+
+.autumn-theme .dbx-budget__select:focus {
+  border-color:
+    var(--autumn-camel);
+
+  box-shadow:
+    0 0 0 3px rgba(180, 135, 97, .11);
+}
+
+
+.autumn-theme .dbx-budget__choice {
+  border-color:
+    rgba(108, 76, 53, .13);
+
+  background:
+    #fffaf3;
+
+  color:
+    var(--autumn-brown);
+}
+
+
+.autumn-theme .dbx-budget__choice input {
+  accent-color:
+    var(--autumn-camel);
+}
+
+
+.autumn-theme .dbx-budget__choice--block b {
+  color:
+    var(--autumn-brown);
+}
+
+
+.autumn-theme .dbx-budget__choice--block small,
+.autumn-theme .dbx-budget__hint {
+  color:
+    var(--autumn-muted);
+}
+
+
+/* checked */
+.autumn-theme
+.dbx-budget__choice--gear:has(input:checked) {
+  border-color:
+    rgba(176, 126, 87, .48);
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4e4cf,
+      #fffaf3
+    );
+
+  box-shadow:
+    0 12px 28px rgba(97, 67, 46, .10);
+}
+
+
+.autumn-theme .gear-left b {
+  color:
+    var(--autumn-brown);
+}
+
+
+.autumn-theme .gear-left small {
+  color:
+    var(--autumn-muted);
+}
+
+
+.autumn-theme .gear-right span {
+  color:
+    var(--autumn-orange);
+}
+
+
+.autumn-theme .gear-right small {
+  color:
+    #9c684c;
+}
+
+
+/* summary */
+.autumn-theme .dbx-budget__summaryItem {
+  background:
+    linear-gradient(
+      180deg,
+      #fff8eb,
+      #efe0c8
+    );
+
+  border-color:
+    rgba(184, 139, 79, .26);
+}
+
+
+.autumn-theme .dbx-budget__summaryItem span,
+.autumn-theme .dbx-budget__breakdownRow span {
+  color:
+    #816551;
+}
+
+
+.autumn-theme .dbx-budget__summaryItem strong {
+  color:
+    #9d623a;
+}
+
+
+.autumn-theme .dbx-budget__breakdown {
+  background:
+    rgba(250, 241, 226, .94);
+
+  border-color:
+    rgba(170, 129, 76, .20);
+}
+
+
+.autumn-theme .dbx-budget__breakdownRow {
+  border-bottom-color:
+    rgba(133, 94, 62, .18);
+}
+
+
+.autumn-theme .dbx-budget__breakdownRow strong {
+  color:
+    var(--autumn-brown);
+}
+
+
+.autumn-theme
+.dbx-budget__breakdownRow--total strong {
+  color:
+    var(--autumn-orange-dark);
+}
+
+
+/* featured car */
+.autumn-theme .dbx-budget__featured {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 247, 232, .98),
+      rgba(235, 216, 182, .97)
+    );
+
+  border-color:
+    rgba(188, 143, 78, .30);
+}
+
+
+.autumn-theme .dbx-budget__featuredLabel {
+  background:
+    rgba(145, 101, 54, .10);
+
+  color:
+    #93663d;
+}
+
+
+.autumn-theme .dbx-budget__featured h4 {
+  color:
+    var(--autumn-brown);
+}
+
+
+.autumn-theme .dbx-budget__featured p {
+  color:
+    var(--autumn-text);
+}
+
+
+.autumn-theme .dbx-budget__featured a {
+  background:
+    linear-gradient(
+      180deg,
+      #a97650,
+      #775441
+    );
+
+  box-shadow:
+    0 12px 24px rgba(94, 65, 45, .20);
+}
+
+
+.autumn-theme .dbx-budget__featured a:hover {
+  background:
+    linear-gradient(
+      180deg,
+      #bb8558,
+      #87604a
+    );
+
+  color:
+    #fff;
+}
+
+
+/* ============================================================
+   12. Mid CTA
+============================================================ */
+
+.autumn-theme .dbx-mid-cta {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, .35),
+      rgba(208, 172, 113, .62),
+      rgba(255, 255, 255, .20)
+    );
+
+  box-shadow:
+    0 28px 70px rgba(72, 50, 35, .18);
+}
+
+
+.autumn-theme .dbx-mid-cta__inner {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(211, 168, 104, .22),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(185, 135, 91, .23),
+      transparent 34%
+    ),
+    linear-gradient(
+      145deg,
+      #765744,
+      #664939 50%,
+      #4d382d
+    );
+}
+
+
+.autumn-theme .dbx-mid-cta__inner h2 {
+  color:
+    #fff9ee;
+}
+
+
+.autumn-theme .dbx-mid-cta__inner p {
+  color:
+    rgba(255, 248, 236, .84);
+}
+
+
+.autumn-theme .dbx-mid-cta__btn--primary {
+  border-color:
+    rgba(232, 204, 153, .42);
+
+  background:
+    linear-gradient(
+      135deg,
+      #c78953,
+      #9e6947
+    );
+
+  box-shadow:
+    0 16px 34px rgba(87, 59, 41, .24),
+    inset 0 1px 0 rgba(255, 255, 255, .18);
+}
+
+
+.autumn-theme
+.dbx-mid-cta__glow--left {
+  background:
+    radial-gradient(
+      circle,
+      rgba(211, 164, 100, .27),
+      transparent 70%
+    );
+}
+
+
+.autumn-theme
+.dbx-mid-cta__glow--right {
+  background:
+    radial-gradient(
+      circle,
+      rgba(190, 144, 92, .28),
+      transparent 72%
+    );
+}
+
+
+/* ============================================================
+   13. Gallery
+============================================================ */
+
+.autumn-theme
+.dbx-gallery-window__wing--left {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(160, 116, 82, .20),
+      rgba(208, 172, 111, .10),
+      transparent
+    );
+}
+
+
+.autumn-theme
+.dbx-gallery-window__wing--right {
+  background:
+    linear-gradient(
+      270deg,
+      rgba(160, 116, 82, .20),
+      rgba(208, 172, 111, .10),
+      transparent
+    );
+}
+
+
+.autumn-theme .dbx-gallery__viewport {
+  border-color:
+    rgba(119, 86, 62, .15);
+
+  background:
+    linear-gradient(
+      180deg,
+      #fffaf3,
+      #f0e2cf
+    );
+
+  box-shadow:
+    0 24px 48px rgba(75, 51, 34, .10),
+    inset 0 1px 0 rgba(255, 255, 255, .82);
+}
+
+
+.autumn-theme .dbx-gallery__arrow {
+  border-color:
+    rgba(112, 79, 57, .20);
+
+  background:
+    rgba(255, 250, 241, .90);
+
+  color:
+    var(--autumn-coffee);
+
+  box-shadow:
+    0 12px 24px rgba(75, 51, 34, .12);
+}
+
+
+.autumn-theme .dbx-gallery__arrow:hover {
+  background:
+    var(--autumn-coffee);
+
+  color:
+    #fffaf0;
+}
+
+
+.autumn-theme .dbx-gallery__dots button {
+  background:
+    rgba(133, 94, 66, .22);
+}
+
+
+.autumn-theme
+.dbx-gallery__dots button.is-active {
+  background:
+    linear-gradient(
+      135deg,
+      var(--autumn-gold),
+      var(--autumn-coffee)
+    );
+}
+
+
+/* Gallery 文字銘牌 */
+.autumn-theme .dbx-gallery__caption {
+  border-color:
+    rgba(173, 126, 60, .72);
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff5e2 0%,
+      #e8d0aa 45%,
+      #c9a36b 100%
+    );
+
+  box-shadow:
+    0 10px 22px rgba(73, 47, 26, .15),
+    inset 0 1px 0 rgba(255, 255, 255, .72);
+}
+
+
+.autumn-theme .dbx-gallery__caption strong {
+  color:
+    #795139;
+}
+
+
+/* ============================================================
+   14. Type Cards
+============================================================ */
+
+.autumn-theme .dbx-type-card {
+  border-color:
+    var(--autumn-border);
+
+  background:
+    linear-gradient(
+      180deg,
+      #fffaf3,
+      #f5eadb
+    );
+
+  box-shadow:
+    var(--autumn-shadow);
+}
+
+
+.autumn-theme .dbx-type-card__media {
+  background:
+    #4a372d;
+}
+
+
+.autumn-theme .dbx-type-card__media::after {
+  background:
+    linear-gradient(
+      to top,
+      rgba(55, 37, 27, .42),
+      transparent
+    );
+}
+
+
+.autumn-theme .dbx-type-card__tag {
+  background:
+    rgba(87, 61, 45, .70);
+
+  border-color:
+    rgba(255, 245, 226, .22);
+
+  color:
+    #fff9ef;
+}
+
+
+.autumn-theme .dbx-type-card__body h3 {
+  color:
+    var(--autumn-brown);
+}
+
+
+.autumn-theme .dbx-type-card__body p {
+  color:
+    var(--autumn-text);
+}
+
+
+.autumn-theme .dbx-type-card__body a {
+  color:
+    var(--autumn-orange-dark);
+}
+
+
+/* ============================================================
+   15. FAQ
+============================================================ */
+
+.autumn-theme .dbx-faq__item {
+  border-color:
+    var(--autumn-border);
+
+  background:
+    linear-gradient(
+      180deg,
+      #fffaf3,
+      #f5e9d9
+    );
+
+  box-shadow:
+    0 12px 26px rgba(72, 50, 36, .06);
+}
+
+
+.autumn-theme .dbx-faq__item summary {
+  color:
+    var(--autumn-brown);
+}
+
+
+.autumn-theme .dbx-faq__item p {
+  color:
+    var(--autumn-text);
+}
+
+
+/* FAQ 展開時增加秋季提示 */
+.autumn-theme
+.dbx-faq__item[open] {
+  border-color:
+    rgba(181, 132, 86, .28);
+
+  box-shadow:
+    0 14px 30px rgba(86, 58, 40, .08);
+}
+
+
+/* ============================================================
+   16. Final CTA
+============================================================ */
+
+.autumn-theme .dbx-cta {
+  background:
+    radial-gradient(
+      circle at 85% 50%,
+      rgba(221, 183, 119, .20),
+      transparent 24%
+    ),
+    linear-gradient(
+      135deg,
+      #7b5a46,
+      #694a3a 52%,
+      #4f382e
+    );
+
+  border-color:
+    rgba(255, 247, 230, .10);
+
+  box-shadow:
+    0 22px 44px rgba(70, 48, 34, .20);
+}
+
+
+.autumn-theme .dbx-cta::before {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(238, 211, 165, .84),
+      transparent
+    );
+}
+
+
+.autumn-theme .dbx-cta__main h2 {
+  color:
+    #fff9ef;
+}
+
+
+.autumn-theme .dbx-cta__main p {
+  color:
+    rgba(255, 247, 234, .88);
+}
+
+
+.autumn-theme .dbx-contact-card {
+  background:
+    rgba(255, 248, 236, .09);
+
+  border-color:
+    rgba(238, 211, 166, .20);
+}
+
+
+.autumn-theme .dbx-contact-card span {
+  color:
+    rgba(255, 231, 195, .83);
+}
+
+
+.autumn-theme .dbx-contact-card a {
+  color:
+    #fffaf2;
+}
+
+
+.autumn-theme .dbx-contact-card--line {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(220, 180, 112, .18),
+      rgba(255, 255, 255, .07)
+    );
+}
+
+
+/* ============================================================
+   17. Falling Leaves
+============================================================ */
+
+.autumn-theme .autumn-leaves {
+  position: fixed;
+  inset: 0;
+
+  z-index: 8;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+
+.autumn-theme .autumn-leaf {
+  position: absolute;
+
+  top: -14vh;
+
+  opacity: 0;
+
+  line-height: 1;
+
+  filter:
+    saturate(.70)
+    sepia(.18)
+    drop-shadow(
+      0 5px 4px rgba(85, 55, 34, .10)
+    );
+
+  animation-name:
+    autumnLeafFall;
+
+  animation-timing-function:
+    linear;
+
+  animation-iteration-count:
+    infinite;
+
+  will-change:
+    transform;
+}
+
+
+/* 每片葉子刻意做不同速度與大小 */
+
+.autumn-theme .autumn-leaf--1 {
+  left: 3%;
+  font-size: 28px;
+  animation-duration: 18s;
+  animation-delay: -4s;
+}
+
+
+.autumn-theme .autumn-leaf--2 {
+  left: 10%;
+  font-size: 17px;
+  animation-duration: 23s;
+  animation-delay: -15s;
+}
+
+
+.autumn-theme .autumn-leaf--3 {
+  left: 19%;
+  font-size: 23px;
+  animation-duration: 20s;
+  animation-delay: -9s;
+}
+
+
+.autumn-theme .autumn-leaf--4 {
+  left: 27%;
+  font-size: 15px;
+  animation-duration: 25s;
+  animation-delay: -20s;
+}
+
+
+.autumn-theme .autumn-leaf--5 {
+  left: 35%;
+  font-size: 30px;
+  animation-duration: 22s;
+  animation-delay: -6s;
+}
+
+
+.autumn-theme .autumn-leaf--6 {
+  left: 43%;
+  font-size: 18px;
+  animation-duration: 19s;
+  animation-delay: -13s;
+}
+
+
+.autumn-theme .autumn-leaf--7 {
+  left: 51%;
+  font-size: 24px;
+  animation-duration: 26s;
+  animation-delay: -18s;
+}
+
+
+.autumn-theme .autumn-leaf--8 {
+  left: 59%;
+  font-size: 16px;
+  animation-duration: 21s;
+  animation-delay: -3s;
+}
+
+
+.autumn-theme .autumn-leaf--9 {
+  left: 67%;
+  font-size: 29px;
+  animation-duration: 24s;
+  animation-delay: -14s;
+}
+
+
+.autumn-theme .autumn-leaf--10 {
+  left: 74%;
+  font-size: 17px;
+  animation-duration: 20s;
+  animation-delay: -10s;
+}
+
+
+.autumn-theme .autumn-leaf--11 {
+  left: 81%;
+  font-size: 25px;
+  animation-duration: 27s;
+  animation-delay: -22s;
+}
+
+
+.autumn-theme .autumn-leaf--12 {
+  left: 87%;
+  font-size: 14px;
+  animation-duration: 19s;
+  animation-delay: -8s;
+}
+
+
+.autumn-theme .autumn-leaf--13 {
+  left: 93%;
+  font-size: 28px;
+  animation-duration: 24s;
+  animation-delay: -17s;
+}
+
+
+.autumn-theme .autumn-leaf--14 {
+  left: 97%;
+  font-size: 16px;
+  animation-duration: 21s;
+  animation-delay: -5s;
+}
+
+
+@keyframes autumnLeafFall {
+
+  0% {
+    transform:
+      translate3d(
+        -28px,
+        -16vh,
+        0
+      )
+      rotate(0deg);
+
+    opacity: 0;
+  }
+
+
+  8% {
+    opacity: .34;
+  }
+
+
+  28% {
+    transform:
+      translate3d(
+        28px,
+        24vh,
+        0
+      )
+      rotate(115deg);
+  }
+
+
+  53% {
+    transform:
+      translate3d(
+        -20px,
+        53vh,
+        0
+      )
+      rotate(235deg);
+  }
+
+
+  76% {
+    transform:
+      translate3d(
+        36px,
+        80vh,
+        0
+      )
+      rotate(355deg);
+
+    opacity: .29;
+  }
+
+
+  100% {
+    transform:
+      translate3d(
+        -15px,
+        116vh,
+        0
+      )
+      rotate(520deg);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* ============================================================
+   18. Mobile Adjustments
+   只調裝飾，不更動既有版型 RWD
+============================================================ */
+
+@media (max-width: 767.98px) {
+
+  /* 手機降低背景光暈 */
+  .autumn-theme .dbx-bg {
+    opacity: .14;
+  }
+
+
+  /* 手機落葉少一半 */
+  .autumn-theme .autumn-leaf--2,
+  .autumn-theme .autumn-leaf--4,
+  .autumn-theme .autumn-leaf--6,
+  .autumn-theme .autumn-leaf--8,
+  .autumn-theme .autumn-leaf--10,
+  .autumn-theme .autumn-leaf--12,
+  .autumn-theme .autumn-leaf--14 {
+    display: none;
+  }
+
+
+  .autumn-theme .autumn-leaf {
+    opacity: .24;
+  }
+
+
+  .autumn-theme .dbx-offer-card--primary {
+    background:
+      linear-gradient(
+        145deg,
+        #b58a64,
+        #795845
+      );
+  }
+
+
+  .autumn-theme .dbx-insurance__panel {
+    background:
+      linear-gradient(
+        145deg,
+        #a88060,
+        #735342
+      );
+  }
+
+}
+
+
+/* ============================================================
+   19. Reduced Motion
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .autumn-theme .autumn-leaf {
+    display: none;
+    animation: none !important;
+  }
+
 }
