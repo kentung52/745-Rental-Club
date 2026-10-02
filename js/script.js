@@ -959,7 +959,7 @@ document.addEventListener('DOMContentLoaded', () => {
         image: "/images/car_introduce/yellow_car/speed400/1.jpg",
         link: "/car_introduce/yellow_motor/speed400.html"
       },
-      {
+      { 
         id: "y5",
         name: "KTM Duke390 ADV",
         pricePerDay: 2400,
