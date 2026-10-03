@@ -8735,6 +8735,19 @@ input[type="tel"]:focus,
     line-height: 1.8;
     margin-bottom: 22px;
   }
+
+  .hp-offer-card__tag,
+  .hp-offer-card__offer {  
+    font-size: 20px;
+  }
+
+  .hp-offer-card__bottom-label {
+    font-size: 20px;
+  }
+
+  .hp-offer-card__bottom-text {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 575.98px) {
