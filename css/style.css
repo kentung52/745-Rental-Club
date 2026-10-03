@@ -8756,15 +8756,27 @@ input[type="tel"]:focus,
   }
 
   .hp-offer__btn-main {
-    font-size: 20px;
+    min-width: 305px;
+    min-height: 82px;
+    padding-left: 26px;
+    padding-right: 26px;
+    justify-content: center;
+    box-shadow: 0 14px 30px rgba(225,36,84,.20);
+    transition: transform .24s ease, box-shadow .24s ease;
+    font-size: 30px;
+  }
+
+  .hp-offer__btn-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 34px rgba(225,36,84,.24);
   }
 
   .hp-offer__btn-sub {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 154px;
-    min-height: 52px;
+    min-width: 204px;
+    min-height: 82px;
     padding: 0 24px;
     border-radius: 999px;
     background: linear-gradient(135deg, #fff4d6 0%, #ffe7a3 100%);
@@ -8773,7 +8785,7 @@ input[type="tel"]:focus,
     overflow: hidden;
     animation: holidayGlow 2.2s ease-in-out infinite;
     font-family: "Exo", sans-serif;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 800;
     transition: all .24s ease;
   }
