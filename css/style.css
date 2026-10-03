@@ -8702,7 +8702,7 @@ input[type="tel"]:focus,
 
   .hp-offer__desc {
     max-width: none;
-    font-size: 17px;
+    font-size: 25px;
     line-height: 1.85;
   }
 
@@ -8776,7 +8776,7 @@ input[type="tel"]:focus,
   }
 
   .hp-offer__desc {
-    font-size: 22px;
+    font-size: 25px;
     line-height: 1.8;
     margin-bottom: 18px;
   }
