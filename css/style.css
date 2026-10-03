@@ -8716,7 +8716,7 @@ input[type="tel"]:focus,
   }
 
   .hp-offer-card__title {
-    font-size: 50px;
+    font-size: 60px;
   }
 
   .hp-offer-card__list li {
@@ -8791,7 +8791,7 @@ input[type="tel"]:focus,
   }
 
   .hp-offer-card__text {
-    font-size: 20px;
+    font-size: 60px;
     line-height: 1.8;
     margin-bottom: 16px;
   }
