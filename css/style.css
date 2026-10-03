@@ -8570,7 +8570,7 @@ input[type="tel"]:focus,
   min-height: 34px;
   padding: 6px 12px;
   border-radius: 999px;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: .08em;
 }
@@ -8636,14 +8636,14 @@ input[type="tel"]:focus,
   border-radius: 999px;
   background: rgba(255,255,255,.10);
   color: #ffbfd0;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: .08em;
 }
 
 .hp-offer-card__bottom-text {
   color: rgba(255,255,255,.88);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.8;
 }
 
@@ -8721,13 +8721,19 @@ input[type="tel"]:focus,
 
   .hp-offer-card__list li {
     padding: 9px 0;
+    font-size: 22px;
+  }
+
+  .hp-offer-card__list i {
+    margin-top: 3px;
+    color: #ffb7c8;
     font-size: 30px;
   }
 
   .hp-offer-card__text {
-    font-size: 25px;
+    font-size: 22px;
     line-height: 1.8;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
   }
 }
 
