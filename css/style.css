@@ -8607,7 +8607,7 @@ input[type="tel"]:focus,
   gap: 10px;
   padding: 11px 0;
   color: rgba(255,255,255,.94);
-  font-size: 16px;
+  font-size: 18px;
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
@@ -8618,7 +8618,7 @@ input[type="tel"]:focus,
 .hp-offer-card__list i {
   margin-top: 3px;
   color: #ffb7c8;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .hp-offer-card__bottom {
@@ -8716,7 +8716,12 @@ input[type="tel"]:focus,
   }
 
   .hp-offer-card__title {
-    font-size: 32px;
+    font-size: 50px;
+  }
+
+  .hp-offer-card__list li {
+    padding: 9px 0;
+    font-size: 30px;
   }
 }
 
@@ -8781,19 +8786,19 @@ input[type="tel"]:focus,
   }
 
   .hp-offer-card__title {
-    font-size: 28px;
+    font-size: 40px;
     line-height: 1.2;
   }
 
   .hp-offer-card__text {
-    font-size: 15px;
+    font-size: 20px;
     line-height: 1.8;
     margin-bottom: 16px;
   }
 
   .hp-offer-card__list li {
     padding: 9px 0;
-    font-size: 15px;
+    font-size: 20px;
   }
 }
 
