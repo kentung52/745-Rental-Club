@@ -1319,7 +1319,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     els.featured.innerHTML = `
       <span class="dbx-budget__featuredLabel">車型資訊</span>
-      <h2>${car.name}</h2>
+      <h4>${car.name}</h4>
       <p>
         ${
           els.campaignDays.options[els.campaignDays.selectedIndex].dataset.priceMode === "wuling"
