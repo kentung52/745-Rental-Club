@@ -8088,7 +8088,7 @@ input[type="tel"]:focus,
 .dbx-budget__breakdownRow span {
   display: block;
   color: #86694d;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 700;
 }
 
@@ -8123,7 +8123,7 @@ input[type="tel"]:focus,
 
 .dbx-budget__breakdownRow strong {
   color: #35261d;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 800;
 }
 
