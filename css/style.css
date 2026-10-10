@@ -9223,12 +9223,12 @@ input[type="tel"]:focus,
 .ship-hero-v3__slider .slick-track,
 .ship-hero-v3__slider .slick-slide,
 .ship-hero-v3__slider .slick-slide > div {
-  min-height: clamp(540px, 30vw, 440px);
+  min-height: clamp(340px, 30vw, 440px);
 }
 
 .ship-hero-v3__slider img {
   width: 100%;
-  height: clamp(840px, 30vw, 440px);
+  height: clamp(340px, 30vw, 440px);
   display: block;
   object-fit: cover;
 }
