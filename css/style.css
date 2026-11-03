@@ -787,7 +787,7 @@ input[type="tel"]:focus,
   content: "";
   position: absolute;
   inset: 0;
-  background: #fff url("/images/activity/autumn_sale/首頁DM.jpg") no-repeat center center;
+  background: #fff url("/images/car_introduce/red_car/gsx1000/1.jpg") no-repeat center center;
   background-size: contain;
   opacity: 0;
   animation: bannerDmFade 12s infinite;
