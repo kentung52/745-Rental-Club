@@ -978,6 +978,16 @@ document.addEventListener('DOMContentLoaded', () => {
         insuranceAvailable: { business: true, roadside: true },
         image: "/images/car_introduce/yellow_car/xmax/1.jpg",
         link: "/car_introduce/yellow_motor/xmax.html"
+      },
+      {
+        id: "y7",
+        name: "Honda CB400",
+        pricePerDay: 2900,
+        weekdayPrice: 1500,
+        insurance: { business: 500, roadside: 500 },
+        insuranceAvailable: { business: true, roadside: true },
+        image: "/images/car_introduce/yellow_car/cb400/1.jpg",
+        link: "/car_introduce/yellow_motor/cb400.html"
       }
     ],
     red: [
