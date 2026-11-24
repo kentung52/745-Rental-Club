@@ -14446,3 +14446,1267 @@ input[type="tel"]:focus,
 }
 
 
+
+
+
+
+/* ============================================================
+   NEW YEAR CAMPAIGN
+   騎士窩跨年活動專屬主題
+
+   01. 主題色彩與 CSS 變數
+   02. 星空、光暈與煙火背景
+   03. Hero 主視覺版型
+   04. Hero 插畫與外框
+   05. 共用內容卡片與標題
+   06. 活動 DM 封面
+   07. 試算器、用品、車款及 FAQ
+   08. CTA 與按鈕特效
+   09. RWD 響應式設定
+   10. 無障礙與動畫效能
+============================================================ */
+
+
+/* ============================================================
+   01. 主題色彩與 CSS 變數
+============================================================ */
+
+.newyear-theme.dbx-page {
+
+  /* 跨年專屬色彩 */
+  --ny-gold: #f4ce87;
+  --ny-muted: #b4c4dc;
+
+  --ny-card: linear-gradient(
+    145deg,
+    #202d49,
+    #121a31
+  );
+
+  --ny-surface: #111b31;
+
+
+  /* 共用 DBX 色彩變數局部替換 */
+  --dbx-red-900: #17213a;
+  --dbx-red-800: #29264a;
+  --dbx-red-700: #423467;
+  --dbx-red-600: #66558f;
+
+  --dbx-gold-500: #f4ce87;
+  --dbx-gold-400: #ffe0a5;
+  --dbx-gold-300: #fff0ce;
+
+  --dbx-ink: #f5f7ff;
+  --dbx-text: #dce6f6;
+
+  --dbx-bg: #090f22;
+  --dbx-panel: #18243f;
+
+  --dbx-border: rgba(244, 206, 135, .25);
+
+  --dbx-shadow:
+    0 18px 42px rgba(0, 0, 0, .22);
+
+
+  position: relative;
+  isolation: isolate;
+
+  color: var(--dbx-ink);
+
+  background:
+    radial-gradient(
+      ellipse at 100% 0,
+      #30204f,
+      transparent 55rem
+    ),
+    radial-gradient(
+      ellipse at 0 40%,
+      #172748,
+      transparent 48rem
+    ),
+    linear-gradient(
+      180deg,
+      #090f22,
+      #151d36 52%,
+      #090f22
+    );
+}
+
+
+/* ============================================================
+   02. 星空、光暈與煙火背景
+============================================================ */
+
+/* 主要內容層 */
+
+.newyear-theme .dbx-shell {
+  position: relative;
+  z-index: 2;
+
+  width: min(
+    1440px,
+    calc(100% - clamp(24px, 5vw, 80px))
+  );
+
+  margin-inline: auto;
+}
+
+
+/* 星空背景 */
+
+.newyear-theme .newyear-sky {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  overflow: hidden;
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(
+      circle,
+      #f4ce87aa 1px,
+      transparent 1.7px
+    ),
+    radial-gradient(
+      circle,
+      #7caeff88 1px,
+      transparent 1.7px
+    );
+
+  background-size:
+    137px 173px,
+    211px 149px;
+
+  background-position:
+    19px 37px,
+    73px 12px;
+}
+
+
+/* 紫藍色夜空光暈 */
+
+.newyear-theme .newyear-sky::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    radial-gradient(
+      ellipse at center,
+      #7655bd44,
+      transparent 65%
+    );
+
+  background-size: 100% 900px;
+
+  animation:
+    newyear-aurora
+    16s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+/* 煙火粒子 */
+
+.newyear-theme .newyear-firework {
+  --ny-burst-size: clamp(65px, 10vw, 150px);
+
+  position: absolute;
+
+  top: 80px;
+  left: 12%;
+
+  width: var(--ny-burst-size);
+  aspect-ratio: 1 / 1;
+
+  color: #ffd58b;
+
+  border-radius: 50%;
+
+  background:
+    repeating-conic-gradient(
+      from 8deg,
+      currentColor 0deg 1.6deg,
+      transparent 1.6deg 22.5deg
+    );
+
+  -webkit-mask-image:
+    radial-gradient(
+      circle,
+      transparent 15%,
+      #000 29%,
+      #000 43%,
+      transparent 71%
+    );
+
+  mask-image:
+    radial-gradient(
+      circle,
+      transparent 15%,
+      #000 29%,
+      #000 43%,
+      transparent 71%
+    );
+
+  animation:
+    newyear-burst
+    7s
+    ease-out
+    infinite;
+}
+
+
+/* 第二組煙火：霓虹藍 */
+
+.newyear-theme .newyear-firework:nth-child(2) {
+  left: 85%;
+  top: 280px;
+
+  color: #85bbff;
+
+  animation-delay: -2.4s;
+}
+
+
+/* 第三組煙火：紫粉色 */
+
+.newyear-theme .newyear-firework:nth-child(3) {
+  left: 68%;
+  top: 30px;
+
+  color: #e29aff;
+
+  animation-delay: -4.5s;
+}
+
+
+/* 夜空光暈動畫 */
+
+@keyframes newyear-aurora {
+
+  from {
+    opacity: .25;
+  }
+
+  to {
+    opacity: .85;
+  }
+
+}
+
+
+/* 煙火綻放與消散 */
+
+@keyframes newyear-burst {
+
+  0%,
+  12% {
+    transform:
+      translate(-50%, -50%)
+      scale(.15);
+
+    opacity: 0;
+  }
+
+  26% {
+    opacity: .8;
+  }
+
+  70%,
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scale(1.7);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* ============================================================
+   03. Hero 主視覺版型
+============================================================ */
+
+/* Hero 主要卡片 */
+
+.newyear-theme .dbx-hero__panel {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.6fr)
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: clamp(24px, 4vw, 64px);
+
+  padding: clamp(22px, 4vw, 54px);
+
+  min-height: 0;
+
+  border-radius:
+    clamp(22px, 3vw, 36px);
+
+  border-color: var(--dbx-border);
+
+  background:
+    radial-gradient(
+      ellipse at 85% 45%,
+      #56408055,
+      transparent 55%
+    ),
+    var(--ny-card);
+
+  box-shadow: var(--dbx-shadow);
+}
+
+
+/* 避免 Grid 子元素超出欄位 */
+
+.newyear-theme .dbx-hero__panel-main,
+.newyear-theme .dbx-hero__panel-side {
+  min-width: 0;
+}
+
+
+/* Hero 右側欄位 */
+
+.newyear-theme .dbx-hero__panel-side {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr);
+
+  place-items: center;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+
+  padding: 0;
+}
+
+
+/* Hero 左側背景光暈 */
+
+.newyear-theme .dbx-hero__bg-shape--left {
+  background:
+    radial-gradient(
+      circle,
+      #315b8f44,
+      transparent 70%
+    );
+}
+
+
+/* Hero 右側背景光暈 */
+
+.newyear-theme .dbx-hero__bg-shape--right {
+  background:
+    radial-gradient(
+      circle,
+      #8454c455,
+      transparent 70%
+    );
+}
+
+
+/* 標題上方金色裝飾線 */
+
+.newyear-theme .dbx-hero__gold-line {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--ny-gold)
+    );
+}
+
+
+/* Hero 主標題 */
+
+.newyear-theme .dbx-title {
+  color: var(--ny-gold);
+
+  font-size:
+    clamp(2rem, 4.6vw, 5rem);
+
+  line-height: 1.18;
+
+  text-shadow:
+    0 0 26px #f4ce8733;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* Hero 活動介紹文字 */
+
+.newyear-theme .dbx-subtitle {
+  color: var(--dbx-text);
+
+  font-size:
+    clamp(1rem, 1.55vw, 1.25rem);
+
+  line-height: 1.85;
+}
+
+
+/* ============================================================
+   04. Hero 插畫與外框
+
+   使用獨立 classname
+   避免原有 festival-emblem 定位規則干擾
+============================================================ */
+
+/* 插畫主要尺寸控制容器 */
+
+.newyear-theme .newyear-emblem {
+  position: relative;
+  isolation: isolate;
+
+  display: grid;
+  place-items: center;
+
+  width: min(100%, 26rem);
+
+  aspect-ratio: 1 / 1;
+
+  margin: 0 auto;
+}
+
+
+/* 橢圓形金色外框 */
+
+.newyear-theme .newyear-emblem__ring {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  border-radius: 50%;
+
+  border:
+    1px solid var(--ny-gold);
+
+  background:
+    radial-gradient(
+      ellipse,
+      #536ca433,
+      #090f22
+    );
+
+  box-shadow:
+    0 0 28px #739eff33,
+    0 0 45px #f4ce871a;
+
+  animation:
+    newyear-ring-glow
+    7s
+    ease-in-out
+    infinite;
+
+  pointer-events: none;
+}
+
+
+/* 插畫裁切容器 */
+
+.newyear-theme .newyear-emblem__media {
+  position: absolute;
+  inset: 4px;
+  z-index: 1;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background: #090f22;
+}
+
+
+/* 插畫圖片 */
+
+.newyear-theme .newyear-emblem__image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: 100%;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+
+/* 插畫表面的煙火光影 */
+
+.newyear-theme .newyear-emblem__media::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 58% 30%,
+      #ffe4a633,
+      transparent 62%
+    );
+
+  animation:
+    newyear-aurora
+    6s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+/* 外框呼吸光暈 */
+
+@keyframes newyear-ring-glow {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 28px #739eff33,
+      0 0 45px #f4ce871a;
+  }
+
+  50% {
+    box-shadow:
+      0 0 36px #739eff55,
+      0 0 55px #f4ce8733;
+  }
+
+}
+
+
+/* ============================================================
+   05. 共用內容卡片與標題
+============================================================ */
+
+/* 統一深色卡片主題 */
+
+.newyear-theme :is(
+  .dbx-offer-card,
+  .dbx-insurance__content,
+  .dbx-insurance__panel,
+  .dbx-gear-promo,
+  .dbx-delivery-promo,
+  .dbx-budget__panel,
+  .dbx-type-card,
+  .dbx-faq__item,
+  .dbx-mid-cta,
+  .dbx-mid-cta__inner,
+  .dbx-cta,
+  .dbx-dm-showcase
+) {
+  background: var(--ny-card);
+
+  color: var(--dbx-ink);
+
+  border-color: var(--dbx-border);
+
+  box-shadow: var(--dbx-shadow);
+
+  min-width: 0;
+}
+
+
+/* 各區塊標題 */
+
+.newyear-theme :is(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  summary,
+  strong,
+  b
+):not(.dbx-title) {
+  color: var(--dbx-ink);
+}
+
+
+/* 內文文字 */
+
+.newyear-theme :is(
+  p,
+  li,
+  label,
+  small
+) {
+  color: var(--dbx-text);
+}
+
+
+/* 金色主題標籤 */
+
+.newyear-theme :is(
+  .dbx-kicker,
+  .dbx-chip,
+  .dbx-offer-card__label,
+  .dbx-budget__eyebrow,
+  .dbx-type-card__tag
+) {
+  background:
+    linear-gradient(
+      145deg,
+      #382f49,
+      #242b41
+    );
+
+  color: var(--ny-gold);
+
+  border:
+    1px solid var(--dbx-border);
+}
+
+
+/* 卡片金色裝飾線 */
+
+.newyear-theme :is(
+  .dbx-hero__panel,
+  .dbx-budget__panel,
+  .dbx-offer-card--primary,
+  .dbx-cta
+)::before,
+
+.newyear-theme .dbx-section__head h2::after {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--ny-gold),
+      transparent
+    );
+}
+
+
+/* 主要活動優惠卡片 */
+
+.newyear-theme .dbx-offer-card--primary {
+  background:
+    linear-gradient(
+      145deg,
+      #47365e,
+      #202d49
+    );
+
+  border-color: #f4ce8777;
+}
+
+
+/* 保險介紹右側面板 */
+
+.newyear-theme .dbx-insurance__seal {
+  background:
+    linear-gradient(
+      145deg,
+      #303b59,
+      #172139
+    );
+
+  border-color: var(--dbx-border);
+}
+
+
+/* 保險介紹重點文字 */
+
+.newyear-theme .dbx-insurance__content b {
+  color: var(--ny-gold) !important;
+}
+
+
+/* 收送車服務圖示 */
+
+.newyear-theme .dbx-delivery-promo__icon {
+  background: #2a3452;
+
+  color: var(--ny-gold);
+}
+
+
+/* ============================================================
+   06. 活動 DM 封面
+
+   不使用固定 4:3 比例
+   由圖片原始尺寸自然撐開容器
+============================================================ */
+
+/* DM 外層容器 */
+
+.newyear-theme .newyear-cover {
+  padding:
+    clamp(8px, 1.8vw, 24px);
+
+  border-radius:
+    clamp(16px, 2.5vw, 30px);
+}
+
+
+/* DM 金屬質感邊框 */
+
+.newyear-theme .newyear-cover
+.dbx-dm-showcase__frame {
+  padding:
+    clamp(5px, .8vw, 12px);
+
+  background:
+    linear-gradient(
+      135deg,
+      #a87c40,
+      #343858 30%,
+      #17233c 75%,
+      #d7b06c
+    );
+
+  border-radius:
+    clamp(12px, 1.8vw, 24px);
+}
+
+
+/* DM 圖片容器 */
+
+.newyear-theme .newyear-cover__media {
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+
+  overflow: hidden;
+
+  border-radius:
+    clamp(8px, 1.4vw, 18px);
+
+  background: #090f22;
+}
+
+
+/* DM 圖片尺寸 */
+
+.newyear-theme .newyear-cover__media img {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+
+  height: auto;
+}
+
+
+/* DM 上下裝飾線 */
+
+.newyear-theme .dbx-dm-showcase__line {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--ny-gold),
+      transparent
+    );
+}
+
+
+/* 隱藏不適用的側邊裝飾 */
+
+.newyear-theme .dbx-dm-showcase__side-mark {
+  display: none;
+}
+
+
+/* 限時優惠標籤 */
+
+.newyear-theme .dbx-dm-showcase__badge {
+  position: relative;
+  inset: auto;
+
+  display: table;
+
+  margin: 0 0 8px auto;
+
+  background: #3a3050;
+
+  color: var(--ny-gold);
+}
+
+
+/* ============================================================
+   07. 試算器、用品、車款及 FAQ
+============================================================ */
+
+/* 深色次要資訊面板 */
+
+.newyear-theme :is(
+  .dbx-budget__select,
+  .dbx-budget__choice,
+  .dbx-budget__summaryItem,
+  .dbx-budget__breakdown,
+  .dbx-budget__featured,
+  .dbx-hero__meta-item,
+  .dbx-contact-card,
+  .dbx-gear-promo__tags span,
+  .dbx-delivery-promo__notes span,
+  .dbx-gear-promo__gallery a,
+  .dbx-gallery__caption
+) {
+  background: var(--ny-surface);
+
+  border-color: var(--dbx-border);
+
+  color: var(--dbx-text);
+}
+
+
+/* 試算器下拉選單 */
+
+.newyear-theme .dbx-budget__select {
+  width: 100%;
+  min-width: 0;
+
+  color-scheme: dark;
+}
+
+
+/* 下拉選單選項 */
+
+.newyear-theme .dbx-budget__select option {
+  color: var(--dbx-ink);
+
+  background: var(--ny-surface);
+}
+
+
+/* 保險與用品選取狀態 */
+
+.newyear-theme .dbx-budget__choice:has(input:checked) {
+  background: #32334e;
+
+  border-color: var(--ny-gold);
+
+  box-shadow:
+    0 0 0 1px #f4ce8733;
+}
+
+
+/* Checkbox 主題色彩 */
+
+.newyear-theme .dbx-budget__choice input {
+  accent-color: #e6b86b;
+}
+
+
+/* 試算器重點標籤與價格 */
+
+.newyear-theme :is(
+  .dbx-budget__label,
+  .dbx-budget__summaryItem span,
+  .dbx-budget__breakdownRow span,
+  .gear-right span,
+  .insurance-price,
+  .dbx-budget__featuredLabel,
+  .dbx-contact-card span
+) {
+  color: var(--ny-gold);
+}
+
+
+/* 次要提示文字 */
+
+.newyear-theme :is(
+  .dbx-budget__hint,
+  .gear-left small,
+  .gear-right small,
+  .dbx-budget__choice small
+) {
+  color: var(--ny-muted);
+}
+
+
+/* 預估費用與總金額 */
+
+.newyear-theme :is(
+  .dbx-budget__summaryItem strong,
+  .dbx-budget__breakdownRow--total strong
+) {
+  color: var(--ny-gold);
+}
+
+
+/* 試算明細分隔線 */
+
+.newyear-theme .dbx-budget__breakdownRow {
+  border-color: var(--dbx-border);
+}
+
+
+/* 裝備展示卡片文字 */
+
+.newyear-theme .dbx-gear-promo__gallery span {
+  background: #172139;
+
+  color: var(--dbx-ink);
+}
+
+
+/* 車輛展示輪播視窗 */
+
+.newyear-theme .dbx-gallery__viewport {
+  background: var(--ny-surface);
+
+  border-color: var(--dbx-border);
+}
+
+
+/* 車輛輪播左右箭頭 */
+
+.newyear-theme .dbx-gallery__arrow {
+  background: #283550;
+
+  color: var(--ny-gold);
+
+  border-color: var(--dbx-border);
+}
+
+
+/* 輪播頁碼圓點 */
+
+.newyear-theme .dbx-gallery__dots button {
+  background: #53617b;
+}
+
+
+/* 目前輪播項目 */
+
+.newyear-theme .dbx-gallery__dots button.is-active {
+  background: var(--ny-gold);
+}
+
+
+/* 輪播側邊裝飾 */
+
+.newyear-theme .dbx-gallery-window__wing {
+  background:
+    linear-gradient(
+      135deg,
+      #30204f55,
+      transparent
+    );
+}
+
+
+/* FAQ 展開狀態 */
+
+.newyear-theme .dbx-faq__item[open] {
+  border-color: #f4ce8777;
+}
+
+
+/* ============================================================
+   08. CTA 與按鈕特效
+============================================================ */
+
+/* 金屬漸層按鈕 */
+
+.newyear-theme :is(
+  .dbx-mid-cta__btn--primary,
+  .dbx-budget__featured a,
+  .dbx-type-card__body a
+) {
+  background:
+    linear-gradient(
+      110deg,
+      #d4a45a,
+      #fff0ce,
+      #d4a45a
+    );
+
+  background-size: 200% 100%;
+
+  color: #172039;
+
+  border-color: var(--ny-gold);
+
+  animation:
+    newyear-shine
+    8s
+    ease-in-out
+    infinite;
+}
+
+
+/* 次要按鈕與聯絡資訊 */
+
+.newyear-theme :is(
+  .dbx-mid-cta__btn--ghost,
+  .dbx-contact-card a
+) {
+  color: var(--ny-gold);
+
+  border-color: var(--dbx-border);
+}
+
+
+/* 按鈕 Hover 狀態 */
+
+.newyear-theme :is(
+  .dbx-mid-cta__btn--primary,
+  .dbx-budget__featured a,
+  .dbx-type-card__body a
+):hover {
+  color: #10182a;
+
+  background: #ffe0a5;
+}
+
+
+/* CTA 背景光暈 */
+
+.newyear-theme .dbx-mid-cta__glow {
+  background:
+    radial-gradient(
+      circle,
+      #8766c144,
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* 金屬流動光澤動畫 */
+
+@keyframes newyear-shine {
+
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+
+}
+
+
+/* 鍵盤操作 Focus 狀態 */
+
+.newyear-theme :is(
+  a,
+  button,
+  select,
+  input,
+  summary
+):focus-visible {
+  outline: 2px solid #93c5ff;
+
+  outline-offset: 3px;
+}
+
+
+/* ============================================================
+   09. RWD 響應式設定
+============================================================ */
+
+
+/* ------------------------------------------------------------
+   小型桌機、筆記型電腦
+   1100px 以下
+------------------------------------------------------------ */
+
+@media (max-width: 1100px) {
+
+  .newyear-theme .dbx-hero__panel {
+    grid-template-columns:
+      minmax(0, 1.4fr)
+      minmax(0, 1fr);
+
+    gap:
+      clamp(18px, 3vw, 32px);
+  }
+
+}
+
+
+/* ------------------------------------------------------------
+   平板裝置
+   992px 以下
+------------------------------------------------------------ */
+
+@media (max-width: 991.98px) {
+
+  /* Hero 改為上下排列 */
+
+  .newyear-theme .dbx-hero__panel {
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    gap:
+      clamp(24px, 4vw, 36px);
+  }
+
+
+  /* 文字排列於上方 */
+
+  .newyear-theme .dbx-hero__panel-main {
+    order: 1;
+  }
+
+
+  /* 插畫排列於下方 */
+
+  .newyear-theme .dbx-hero__panel-side {
+    order: 2;
+  }
+
+
+  /* 插畫改為正圓形 */
+
+  .newyear-theme .newyear-emblem {
+    width: min(75%, 22rem);
+
+    aspect-ratio: 1 / 1;
+  }
+
+
+  /* 費用試算器改為單欄 */
+
+  .newyear-theme .dbx-budget {
+    grid-template-columns:
+      minmax(0, 1fr);
+  }
+
+}
+
+
+/* ------------------------------------------------------------
+   手機裝置
+   576px 以下
+------------------------------------------------------------ */
+
+@media (max-width: 575.98px) {
+
+  /* 頁面左右留白 */
+
+  .newyear-theme .dbx-shell {
+    width: calc(100% - 28px);
+
+    padding-inline: 0;
+  }
+
+
+  /* Hero 卡片內距 */
+
+  .newyear-theme .dbx-hero__panel {
+    padding: 24px 16px;
+  }
+
+
+  /* Hero 標題大小 */
+
+  .newyear-theme .dbx-title {
+    font-size:
+      clamp(1.75rem, 7.5vw, 2.5rem);
+  }
+
+
+  /* Hero 內文字體 */
+
+  .newyear-theme .dbx-subtitle {
+    font-size: 1rem;
+
+    line-height: 1.8;
+  }
+
+
+  /* 插畫自適應手機可用寬度 */
+
+  .newyear-theme .newyear-emblem {
+    width: min(86%, 18rem);
+  }
+
+
+  /* 降低手機版背景動畫數量 */
+
+  .newyear-theme .newyear-firework:nth-child(3) {
+    display: none;
+  }
+
+
+  /* DM 優惠標籤 */
+
+  .newyear-theme .dbx-dm-showcase__badge {
+    font-size: .7rem;
+
+    padding: 5px 9px;
+  }
+
+}
+
+
+/* ============================================================
+   10. 無障礙與動畫效能
+
+   尊重使用者系統的減少動態效果設定
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .newyear-theme .newyear-sky::before,
+
+  .newyear-theme .newyear-firework,
+
+  .newyear-theme .newyear-emblem__ring,
+
+  .newyear-theme .newyear-emblem__media::after,
+
+  .newyear-theme :is(
+    .dbx-mid-cta__btn--primary,
+    .dbx-budget__featured a,
+    .dbx-type-card__body a
+  ) {
+    animation: none;
+  }
+
+
+  /* 保留靜態煙火裝飾 */
+
+  .newyear-theme .newyear-firework {
+    opacity: .3;
+  }
+
+
+  /* 關閉內容進場動畫 */
+
+  .newyear-theme .dbx-reveal {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+}
+
+
+/* ============================================================
+   NEW YEAR CAMPAIGN END
+============================================================ */
